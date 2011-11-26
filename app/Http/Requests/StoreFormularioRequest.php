@@ -24,8 +24,8 @@ class StoreFormularioRequest extends FormRequest
      */
     public function rules()
     {
-        //if ($this->posee_abogado == true)
-        //{
+        if ($this->posee_abogado == true)
+        {
             return 
             [
                 'dni' => 'required|integer|digits_between:7, 8', 
@@ -49,7 +49,7 @@ class StoreFormularioRequest extends FormRequest
                 'tipos_tramite_id' => 'required',
                 'delegacion_id' => 'required',
             ];
-        /*
+        
         }
         else 
         {
@@ -68,7 +68,6 @@ class StoreFormularioRequest extends FormRequest
                 'delegacion_id' => 'required',
             ];
         }
-        */
     }
 
     public function messages()
