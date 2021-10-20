@@ -1,14 +1,16 @@
 <template>
     <layout-no-registrado>
-       <Header/>
+        <Titulo texto="TRAMITES"/>
     </layout-no-registrado>
 </template>
 
 <script>
 
-import Header from "../Componentes/Header"
+
 import LayoutNoRegistrado from "../Layouts/LayoutNoRegistrado";
+import Titulo from "../Componentes/Titulo";
+
 export default {
-    components: {LayoutNoRegistrado, Header}
+    components: {LayoutNoRegistrado, Titulo}
 }
 </script>
