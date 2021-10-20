@@ -1,7 +1,6 @@
 <template>
     <app-layout>
         <template>
-            <dropdown-menu titulo="inicio" :dataItem="this.expedientes"/>
             <v-card
                 :loading="loading"
                 class="mx-auto my-12"
