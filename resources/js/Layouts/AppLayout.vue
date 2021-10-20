@@ -1,7 +1,9 @@
 <template>
     <div>
         <v-app>
-            <v-app-bar app></v-app-bar>
+            <v-sheet>
+            <navbar-no-registrado/>
+            </v-sheet>
             <v-main>
                 <v-container>
                     <main>
@@ -14,6 +16,11 @@
 </template>
 
 <script>
+import NavbarNoRegistrado from "../Layouts/Componentes/NavbarNoRegistrado"
+
+export default {
+    components: {NavbarNoRegistrado}
+}
 </script>
 
 <style>
