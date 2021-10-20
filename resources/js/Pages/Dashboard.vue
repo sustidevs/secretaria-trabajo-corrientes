@@ -1,5 +1,5 @@
 <template>
-    <app-layout>
+    <layout-no-registrado>
         <template>
             <v-card
                 :loading="loading"
@@ -78,17 +78,17 @@
                 </v-card-actions>
             </v-card>
         </template>
-    </app-layout>
+    </layout-no-registrado>
 </template>
 
 <script>
-    import AppLayout from '../Layouts/AppLayout'
+    import LayoutNoRegistrado from "../Layouts/LayoutNoRegistrado";
     import Welcome from './Welcome'
     import DropdownMenu from "../Componentes/DropdownMenu";
 
     export default {
         components: {
-            AppLayout,
+            LayoutNoRegistrado,
             Welcome,
             DropdownMenu
         },
