@@ -1,6 +1,7 @@
 <template>
     <app-layout>
         <template>
+            <dropdown-menu titulo="inicio" :dataItem="this.expedientes"/>
             <v-card
                 :loading="loading"
                 class="mx-auto my-12"
@@ -78,29 +79,24 @@
                 </v-card-actions>
             </v-card>
         </template>
-
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <welcome />
-                </div>
-            </div>
-        </div>
     </app-layout>
 </template>
 
 <script>
     import AppLayout from '../Layouts/AppLayout'
     import Welcome from './Welcome'
+    import DropdownMenu from "../Componentes/DropdownMenu";
 
     export default {
         components: {
             AppLayout,
             Welcome,
+            DropdownMenu
         },
         data: () => ({
             loading: false,
             selection: 1,
+            expedientes:[ {titulo:'Nuevo', link:'/nuevo-expediente'}],
         }),
 
         methods: {
