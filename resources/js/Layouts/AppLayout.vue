@@ -1,25 +1,21 @@
 <template>
-    <div>
         <v-app>
             <v-sheet>
-            <navbar-no-registrado/>
+                <navbar-no-registrado/>
             </v-sheet>
             <v-main>
-                <v-container>
-                    <main>
-                        <slot></slot>
-                    </main>
-                </v-container>
+                <slot></slot>
             </v-main>
+            <Footer/>
         </v-app>
-    </div>
 </template>
 
 <script>
 import NavbarNoRegistrado from "../Layouts/Componentes/NavbarNoRegistrado"
+import Footer from "../Layouts/Componentes/Footer"
 
 export default {
-    components: {NavbarNoRegistrado}
+    components: {NavbarNoRegistrado, Footer}
 }
 </script>
 
