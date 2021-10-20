@@ -1,6 +1,7 @@
 <template>
     <layout-no-registrado>
         <Titulo texto="TRAMITES"/>
+        <Descripcion texto="sdfsdfsdfsd"/>
     </layout-no-registrado>
 </template>
 
@@ -9,8 +10,9 @@
 
 import LayoutNoRegistrado from "../Layouts/LayoutNoRegistrado";
 import Titulo from "../Componentes/Titulo";
+import Descripcion from "../Componentes/Descripcion";
 
 export default {
-    components: {LayoutNoRegistrado, Titulo}
+    components: {LayoutNoRegistrado, Titulo, Descripcion}
 }
 </script>
