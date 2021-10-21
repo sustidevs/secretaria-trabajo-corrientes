@@ -2206,6 +2206,118 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Layouts/Componentes/NavbarMobile.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Layouts/Componentes/NavbarMobile.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'NavbarMobile',
+  data: function data() {
+    return {
+      sheet: false,
+      links: [{
+        to: '/',
+        icon: 'mdi-chevron-right',
+        text: 'Inicio'
+      }, {
+        icon: 'mdi-tennis',
+        text: 'Institucional',
+        subLinks: [{
+          text: 'Inspectores',
+          to: '/',
+          icon: 'mdi-chevron-right'
+        }, {
+          text: 'Organigrama',
+          to: '/',
+          icon: 'mdi-chevron-right'
+        }]
+      }, {
+        to: '/',
+        icon: 'mdi-chevron-right',
+        text: 'Trámites'
+      }, {
+        to: '/',
+        icon: 'mdi-chevron-right',
+        text: 'Novedades'
+      }]
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Layouts/Componentes/NavbarNoRegistrado.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Layouts/Componentes/NavbarNoRegistrado.vue?vue&type=script&lang=js& ***!
@@ -2267,8 +2379,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Layouts_Componentes_NavbarNoRegistrado__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Layouts/Componentes/NavbarNoRegistrado */ "./resources/js/Layouts/Componentes/NavbarNoRegistrado.vue");
-/* harmony import */ var _Layouts_Componentes_Footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Layouts/Componentes/Footer */ "./resources/js/Layouts/Componentes/Footer.vue");
+/* harmony import */ var _Layouts_Componentes_NavbarMobile__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Layouts/Componentes/NavbarMobile */ "./resources/js/Layouts/Componentes/NavbarMobile.vue");
+/* harmony import */ var _Layouts_Componentes_NavbarNoRegistrado__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Layouts/Componentes/NavbarNoRegistrado */ "./resources/js/Layouts/Componentes/NavbarNoRegistrado.vue");
+/* harmony import */ var _Layouts_Componentes_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Layouts/Componentes/Footer */ "./resources/js/Layouts/Componentes/Footer.vue");
 //
 //
 //
@@ -2281,12 +2394,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    NavbarNoRegistrado: _Layouts_Componentes_NavbarNoRegistrado__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Footer: _Layouts_Componentes_Footer__WEBPACK_IMPORTED_MODULE_1__["default"]
+    NavbarMobile: _Layouts_Componentes_NavbarMobile__WEBPACK_IMPORTED_MODULE_0__["default"],
+    NavbarNoRegistrado: _Layouts_Componentes_NavbarNoRegistrado__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Footer: _Layouts_Componentes_Footer__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
 });
 
@@ -3533,7 +3653,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.v-btn[data-v-117de6b1]::before {\n    background-color: transparent;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.v-btn[data-v-117de6b1]::before {\r\n    background-color: transparent;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3557,7 +3677,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.size{\n    font-size: 17px !important\n}\n.v-btn::before {\n    background-color: transparent;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.size{\r\n    font-size: 17px !important\n}\n.v-btn::before {\r\n    background-color: transparent;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3581,7 +3701,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.degrade {\n    background-image: linear-gradient(-2deg, #6ebe44 25%, #21bcef 100%);\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.degrade {\r\n    background-image: linear-gradient(-2deg, #6ebe44 25%, #21bcef 100%);\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3605,7 +3725,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.v-application {\n    background-color: white !important;\n}\n@font-face {\n    font-family: MyriadPro-Cond;\n    src: url('/fonts/MyriadPro-Cond.otf');\n}\n@font-face {\n    font-family: MyriadPro-LightCond;\n    src: url('/fonts/MyriadPro-LightCond.otf');\n}\n@font-face {\n    font-family: MyriadProBlackCond;\n    src: url('/fonts/MyriadProBlackCond.otf');\n}\n.MyriadPro-Cond{\n    font-family: \"MyriadPro-Cond\";\n}\n.MyriadPro-LightCond {\n    font-family: \"MyriadPro-LightCond\";\n}\n.MyriadProBlackCond {\n    font-family: \"MyriadProBlackCond\";\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.v-application {\r\n    background-color: white !important;\n}\n@font-face {\r\n    font-family: MyriadPro-Cond;\r\n    src: url('/fonts/MyriadPro-Cond.otf');\n}\n@font-face {\r\n    font-family: MyriadPro-LightCond;\r\n    src: url('/fonts/MyriadPro-LightCond.otf');\n}\n@font-face {\r\n    font-family: MyriadProBlackCond;\r\n    src: url('/fonts/MyriadProBlackCond.otf');\n}\n.MyriadPro-Cond{\r\n    font-family: \"MyriadPro-Cond\";\n}\n.MyriadPro-LightCond {\r\n    font-family: \"MyriadPro-LightCond\";\n}\n.MyriadProBlackCond {\r\n    font-family: \"MyriadProBlackCond\";\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -25642,6 +25762,45 @@ component.options.__file = "resources/js/Layouts/Componentes/Footer.vue"
 
 /***/ }),
 
+/***/ "./resources/js/Layouts/Componentes/NavbarMobile.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/Layouts/Componentes/NavbarMobile.vue ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _NavbarMobile_vue_vue_type_template_id_f61adccc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NavbarMobile.vue?vue&type=template&id=f61adccc& */ "./resources/js/Layouts/Componentes/NavbarMobile.vue?vue&type=template&id=f61adccc&");
+/* harmony import */ var _NavbarMobile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NavbarMobile.vue?vue&type=script&lang=js& */ "./resources/js/Layouts/Componentes/NavbarMobile.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _NavbarMobile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _NavbarMobile_vue_vue_type_template_id_f61adccc___WEBPACK_IMPORTED_MODULE_0__.render,
+  _NavbarMobile_vue_vue_type_template_id_f61adccc___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Layouts/Componentes/NavbarMobile.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/Layouts/Componentes/NavbarNoRegistrado.vue":
 /*!*****************************************************************!*\
   !*** ./resources/js/Layouts/Componentes/NavbarNoRegistrado.vue ***!
@@ -25889,6 +26048,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Layouts/Componentes/NavbarMobile.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/Layouts/Componentes/NavbarMobile.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NavbarMobile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./NavbarMobile.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Layouts/Componentes/NavbarMobile.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NavbarMobile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/Layouts/Componentes/NavbarNoRegistrado.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************!*\
   !*** ./resources/js/Layouts/Componentes/NavbarNoRegistrado.vue?vue&type=script&lang=js& ***!
@@ -26098,6 +26273,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Footer_vue_vue_type_template_id_76c091e3___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Footer_vue_vue_type_template_id_76c091e3___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Footer.vue?vue&type=template&id=76c091e3& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Layouts/Componentes/Footer.vue?vue&type=template&id=76c091e3&");
+
+
+/***/ }),
+
+/***/ "./resources/js/Layouts/Componentes/NavbarMobile.vue?vue&type=template&id=f61adccc&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/Layouts/Componentes/NavbarMobile.vue?vue&type=template&id=f61adccc& ***!
+  \******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NavbarMobile_vue_vue_type_template_id_f61adccc___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NavbarMobile_vue_vue_type_template_id_f61adccc___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NavbarMobile_vue_vue_type_template_id_f61adccc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./NavbarMobile.vue?vue&type=template&id=f61adccc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Layouts/Componentes/NavbarMobile.vue?vue&type=template&id=f61adccc&");
 
 
 /***/ }),
@@ -26537,6 +26729,204 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Layouts/Componentes/NavbarMobile.vue?vue&type=template&id=f61adccc&":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Layouts/Componentes/NavbarMobile.vue?vue&type=template&id=f61adccc& ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "MyriadPro-Cond" },
+    [
+      _c(
+        "v-app-bar",
+        { staticClass: "pl-3", attrs: { height: "64", color: "#393b44" } },
+        [
+          _c(
+            "v-bottom-navigation",
+            {
+              staticClass: "justify-start",
+              attrs: {
+                "background-color": "#393b44",
+                dark: "",
+                fixed: "",
+                height: "70"
+              }
+            },
+            [
+              _c(
+                "v-bottom-sheet",
+                {
+                  scopedSlots: _vm._u([
+                    {
+                      key: "activator",
+                      fn: function(ref) {
+                        var on = ref.on
+                        var attrs = ref.attrs
+                        return [
+                          _c(
+                            "v-btn",
+                            _vm._g(_vm._b({}, "v-btn", attrs, false), on),
+                            [
+                              _vm._v(
+                                "\n                        Ícono\n                        "
+                              ),
+                              _c("v-icon", { staticClass: "white--text" }, [
+                                _vm._v("mdi-menu")
+                              ])
+                            ],
+                            1
+                          )
+                        ]
+                      }
+                    }
+                  ]),
+                  model: {
+                    value: _vm.sheet,
+                    callback: function($$v) {
+                      _vm.sheet = $$v
+                    },
+                    expression: "sheet"
+                  }
+                },
+                [
+                  _vm._v(" "),
+                  _c(
+                    "v-list",
+                    {
+                      staticClass: "MyriadPro-Cond",
+                      attrs: { color: "#393b44", dark: "" }
+                    },
+                    _vm._l(_vm.links, function(link, i) {
+                      return _c(
+                        "div",
+                        [
+                          !link.subLinks
+                            ? _c(
+                                "v-list-tile",
+                                {
+                                  key: i,
+                                  staticClass: "v-list-item",
+                                  attrs: {
+                                    to: link.to,
+                                    "active-class": _vm.color,
+                                    avatar: ""
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "v-list-tile-action",
+                                    [_c("v-icon", [_vm._v(_vm._s(link.icon))])],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-list-tile-title", {
+                                    domProps: { textContent: _vm._s(link.text) }
+                                  })
+                                ],
+                                1
+                              )
+                            : _c(
+                                "v-list-group",
+                                {
+                                  key: link.text,
+                                  attrs: { "no-action": "" },
+                                  scopedSlots: _vm._u(
+                                    [
+                                      {
+                                        key: "activator",
+                                        fn: function() {
+                                          return [
+                                            _c(
+                                              "v-list-tile",
+                                              [
+                                                _c(
+                                                  "v-list-tile-content",
+                                                  [
+                                                    _c("v-list-tile-title", [
+                                                      _vm._v(_vm._s(link.text))
+                                                    ])
+                                                  ],
+                                                  1
+                                                )
+                                              ],
+                                              1
+                                            )
+                                          ]
+                                        },
+                                        proxy: true
+                                      }
+                                    ],
+                                    null,
+                                    true
+                                  )
+                                },
+                                [
+                                  _vm._v(" "),
+                                  _vm._l(link.subLinks, function(sublink) {
+                                    return _c(
+                                      "v-list-tile",
+                                      {
+                                        key: sublink.text,
+                                        staticClass: "white--text",
+                                        attrs: { to: sublink.to }
+                                      },
+                                      [
+                                        _c(
+                                          "v-list-tile-content",
+                                          [
+                                            _c(
+                                              "v-list-item-title",
+                                              { staticClass: "pl-8 ma-3" },
+                                              [_vm._v(_vm._s(sublink.text))]
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  })
+                                ],
+                                2
+                              )
+                        ],
+                        1
+                      )
+                    }),
+                    0
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Layouts/Componentes/NavbarNoRegistrado.vue?vue&type=template&id=4d22dd89&":
 /*!***************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Layouts/Componentes/NavbarNoRegistrado.vue?vue&type=template&id=4d22dd89& ***!
@@ -26650,7 +27040,17 @@ var render = function() {
   return _c(
     "v-app",
     [
-      _c("v-sheet", [_c("navbar-no-registrado")], 1),
+      _c("v-sheet", [
+        _vm.$vuetify.breakpoint.smOnly || _vm.$vuetify.breakpoint.xsOnly
+          ? _c("div", [_c("navbar-mobile")], 1)
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.$vuetify.breakpoint.mdOnly ||
+        _vm.$vuetify.breakpoint.lgOnly ||
+        _vm.$vuetify.breakpoint.xlOnly
+          ? _c("div", [_c("navbar-no-registrado")], 1)
+          : _vm._e()
+      ]),
       _vm._v(" "),
       _c("v-main", [_vm._t("default")], 2),
       _vm._v(" "),

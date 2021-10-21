@@ -1,7 +1,12 @@
 <template>
     <v-app>
         <v-sheet>
-            <navbar-no-registrado/>
+            <div v-if="$vuetify.breakpoint.smOnly || $vuetify.breakpoint.xsOnly">
+                <navbar-mobile/>
+            </div>
+            <div v-if="$vuetify.breakpoint.mdOnly || $vuetify.breakpoint.lgOnly || $vuetify.breakpoint.xlOnly">
+                <navbar-no-registrado/>
+            </div>
         </v-sheet>
         <v-main>
             <slot></slot>
@@ -11,11 +16,12 @@
 </template>
 
 <script>
+import NavbarMobile from "../Layouts/Componentes/NavbarMobile"
 import NavbarNoRegistrado from "../Layouts/Componentes/NavbarNoRegistrado"
 import Footer from "../Layouts/Componentes/Footer"
 
 export default {
-    components: {NavbarNoRegistrado, Footer}
+    components: {NavbarMobile, NavbarNoRegistrado, Footer}
 }
 </script>
 
