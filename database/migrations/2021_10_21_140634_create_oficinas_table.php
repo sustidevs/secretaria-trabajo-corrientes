@@ -17,7 +17,7 @@ class CreateOficinasTable extends Migration
         {
             $table->bigIncrements('id');
             $table->foreignId('delegacion_id')->constrained('delegaciones');
-            $table->foreignId('tipo_tramite_id')->constrained();
+            $table->foreignId('tipos_tramite_id')->constrained('tipos_tramite');
             $table->softDeletes();
             $table->timestamps();
         });

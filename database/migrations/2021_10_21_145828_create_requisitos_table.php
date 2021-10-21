@@ -16,7 +16,7 @@ class CreateRequisitosTable extends Migration
         Schema::create('requisitos', function (Blueprint $table) 
         {
             $table->bigIncrements('id');
-            $table->foreignId('tipo_tramite_id')->constrained();
+            $table->foreignId('tipos_tramite_id')->constrained('tipos_tramite');
             $table->string('titulo')->nullable();
             $table->string('descripcion')->nullable();
             $table->integer('tipo')->default(1); //TODO Revisar por qué default(1)

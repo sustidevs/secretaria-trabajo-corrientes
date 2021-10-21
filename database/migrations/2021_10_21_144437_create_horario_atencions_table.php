@@ -21,6 +21,7 @@ class CreateHorarioAtencionsTable extends Migration
             $table->time('horario_fin');
             $table->integer('cant_max_turno');
             $table->integer('intervalo_turno');//En minutos
+            $table->softDeletes();
             $table->timestamps();
         });
     }

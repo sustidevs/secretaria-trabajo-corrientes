@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Delegacion extends Model
 {
     use HasFactory;
+    protected $table = "delegaciones";
 }

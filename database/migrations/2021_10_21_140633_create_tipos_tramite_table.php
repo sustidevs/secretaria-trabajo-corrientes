@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTiposTramitesTable extends Migration
+class CreateTiposTramiteTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTiposTramitesTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipos_tramites', function (Blueprint $table) 
+        Schema::create('tipos_tramite', function (Blueprint $table) 
         {
             $table->bigIncrements('id');
             $table->string('descripcion');
@@ -29,6 +29,6 @@ class CreateTiposTramitesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipos_tramites');
+        Schema::dropIfExists('tipos_tramite');
     }
 }

@@ -17,7 +17,7 @@ class CreateDelegadosTable extends Migration
         {
             $table->bigIncrements('id');
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('delegacion_id')->constrained();
+            $table->foreignId('delegacion_id')->constrained('delegaciones');
             $table->softDeletes();
             $table->timestamps();
         });
