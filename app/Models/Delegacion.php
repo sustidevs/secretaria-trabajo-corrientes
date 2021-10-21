@@ -9,4 +9,9 @@ class Delegacion extends Model
 {
     use HasFactory;
     protected $table = "delegaciones";
+
+    public function oficinas()
+    {
+        return $this->hasMany(Oficina::class);
+    }
 }
