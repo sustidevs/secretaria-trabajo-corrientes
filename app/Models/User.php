@@ -58,4 +58,13 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    /**
+    * Las delegaciones que pertenece el  usuario (empleado/delegado).
+    * Puede ser una sola o muchas delegaciones.
+    */
+    public function delegaciones()
+    {
+        return $this->belongsToMany(Delegacion::class, 'delegados', 'user_id', 'delegacion_id');
+    }
 }
