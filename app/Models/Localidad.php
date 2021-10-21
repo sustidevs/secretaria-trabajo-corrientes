@@ -16,4 +16,9 @@ class Localidad extends Model
     {
         return $this->hasMany(Persona::class);
     }
+
+    public function delegaciones()
+    {
+        return $this->hasMany(Delegacion::class);
+    }
 }
