@@ -6,8 +6,6 @@
 </template>
 
 <script>
-
-
 import LayoutNoRegistrado from "../Layouts/LayoutNoRegistrado";
 import Descripcion from "../Componentes/Descripcion";
 
