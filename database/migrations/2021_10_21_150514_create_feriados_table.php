@@ -13,10 +13,12 @@ class CreateFeriadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('feriados', function (Blueprint $table) {
+        Schema::create('feriados', function (Blueprint $table) 
+        {
             $table->bigIncrements('id');
-            $table->int('dia');
-            $table->int('mes');
+            $table->integer('dia');
+            $table->integer('mes');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
