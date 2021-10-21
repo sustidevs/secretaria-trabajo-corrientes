@@ -8,7 +8,8 @@
                 <navbar-no-registrado/>
             </div>
         </v-sheet>
-        <v-main>
+        <Header/>
+        <v-main class="mt-4 mb-8 mx-4 mx-sm-10 mx-lg-16">
             <slot></slot>
         </v-main>
         <Footer/>
@@ -19,9 +20,10 @@
 import NavbarMobile from "../Layouts/Componentes/NavbarMobile"
 import NavbarNoRegistrado from "../Layouts/Componentes/NavbarNoRegistrado"
 import Footer from "../Layouts/Componentes/Footer"
+import Header from "../Componentes/Header"
 
 export default {
-    components: {NavbarMobile, NavbarNoRegistrado, Footer}
+    components: {NavbarMobile, NavbarNoRegistrado, Footer, Header}
 }
 </script>
 
