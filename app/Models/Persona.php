@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Persona extends Model
 {
     use HasFactory;
+
+    public function localidad()
+    {
+        return $this->belongsTo(Localidad::class);
+    }
 }
