@@ -27950,7 +27950,7 @@ var render = function() {
           _c("card", {
             attrs: {
               title: "Ratificación",
-              img: "",
+              img: "./images/cardTramites/ratificacion.svg",
               textoBoton: "ver requisitos"
             }
           })
@@ -27967,7 +27967,7 @@ var render = function() {
           _c("card", {
             attrs: {
               title: "Consignación",
-              img: "",
+              img: "./images/cardTramites/consignacion.svg",
               textoBoton: "ver requisitos"
             }
           })
@@ -27982,7 +27982,11 @@ var render = function() {
         },
         [
           _c("card", {
-            attrs: { title: "Rúbrica", img: "", textoBoton: "ver requisitos" }
+            attrs: {
+              title: "Rúbrica",
+              img: "./images/cardTramites/rubrica.svg",
+              textoBoton: "ver requisitos"
+            }
           })
         ],
         1
@@ -27997,7 +28001,7 @@ var render = function() {
           _c("card", {
             attrs: {
               title: "Mesa de Entradas",
-              img: "",
+              img: "./images/cardTramites/mesaEntrada.svg",
               textoBoton: "ver requisitos"
             }
           })
@@ -28014,7 +28018,7 @@ var render = function() {
           _c("card", {
             attrs: {
               title: "Formulación de Reclamos",
-              img: "",
+              img: "./images/cardTramites/formulacionReclamos.svg",
               textoBoton: "ver requisitos"
             }
           })
@@ -28031,7 +28035,7 @@ var render = function() {
           _c("card", {
             attrs: {
               title: "Asesoramiento Jurídico Gratuito",
-              img: "",
+              img: "./images/cardTramites/asesoramiento.svg",
               textoBoton: "ver requisitos"
             }
           })
