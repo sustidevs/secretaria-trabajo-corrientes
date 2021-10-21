@@ -11,6 +11,11 @@ class Delegacion extends Model
 
     protected $table = "delegaciones";
 
+    public function oficinas()
+    {
+        return $this->hasMany(Oficina::class);
+    }
+        
     public function localidad()
     {
         return $this->belongsTo(Localidad::class);
