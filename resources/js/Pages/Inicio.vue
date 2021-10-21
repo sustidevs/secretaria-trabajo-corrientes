@@ -1,17 +1,15 @@
 <template>
     <layout-no-registrado>
-        <Descripcion texto="sdfsdfsdfsd"/>
-        <Card textoBoton="ver requisitos"/>
+        <CardTramites/>
     </layout-no-registrado>
 </template>
 
 <script>
 import LayoutNoRegistrado from "../Layouts/LayoutNoRegistrado";
-import Descripcion from "../Componentes/Descripcion";
-import Card from "../Componentes/Card";
+import CardTramites from "../Inicio/CardTramites";
 
 
 export default {
-    components: {LayoutNoRegistrado, Descripcion, Card}
+    components: {LayoutNoRegistrado, CardTramites}
 }
 </script>
