@@ -1,5 +1,5 @@
 <template>
-        <v-footer fixed  padless>
+        <v-footer padless>
             <v-card color="#393b44" flat tile width="100%" height="100%" class="py-4">
                 <v-row>
                     <v-col justify="center" align="center">

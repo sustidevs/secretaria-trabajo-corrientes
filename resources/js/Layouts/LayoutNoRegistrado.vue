@@ -8,7 +8,9 @@
                 <navbar-no-registrado/>
             </div>
         </v-sheet>
-        <Header/>
+        <div v-if="$page.url === '/'">
+            <Header/>
+        </div>
         <v-main class="mt-4 mb-8 mx-4 mx-sm-10 mx-lg-16">
             <slot></slot>
         </v-main>
