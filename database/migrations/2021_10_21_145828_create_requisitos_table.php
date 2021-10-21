@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOficinasTable extends Migration
+class CreateRequisitosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateOficinasTable extends Migration
      */
     public function up()
     {
-        Schema::create('oficinas', function (Blueprint $table) 
+        Schema::create('requisitos', function (Blueprint $table) 
         {
             $table->bigIncrements('id');
-            $table->foreignId('delegacion_id')->constrained('delegaciones');
             $table->foreignId('tipo_tramite_id')->constrained();
+            $table->string('titulo')->nullable();
+            $table->string('descripcion')->nullable();
+            $table->integer('tipo')->default(1); //TODO Revisar por qué default(1)
             $table->softDeletes();
             $table->timestamps();
         });
@@ -30,6 +32,6 @@ class CreateOficinasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('oficinas');
+        Schema::dropIfExists('requisitos');
     }
 }
