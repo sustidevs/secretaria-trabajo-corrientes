@@ -13,4 +13,9 @@ class Persona extends Model
     {
         return $this->belongsTo(Localidad::class);
     }
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }
