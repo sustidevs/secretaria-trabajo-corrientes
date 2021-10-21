@@ -9,4 +9,9 @@ class TiposTramite extends Model
 {
     use HasFactory;
     protected $table = "tipos_tramite";
+
+    public function requisitos()
+    {
+        return $this->hasMany(Requisito::class);
+    }
 }
