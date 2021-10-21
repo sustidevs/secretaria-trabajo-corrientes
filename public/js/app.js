@@ -2115,6 +2115,115 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      items: [{
+        delegacion: 'Corrientes',
+        direccion: 'Belgrano 1317',
+        telefono: '(3794) 4433191',
+        correo: 'trabajo_capital@corrientes.gob.ar'
+      }, {
+        delegacion: 'Bella Vista',
+        direccion: 'Santa Fe 782',
+        telefono: '(3795) 045902',
+        correo: 'trabajo_bellavista@corrientes.gob.ar'
+      }, {
+        delegacion: 'Curuzú Cuatiá',
+        direccion: 'Rivadavia 836',
+        telefono: '(3795) 045906',
+        correo: 'trabajo_curuzucuatia@corrientes.gob.ar'
+      }, {
+        delegacion: 'Esquina',
+        direccion: 'General Velazco 1435',
+        telefono: '(3795) 045917',
+        correo: 'trabajo_esquina@corrientes.gob.ar'
+      }, {
+        delegacion: 'Gobernador Virasoro',
+        direccion: 'Remedios de Escalada 943',
+        telefono: '(3795) 045913',
+        correo: 'trabajo_gobvirasoro@corrientes.gob.ar'
+      }, {
+        delegacion: 'Goya',
+        direccion: 'Los Primeros Concejales 256 (Oficinas 6 y 7)',
+        telefono: '(3795) 045905',
+        correo: 'trabajo_goya@corrientes.gob.ar'
+      }, {
+        delegacion: 'Ituizango',
+        direccion: 'Barrio Los Constituyentes calle P casa Nº 50',
+        telefono: '(3795) 045908',
+        correo: 'trabajo_ituizango@corrientes.gob.ar'
+      }, {
+        delegacion: 'Mercedes',
+        direccion: 'Juan Pujol 759',
+        telefono: '(3795) 045903',
+        correo: 'trabajo_mercedes@corrientes.gob.ar'
+      }, {
+        delegacion: 'Monte Caseros',
+        direccion: 'Colón 1271 local 1',
+        telefono: '(3795) 045910',
+        correo: 'trabajo_montecaseros@corrientes.gob.ar'
+      }, {
+        delegacion: 'Paso de los Libres',
+        direccion: 'Coronel López 816 Planta Baja',
+        telefono: '(3795) 045912',
+        correo: 'trabajo_pasodeloslibres@corrientes.gob.ar'
+      }, {
+        delegacion: 'Santo Tome',
+        direccion: 'Irigoyen 876',
+        telefono: '(3795) 045911',
+        correo: 'trabajo_santotome@corrientes.gob.ar'
+      }]
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/Descripcion.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/Descripcion.vue?vue&type=script&lang=js& ***!
@@ -2534,6 +2643,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Componentes_Titulo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Componentes/Titulo */ "./resources/js/Componentes/Titulo.vue");
 /* harmony import */ var _Componentes_Descripcion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Componentes/Descripcion */ "./resources/js/Componentes/Descripcion.vue");
 /* harmony import */ var _Componentes_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Componentes/Card */ "./resources/js/Componentes/Card.vue");
+/* harmony import */ var _Componentes_CuadroDelegacionesAreas__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Componentes/CuadroDelegacionesAreas */ "./resources/js/Componentes/CuadroDelegacionesAreas.vue");
 //
 //
 //
@@ -2542,6 +2652,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 
 
 
@@ -2551,7 +2663,8 @@ __webpack_require__.r(__webpack_exports__);
     LayoutNoRegistrado: _Layouts_LayoutNoRegistrado__WEBPACK_IMPORTED_MODULE_0__["default"],
     Titulo: _Componentes_Titulo__WEBPACK_IMPORTED_MODULE_1__["default"],
     Descripcion: _Componentes_Descripcion__WEBPACK_IMPORTED_MODULE_2__["default"],
-    Card: _Componentes_Card__WEBPACK_IMPORTED_MODULE_3__["default"]
+    Card: _Componentes_Card__WEBPACK_IMPORTED_MODULE_3__["default"],
+    CuadroDelegacionesAreas: _Componentes_CuadroDelegacionesAreas__WEBPACK_IMPORTED_MODULE_4__["default"]
   }
 });
 
@@ -3621,6 +3734,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, "/*!\n* Vuetify v2.5.10\n* Forged by Jo
 
 /***/ }),
 
+/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=style&index=0&lang=css&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=style&index=0&lang=css& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.tamTabla{\n    font-size: 25px !important;\n}\n.descTabla{\n   font-size: 20px !important;\n}\n.theme--light.v-data-table\ntbody\ntr:hover:not(.v-data-table__expanded__content) {\n    background: #fff;\n}\n\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/Descripcion.vue?vue&type=style&index=0&lang=css&":
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/Descripcion.vue?vue&type=style&index=0&lang=css& ***!
@@ -3758,7 +3895,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.v-application {\n    background-color: white !important;\n}\n@font-face {\n    font-family: MyriadPro-Cond;\n    src: url('/fonts/MyriadPro-Cond.otf');\n}\n@font-face {\n    font-family: MyriadPro-LightCond;\n    src: url('/fonts/MyriadPro-LightCond.otf');\n}\n@font-face {\n    font-family: MyriadProBlackCond;\n    src: url('/fonts/MyriadProBlackCond.otf');\n}\n.MyriadPro-Cond{\n    font-family: \"MyriadPro-Cond\";\n}\n.MyriadPro-LightCond {\n    font-family: \"MyriadPro-LightCond\";\n}\n.MyriadProBlackCond {\n    font-family: \"MyriadProBlackCond\";\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.v-application {\r\n    background-color: white !important;\n}\n@font-face {\r\n    font-family: MyriadPro-Cond;\r\n    src: url('/fonts/MyriadPro-Cond.otf');\n}\n@font-face {\r\n    font-family: MyriadPro-LightCond;\r\n    src: url('/fonts/MyriadPro-LightCond.otf');\n}\n@font-face {\r\n    font-family: MyriadProBlackCond;\r\n    src: url('/fonts/MyriadProBlackCond.otf');\n}\n.MyriadPro-Cond{\r\n    font-family: \"MyriadPro-Cond\";\n}\n.MyriadPro-LightCond {\r\n    font-family: \"MyriadPro-LightCond\";\n}\n.MyriadProBlackCond {\r\n    font-family: \"MyriadProBlackCond\";\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -25206,6 +25343,36 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=style&index=0&lang=css&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=style&index=0&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CuadroDelegacionesAreas_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CuadroDelegacionesAreas.vue?vue&type=style&index=0&lang=css& */ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=style&index=0&lang=css&");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CuadroDelegacionesAreas_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CuadroDelegacionesAreas_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/Descripcion.vue?vue&type=style&index=0&lang=css&":
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/Descripcion.vue?vue&type=style&index=0&lang=css& ***!
@@ -25734,6 +25901,47 @@ component.options.__file = "resources/js/Componentes/Card.vue"
 
 /***/ }),
 
+/***/ "./resources/js/Componentes/CuadroDelegacionesAreas.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/Componentes/CuadroDelegacionesAreas.vue ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _CuadroDelegacionesAreas_vue_vue_type_template_id_01ddd7ca___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CuadroDelegacionesAreas.vue?vue&type=template&id=01ddd7ca& */ "./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=template&id=01ddd7ca&");
+/* harmony import */ var _CuadroDelegacionesAreas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CuadroDelegacionesAreas.vue?vue&type=script&lang=js& */ "./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=script&lang=js&");
+/* harmony import */ var _CuadroDelegacionesAreas_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CuadroDelegacionesAreas.vue?vue&type=style&index=0&lang=css& */ "./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+;
+
+
+/* normalize component */
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _CuadroDelegacionesAreas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CuadroDelegacionesAreas_vue_vue_type_template_id_01ddd7ca___WEBPACK_IMPORTED_MODULE_0__.render,
+  _CuadroDelegacionesAreas_vue_vue_type_template_id_01ddd7ca___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Componentes/CuadroDelegacionesAreas.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/Componentes/Descripcion.vue":
 /*!**************************************************!*\
   !*** ./resources/js/Componentes/Descripcion.vue ***!
@@ -26191,6 +26399,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CuadroDelegacionesAreas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CuadroDelegacionesAreas.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CuadroDelegacionesAreas_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/Componentes/Descripcion.vue?vue&type=script&lang=js&":
 /*!***************************************************************************!*\
   !*** ./resources/js/Componentes/Descripcion.vue?vue&type=script&lang=js& ***!
@@ -26351,6 +26575,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=style&index=0&lang=css&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=style&index=0&lang=css& ***!
+  \***********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CuadroDelegacionesAreas_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CuadroDelegacionesAreas.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=style&index=0&lang=css&");
+
+
+/***/ }),
+
 /***/ "./resources/js/Componentes/Descripcion.vue?vue&type=style&index=0&lang=css&":
 /*!***********************************************************************************!*\
   !*** ./resources/js/Componentes/Descripcion.vue?vue&type=style&index=0&lang=css& ***!
@@ -26455,6 +26692,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Card_vue_vue_type_template_id_61970af2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Card_vue_vue_type_template_id_61970af2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Card.vue?vue&type=template&id=61970af2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/Card.vue?vue&type=template&id=61970af2&");
+
+
+/***/ }),
+
+/***/ "./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=template&id=01ddd7ca&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=template&id=01ddd7ca& ***!
+  \*********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CuadroDelegacionesAreas_vue_vue_type_template_id_01ddd7ca___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CuadroDelegacionesAreas_vue_vue_type_template_id_01ddd7ca___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CuadroDelegacionesAreas_vue_vue_type_template_id_01ddd7ca___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CuadroDelegacionesAreas.vue?vue&type=template&id=01ddd7ca& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=template&id=01ddd7ca&");
 
 
 /***/ }),
@@ -26701,6 +26955,89 @@ var render = function() {
     ],
     1
   )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=template&id=01ddd7ca&":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Componentes/CuadroDelegacionesAreas.vue?vue&type=template&id=01ddd7ca& ***!
+  \************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("v-simple-table", {
+    scopedSlots: _vm._u([
+      {
+        key: "default",
+        fn: function() {
+          return [
+            _c("thead", [
+              _c("tr", { staticClass: "light-green lighten-1" }, [
+                _c("th", { staticClass: "text-left MyriadPro-Cond tamTabla" }, [
+                  _vm._v("\n                Delegacion\n            ")
+                ]),
+                _vm._v(" "),
+                _c("th", { staticClass: "text-left MyriadPro-Cond tamTabla" }, [
+                  _vm._v("\n                Direccion\n            ")
+                ]),
+                _vm._v(" "),
+                _c("th", { staticClass: "text-left MyriadPro-Cond tamTabla" }, [
+                  _vm._v("\n                Telefono\n            ")
+                ]),
+                _vm._v(" "),
+                _c("th", { staticClass: "text-left MyriadPro-Cond tamTabla" }, [
+                  _vm._v("\n                Correo\n            ")
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              _vm._l(_vm.items, function(item) {
+                return _c(
+                  "tr",
+                  { key: item.name, staticClass: "MyriadPro-LightCond" },
+                  [
+                    _c("td", { staticClass: "descTabla" }, [
+                      _vm._v(_vm._s(item.delegacion))
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "descTabla" }, [
+                      _vm._v(_vm._s(item.direccion))
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "descTabla" }, [
+                      _vm._v(_vm._s(item.telefono))
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "descTabla" }, [
+                      _vm._v(_vm._s(item.correo))
+                    ])
+                  ]
+                )
+              }),
+              0
+            )
+          ]
+        },
+        proxy: true
+      }
+    ])
+  })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -27445,6 +27782,8 @@ var render = function() {
       _c("Titulo", { attrs: { texto: "TRAMITES" } }),
       _vm._v(" "),
       _c("Descripcion", { attrs: { texto: "sdfsdfsdfsd" } }),
+      _vm._v(" "),
+      _c("cuadro-delegaciones-areas"),
       _vm._v(" "),
       _c("Card")
     ],
