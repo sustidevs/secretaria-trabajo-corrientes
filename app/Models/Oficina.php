@@ -13,4 +13,9 @@ class Oficina extends Model
     {
         return $this->belongsTo(Delegacion::class);
     }
+    
+    public function tipoTramite()
+    {
+        return $this->belongsTo(TiposTramite::class);
+    }
 }
