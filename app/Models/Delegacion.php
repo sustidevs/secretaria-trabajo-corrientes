@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Delegacion extends Model
 {
     use HasFactory;
+
     protected $table = "delegaciones";
 
     /**
@@ -16,5 +17,10 @@ class Delegacion extends Model
     public function empleados()
     {
         return $this->belongsToMany(User::class, 'delegados', 'delegacion_id', 'user_id');
+    }
+    
+    public function localidad()
+    {
+        return $this->belongsTo(Localidad::class);
     }
 }
