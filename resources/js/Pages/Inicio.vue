@@ -1,6 +1,6 @@
 <template>
     <layout-no-registrado>
-        <Titulo texto="TRAMITES"/>
+        <Titulo texto="TRÁMITES"/>
         <Descripcion texto="sdfsdfsdfsd"/>
         <cuadro-delegaciones-areas/>
         <Card/>

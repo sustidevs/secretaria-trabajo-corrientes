@@ -28437,7 +28437,7 @@ var render = function() {
   return _c(
     "layout-no-registrado",
     [
-      _c("Titulo", { attrs: { texto: "TRAMITES" } }),
+      _c("Titulo", { attrs: { texto: "TRÁMITES" } }),
       _vm._v(" "),
       _c("Descripcion", { attrs: { texto: "sdfsdfsdfsd" } }),
       _vm._v(" "),
