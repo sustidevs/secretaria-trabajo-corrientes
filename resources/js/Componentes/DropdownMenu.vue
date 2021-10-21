@@ -16,17 +16,21 @@
             </template>
 
             <v-list  color="#393b44">
-                <v-list-item
-                    v-for="item in dataItem"
-                    :key="item.titulo"
-                    :href="item.link"
-                    class="px-8"
-
-                >
+                <v-list-item>
                     <v-hover v-slot="{ hover }" >
                         <v-list-item-title :class="hover ? 'green--text text--darken-1' : 'white--text'" class="size MyriadPro-Cond ">
-                            {{ item.titulo}}
+                            ORGANIGRAMA
                         </v-list-item-title>
+                    </v-hover>
+                </v-list-item>
+
+                <v-list-item>
+                    <v-hover v-slot="{ hover }" >
+                        <a href="/delegaciones">
+                            <v-list-item-title  :class="hover ? 'green--text text--darken-1' : 'white--text'" class="size MyriadPro-Cond ">
+                                DELEGACIONES
+                            </v-list-item-title>
+                        </a>
                     </v-hover>
                 </v-list-item>
             </v-list>

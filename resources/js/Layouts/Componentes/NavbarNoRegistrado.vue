@@ -1,7 +1,7 @@
 <template>
             <v-app-bar class="px-7" color="#393b44">
                 <a href="/"><img class="pa-2" max-height="70" width="120" :src="('./images/secretariaBlanco.svg')"></a>
-                <dropdown-list  titulo="Inicio"/>
+                <a href="/"><dropdown-list  titulo="Inicio"/></a>
                 <DropdownMenu titulo="Institucional" :data-item="institucional"/>
                 <dropdown-list  titulo="Tramites"/>
                 <dropdown-list  titulo="Novedades"/>
@@ -22,7 +22,7 @@ export default {
     components: {DropdownMenu,DropdownList},
 
     data: () => ({
-        institucional:[{titulo: 'ORGANIGRAMA', link:'/'},{titulo: 'DELEGACIONES',link:'/'}],
+        institucional:[{titulo: 'ORGANIGRAMA', link:'/'},{titulo: 'DELEGACIONES', link:'/delegaciones'}],
     }),
 
 };
