@@ -23,8 +23,8 @@ class CreatePersonasTable extends Migration
             $table->string('domicilio');
             $table->foreignId('localidad_id')->constrained('localidades');
             $table->bigInteger('tipo');
-            $table->timestamps();
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 

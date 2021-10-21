@@ -13,9 +13,11 @@ class CreateDiasTable extends Migration
      */
     public function up()
     {
-        Schema::create('dias', function (Blueprint $table) {
+        Schema::create('dias', function (Blueprint $table) 
+        {
             $table->bigIncrements('id');
             $table->string('nombre');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
