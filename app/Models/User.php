@@ -67,4 +67,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Delegacion::class, 'delegados', 'user_id', 'delegacion_id');
     }
+
+    public function persona()
+    {
+        return $this->belongsTo(Persona::class);
+    }
 }
