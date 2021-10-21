@@ -19,6 +19,11 @@ class Delegacion extends Model
         return $this->belongsToMany(User::class, 'delegados', 'delegacion_id', 'user_id');
     }
     
+    public function oficinas()
+    {
+        return $this->hasMany(Oficina::class);
+    }
+        
     public function localidad()
     {
         return $this->belongsTo(Localidad::class);
