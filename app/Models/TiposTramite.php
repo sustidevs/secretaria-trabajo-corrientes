@@ -14,4 +14,9 @@ class TiposTramite extends Model
     {
         return $this->hasMany(Oficina::class);
     }
+    
+    public function requisitos()
+    {
+        return $this->hasMany(Requisito::class);
+    }
 }
