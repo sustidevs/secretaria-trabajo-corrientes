@@ -7,6 +7,11 @@
             <v-col align="center" cols="12">
                 <div class="MyriadPro-Cond text-4xl justify-center grey--text text--darken-3" v-text="title"/>
                 <div class="MyriadPro-LightCond text-2xl justify-center" v-text="description"/>
+                <div class="MyriadPro-Cond pt-3">
+                    <v-btn color="light-green darken-1" large rounded width="60%" :href="link">
+                        <a class="white--text text-xl" > {{textoBoton}} </a>
+                    </v-btn>
+                </div>
             </v-col>
         </v-row>
     </v-card>
@@ -14,12 +19,13 @@
 
 <script>
 export default {
-    name: "CardTramite",
+    name: "Card",
     props: {
         title: String,
         description: String,
         img: String,
         link:String,
+        textoBoton: String,
     },
 }
 </script>
