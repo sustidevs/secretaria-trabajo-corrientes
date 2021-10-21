@@ -8,8 +8,6 @@
 </template>
 
 <script>
-
-
 import LayoutNoRegistrado from "../Layouts/LayoutNoRegistrado";
 import Titulo from "../Componentes/Titulo";
 import Descripcion from "../Componentes/Descripcion";
