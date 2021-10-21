@@ -9,4 +9,12 @@ class Delegacion extends Model
 {
     use HasFactory;
     protected $table = "delegaciones";
+
+    /**
+    * Los usuarios (empleados/delegados) que pertenece a la delegacion.
+    */
+    public function empleados()
+    {
+        return $this->belongsToMany(User::class, 'delegados', 'delegacion_id', 'user_id');
+    }
 }
