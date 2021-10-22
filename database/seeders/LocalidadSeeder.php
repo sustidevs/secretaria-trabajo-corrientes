@@ -35,6 +35,7 @@ class LocalidadSeeder extends Seeder
         'San Roque',
         'Santo Tomé',
         'Sauce',
+        'Gdor. Virasoro',
         'Todas'		//último sin coma
     ];
 
