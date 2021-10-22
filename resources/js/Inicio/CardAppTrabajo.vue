@@ -1,7 +1,7 @@
 <template>
     <v-row>
         <v-col cols="12">
-            <card title="Aplicación Trabajo Corrientes" img="./images/aplicacion.png" textoBoton="Ver más"></card>
+            <card title="Aplicación Trabajo Corrientes" description="Descargá nuestra app y solicitá una Inspección Laboral." img="./images/aplicacion.png" textoBoton="Ver más"></card>
         </v-col>
     </v-row>
 </template>
