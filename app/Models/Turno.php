@@ -18,4 +18,9 @@ class Turno extends Model
     {
         return $this->belongsTo(Persona::class,'abogado_id');
     }
+
+    public function oficina()
+    {
+        return $this->belongsTo(Oficina::class);
+    }
 }

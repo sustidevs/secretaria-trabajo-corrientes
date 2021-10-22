@@ -18,4 +18,9 @@ class Oficina extends Model
     {
         return $this->belongsTo(TiposTramite::class);
     }
+
+    public function turnos()
+    {
+        return $this->hasMany(Turno::class);
+    }
 }
