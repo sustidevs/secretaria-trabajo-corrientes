@@ -72,4 +72,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Persona::class);
     }
+
+    public function turnos()
+    {
+        return $this->hasMany(Turno::class);
+    }
 }
