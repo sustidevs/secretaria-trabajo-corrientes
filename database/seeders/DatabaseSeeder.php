@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             LocalidadSeeder::class,
             DiaSeeder::class,
             DelegacionSeeder::class,
+            TiposTramiteSeeder::class
         ]);
     }
 }
