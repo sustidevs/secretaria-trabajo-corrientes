@@ -19,8 +19,7 @@ import CuadroDelegacionesAreas from "../Componentes/CuadroDelegacionesAreas"
 import Titulo from "../Componentes/Titulo";
 import LayoutNoRegistrado from "../Layouts/LayoutNoRegistrado";
 import Mapa from "../Componentes/Mapa"
-import Mapap from "../Componentes/Mapap"
 export default {
-    components: {LayoutNoRegistrado, CuadroDelegacionesAreas, Titulo, Mapa, Mapap}
+    components: {LayoutNoRegistrado, CuadroDelegacionesAreas, Titulo, Mapa}
 }
 </script>
