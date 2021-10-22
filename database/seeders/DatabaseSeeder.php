@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             TiposTramiteSeeder::class,
             DelegacionSeeder::class,
             OficinaSeeder::class,
-            TiposTramiteSeeder::class
+            TiposTramiteSeeder::class,
+            RequisitoSeeder::class,
         ]);
     }
 }
