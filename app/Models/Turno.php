@@ -23,4 +23,9 @@ class Turno extends Model
     {
         return $this->belongsTo(Oficina::class);
     }
+
+    public function empleado()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
