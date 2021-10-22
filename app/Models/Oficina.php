@@ -23,4 +23,9 @@ class Oficina extends Model
     {
         return $this->hasMany(Turno::class);
     }
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }
