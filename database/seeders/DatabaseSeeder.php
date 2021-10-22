@@ -19,8 +19,10 @@ class DatabaseSeeder extends Seeder
             DiaSeeder::class,
             TiposTramiteSeeder::class,
             DelegacionSeeder::class,
-            PersonaSeeder::class,
-            OficinaSeeder::class
+            OficinaSeeder::class,
+            HorariosAtencionSeeder::class,
+            RequisitoSeeder::class,
+            PersonaSeeder::class
         ]);
     }
 }
