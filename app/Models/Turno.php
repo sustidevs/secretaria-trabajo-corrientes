@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Turno extends Model
 {
     use HasFactory;
+
+    public function solicitante()
+    {
+        return $this->belongsTo(Persona::class,'solicitante_id');
+    }
+
+    public function abogado()
+    {
+        return $this->belongsTo(Persona::class,'abogado_id');
+    }
 }
