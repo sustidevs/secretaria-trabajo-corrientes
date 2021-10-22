@@ -14,8 +14,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            DiaSeeder::class
-        ]
-        );
+            DiaSeeder::class,
+            FeriadoSeeder::class
+        ]);
     }
 }
