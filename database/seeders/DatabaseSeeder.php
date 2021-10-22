@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             OficinaSeeder::class,
             TiposTramiteSeeder::class,
             RequisitoSeeder::class,
+            PersonaSeeder::class,
         ]);
     }
 }
