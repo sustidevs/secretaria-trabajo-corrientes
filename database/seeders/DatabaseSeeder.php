@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             FeriadoSeeder::class,
             LocalidadSeeder::class,
             DiaSeeder::class,
-            FeriadoSeeder::class
+            DelegacionSeeder::class,
+            TiposTramiteSeeder::class
         ]);
     }
 }
