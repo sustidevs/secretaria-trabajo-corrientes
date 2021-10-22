@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
             LocalidadSeeder::class,
             DiaSeeder::class,
             TiposTramiteSeeder::class,
-            OficinaSeeder::class,
             DelegacionSeeder::class,
+            OficinaSeeder::class,
             TiposTramiteSeeder::class
         ]);
     }
