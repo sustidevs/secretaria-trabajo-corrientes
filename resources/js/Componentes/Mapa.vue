@@ -1,17 +1,14 @@
 <template>
     <div>
-        <v-alert x="15" y="10" v-if="show" dense text type="success">
-            <v-row>
-                <v-col cols="12" lg="6">
-                    <p><strong>Delegacion:</strong> {{ this.title }} </p>
-                    <p><strong>Direccion:</strong> {{ this.direccion }} </p>
-                </v-col>
-                <v-col cols="12" lg="6">
-                    <p><strong>Telefono:</strong> {{ this.correo }} </p>
-                    <p><strong>Correo:</strong>  {{ this.delegado }}</p>
-                </v-col>
-            </v-row>
-        </v-alert>
+        <div class="MyriadPro-Cond text-center text-4xl  green--text text--darken-4">
+            Haz click sobre las localidades resaltadas para más informacion
+        </div>
+        <notifications group="map" position="top right">
+            <p><strong>Delegacion:</strong> {{ this.title }} </p>
+        </notifications>
+        <v-chip class="ma-2 ml-16 MyriadPro-Cond chip-size" color="#558B2F" text-color="white">
+            Localidades con Delegación
+        </v-chip>
         <map-container v-on:map-clicked="onMapClick"/>
     </div>
 </template>
@@ -34,7 +31,7 @@ export default {
         correo: '',
         delegado: '',
     }),
-
+/**
     methods: {
         onMapClick: function(attr){
             this.show = true,
@@ -45,22 +42,33 @@ export default {
                                 this.delegado = attr.delegado
         }
     }
-    /**
+ **/
      methods: {
     onMapClick: function(attr){
       this.$notify({
         group: 'map',
-        title: 'State clicked',
-        text: `You clicked on state with id: ${attr.mapId} and title: ${attr.title}`
+        title: `<u>Delegacion</u> : ${attr.title} <br/> <u>Direccion:</u> ${attr.direccion} <br/><u> Telefono:</u> ${attr.telefono} <br/> <u>Delegado:</u> ${attr.delegado} `,
       });
     }
-  }**/
+  }
 }
 </script>
 
 <style>
-.capital{
-    transform: translate(320%,80%)
+.vue-notification {
+    padding: 10px;
+    margin: 230px 60px 10px 10px ;
+
+    font-family: MyriadPro-Cond;
+    font-size: 20px;
+    rounded: 10px;
+    color: #1B5E20;
+    background: #DCEDC8;
+    border-left: 5px solid #42A85F;
+}
+
+.chip-size{
+    font-size: 18px !important;
 }
 </style>
 

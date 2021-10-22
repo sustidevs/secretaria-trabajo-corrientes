@@ -6,9 +6,13 @@
             <v-col cols="12" lg="6">
                 <cuadro-delegaciones-areas/>
             </v-col>
-            <v-col cols="12" lg="6">
-                <mapa/>
-            </v-col>
+
+                <v-col cols="12" lg="6">
+                    <div v-if=" $vuetify.breakpoint.lgOnly || $vuetify.breakpoint.xlOnly">
+                        <mapa/>
+                    </div>
+                </v-col>
+
         </v-row>
 
     </layout-no-registrado>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div :id="svgId" class="svg-container"></div>
+        <a><div :id="svgId" class="svg-container"></div></a>
     </div>
 </template>
 <script>
@@ -12,10 +12,10 @@ export default {
     return {
       svgId: "corrientesMap",
       mapAttr: {
-        viewBoxWidth: 1106,
-        viewBoxHeight: 1106,
-        imageWidth: 1106,
-        imageHeight: 500,
+        viewBoxWidth: 700,
+        viewBoxHeight: 700,
+        imageWidth: 100,
+        imageHeight: 100,
       },
       svgContainer: null
     }
@@ -27,7 +27,7 @@ export default {
     generateVenueMap: function () {
       const vue = this;
       const mapData = corrientesMap.g.path
-      const svgContainer = vue.$svg("corrientesMap").size('100%', '100%').viewbox(-200, 0, vue.mapAttr.viewBoxWidth, vue.mapAttr.viewBoxHeight);
+      const svgContainer = vue.$svg("corrientesMap").size('70%', '60%').viewbox(-120, -10, vue.mapAttr.viewBoxWidth, vue.mapAttr.viewBoxHeight);
       vue.svgContainer = svgContainer;
       mapData.forEach((pathObj) => {
         vue.generatePath(svgContainer, pathObj);
