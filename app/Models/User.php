@@ -72,4 +72,14 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Persona::class);
     }
+
+    public function oficina()
+    {
+        return $this->belongsTo(Oficina::class);
+    }
+
+    public function turnos()
+    {
+        return $this->hasMany(Turno::class);
+    }
 }

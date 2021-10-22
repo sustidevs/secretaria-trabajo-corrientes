@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Turno;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Persona extends Model
 {
@@ -17,5 +18,10 @@ class Persona extends Model
     public function users()
     {
         return $this->hasMany(User::class);
+    }
+
+    public function turnos()
+    {
+        return $this->hasMany(Turno::class);
     }
 }
