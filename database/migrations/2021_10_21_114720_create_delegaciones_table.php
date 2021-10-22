@@ -18,6 +18,7 @@ class CreateDelegacionesTable extends Migration
             $table->bigIncrements('id');
             $table->foreignId('localidad_id')->constrained('localidades');
             $table->string('geolocalizacion')->nullable();
+            $table->bigInteger('codigo postal')->nullable();
             $table->string('telefono');
             $table->string('correo');
             $table->string('direccion');
