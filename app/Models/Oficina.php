@@ -24,6 +24,11 @@ class Oficina extends Model
         return $this->hasMany(Turno::class);
     }
 
+    public function dias()
+    {
+        return $this->belongsToMany(Dia::class, 'horarios_atencion', 'oficina_id', 'dia_id');
+    }
+    
     public function users()
     {
         return $this->hasMany(User::class);

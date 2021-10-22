@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHorarioAtencionsTable extends Migration
+class CreateHorariosAtencionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateHorarioAtencionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('horario_atencions', function (Blueprint $table) {
+        Schema::create('horarios_atencion', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->foreignId('oficina_id')->constrained();
             $table->foreignId('dia_id')->constrained();
