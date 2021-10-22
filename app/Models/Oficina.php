@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Oficina extends Model
 {
     use HasFactory;
+
+    public function delegacion()
+    {
+        return $this->belongsTo(Delegacion::class);
+    }
+    
+    public function tipoTramite()
+    {
+        return $this->belongsTo(TiposTramite::class);
+    }
 }
