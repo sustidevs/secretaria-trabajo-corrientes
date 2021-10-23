@@ -1,5 +1,5 @@
 <template>
-    <v-card :width="width" elevation="2" color="light-green lighten-1 px-4" >
+    <v-card  elevation="2" color="light-green lighten-1 px-4 mx-4" >
         <v-row no-gutters justify="center">
             <div class="MyriadPro-Cond size-org grey--text text--darken-3">
                 {{ texto }}

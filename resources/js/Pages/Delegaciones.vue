@@ -1,7 +1,6 @@
 <template>
     <layout-no-registrado>
         <Titulo class="pb-8" texto="DELEGACIONES PROVINCIALES"/>
-        <mapap/>
         <v-row>
             <v-col cols="12" lg="6">
                 <cuadro-delegaciones-areas/>
