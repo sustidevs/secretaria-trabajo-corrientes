@@ -18,9 +18,11 @@
             <v-list  color="#393b44">
                 <v-list-item>
                     <v-hover v-slot="{ hover }" >
+                        <a href="/organigrama">
                         <v-list-item-title :class="hover ? 'green--text text--darken-1' : 'white--text'" class="size MyriadPro-Cond ">
                             ORGANIGRAMA
                         </v-list-item-title>
+                        </a>
                     </v-hover>
                 </v-list-item>
 
