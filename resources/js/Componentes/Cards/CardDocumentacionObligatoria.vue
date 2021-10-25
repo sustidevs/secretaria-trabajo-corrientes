@@ -4,31 +4,24 @@
             <v-icon color="grey darken-3" medium class="pr-2">mdi-text-box-multiple-outline</v-icon>
             Documentación Obligatoria
         </div>
-        <div class="pr-9" v-for="requisito in dataRequisitos.requisitos" :key="requisito.id"
-                name="requisitos_id">
+        <div class="pr-9">
             <v-flex class="MyriadPro-Cond text-3xl justify-start align-start">
                 <v-icon color="grey darken-3" class="pr-2" align="start" justify="start">mdi-check-bold</v-icon>
-                {{ requisito.titulo }}
+                Titulo
             </v-flex>
             <v-flex class="MyriadPro-LightCond text-2xl pl-8 pb-3">
-                {{ requisito.descripcion }}
+                lorem ipsum dolor sit amet consectetur adipiscing elit
             </v-flex>
         </div>
-        <div v-if="this.dataRequisitos.aclaracion.length === 0" />
-        <div v-else class="MyriadPro-Cond text-3xl pb-3" v-for="requisito in dataRequisitos.aclaracion"
-                :key="requisito.id" name="aclaracion_id">
+        <div class="MyriadPro-Cond text-3xl pb-3">
             <v-icon color="black" class="pr-2">mdi-check-bold</v-icon>
-            {{ requisito.descripcion }}
+            Titulo sin descripcion
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: "CardVerde",
-    props: {
-        titulo: String,
-        descripcion: String,
-    },
+    name: "CardDocumentacionObligatoria",
 }
 </script>
