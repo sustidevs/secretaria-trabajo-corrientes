@@ -33,3 +33,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::inertia('/', 'Inicio');
 Route::inertia('/delegaciones', 'Delegaciones');
 Route::inertia('/organigrama', 'Organigrama');
+Route::inertia('/requisitos', 'Requisitos');
