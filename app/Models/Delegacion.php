@@ -14,9 +14,9 @@ class Delegacion extends Model
     /**
     * Los usuarios (empleados/delegados) que pertenece a la delegacion.
     */
-    public function empleados()
+    public function users()
     {
-        return $this->belongsToMany(User::class, 'delegados', 'delegacion_id', 'user_id');
+        return $this->hasMany(User::class);
     }
     
     public function oficinas()
@@ -28,4 +28,12 @@ class Delegacion extends Model
     {
         return $this->belongsTo(Localidad::class);
     }
+
+    public function localidadNombre()
+    {
+        $nombreLocalidadDireccion = $this->localidad->nombre . ' ('.$this->direccion .')';
+        
+        return  $nombreLocalidadDireccion;
+    }
+
 }
