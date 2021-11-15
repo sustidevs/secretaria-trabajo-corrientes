@@ -10,5 +10,13 @@ class HorarioAtencion extends Model
     use HasFactory;
     protected $table = 'horarios_atencion';
 
+    public function oficinas()
+    {
+        $this->hasMany(Oficina::class);
+    }
     
+    public function dias()
+    {
+        $this->hasMany(Dia::class);
+    }
 }
