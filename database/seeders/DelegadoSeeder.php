@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Delegado;
 use Illuminate\Database\Seeder;
 
 class DelegadoSeeder extends Seeder
@@ -13,6 +14,9 @@ class DelegadoSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Delegado::create([
+            'user_id' => '10',
+            'delegacion_id' => '3795045905',
+        ]);
     }
 }
