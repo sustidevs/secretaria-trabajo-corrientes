@@ -1,5 +1,5 @@
 <template>
-  <div class="sizeText MyriadPro-Cond pb-2">
+  <div class="inputText MyriadPro-Cond grey--text text--darken-3">
     {{ texto }}
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style>
-  .sizeText{
+  .inputText{
     font-size: 22px !important;
   }
 </style>
