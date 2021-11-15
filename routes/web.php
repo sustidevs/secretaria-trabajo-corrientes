@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\prueba;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::inertia('/', 'Inicio');
 Route::inertia('/delegaciones', 'Delegaciones');
+
+//TEST//////////////////////////////////////////////////
+Route::get('/test', [prueba::class,'test']);
+Route::get('/test2', [prueba::class,'test2']);
+///////////////////////////////////////////////////////
