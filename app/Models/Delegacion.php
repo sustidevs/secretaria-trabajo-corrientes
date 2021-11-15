@@ -32,8 +32,17 @@ class Delegacion extends Model
     public function localidadNombre()
     {
         $nombreLocalidadDireccion = $this->localidad->nombre . ' ('.$this->direccion .')';
-        
         return  $nombreLocalidadDireccion;
     }
 
+    public static function localidadesDireccion()
+    {
+        $arrayDelegaciones= collect();
+        $delegaciones = Delegacion::All()->except(['12']);
+        foreach ($delegaciones as $delegacion)
+        {
+            $arrayDelegaciones->push(['id' => $delegacion->id, 'nombre' => $delegacion->localidadNombre()]);
+        }
+        return  $arrayDelegaciones;
+    }
 }
