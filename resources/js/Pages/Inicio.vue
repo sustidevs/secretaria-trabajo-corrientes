@@ -1,6 +1,7 @@
 <template>
     <layout-no-registrado>
         <div>
+
             <Titulo texto="TRÁMITES"/>
             <card-tramites class="pt-8 pb-16"/>
             <Titulo texto="TÍTULO"/>

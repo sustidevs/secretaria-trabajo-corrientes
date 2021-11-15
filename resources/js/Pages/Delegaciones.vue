@@ -1,7 +1,19 @@
 <template>
     <layout-no-registrado>
         <Titulo class="pb-8" texto="DELEGACIONES PROVINCIALES"/>
-        <cuadro-delegaciones-areas/>
+        <v-row>
+            <v-col cols="12" lg="6">
+                <cuadro-delegaciones-areas/>
+            </v-col>
+
+                <v-col cols="12" lg="6">
+                    <div v-if=" $vuetify.breakpoint.lgOnly || $vuetify.breakpoint.xlOnly">
+                        <mapa/>
+                    </div>
+                </v-col>
+
+        </v-row>
+
     </layout-no-registrado>
 </template>
 
@@ -9,8 +21,8 @@
 import CuadroDelegacionesAreas from "../Componentes/CuadroDelegacionesAreas"
 import Titulo from "../Componentes/Titulo";
 import LayoutNoRegistrado from "../Layouts/LayoutNoRegistrado";
-
+import Mapa from "../Componentes/Mapa"
 export default {
-    components: {LayoutNoRegistrado, CuadroDelegacionesAreas, Titulo}
+    components: {LayoutNoRegistrado, CuadroDelegacionesAreas, Titulo, Mapa}
 }
 </script>

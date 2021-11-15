@@ -22,7 +22,7 @@ export default {
     components: {DropdownMenu,DropdownList},
 
     data: () => ({
-        institucional:[{titulo: 'ORGANIGRAMA', link:'/'},{titulo: 'DELEGACIONES', link:'/delegaciones'}],
+        institucional:[{titulo: 'ORGANIGRAMA', link:'/organigrama'},{titulo: 'DELEGACIONES', link:'/delegaciones'}],
     }),
 
 };
