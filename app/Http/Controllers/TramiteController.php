@@ -2,10 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TiposTramite;
 use Illuminate\Http\Request;
 
 class TramiteController extends Controller
 {
+
+    /*
+        Listado de requisitos para un determinado tramite.
+        ENTRADA: id de tabla tipos_tramite.
+        SALIDA: listado de requisitos(tabla requisitos), con descripcion y id de tipo de tramite(tabla tipos_tramite).
+    */
+    public function requisitos($id)
+    {
+        $tipoTramite = TiposTramite::FindOrFail($id);
+        return [$tipoTramite->id, 
+                $tipoTramite->descripcion,
+                $tipoTramite->requisitos];
+    }
+
     /**
      * Display a listing of the resource.
      *
