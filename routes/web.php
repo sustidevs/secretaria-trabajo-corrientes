@@ -29,3 +29,4 @@ Route::inertia('/requisitos', 'Requisitos');
 
 
 Route::inertia('/login', 'Login');
+Route::inertia('/turnos', 'Turnos');
