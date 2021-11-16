@@ -11,9 +11,7 @@
                         <mapa/>
                     </div>
                 </v-col>
-
         </v-row>
-
     </layout-no-registrado>
 </template>
 

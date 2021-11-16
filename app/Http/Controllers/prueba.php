@@ -10,10 +10,11 @@ class prueba extends Controller
 {
     public function test()//JC
     {
-        $tipoTramite = TiposTramite::FindOrFail(1);
+        $tipoTramite = TiposTramite::FindOrFail(2);
         $requisitos = $tipoTramite->listadoRequisitos();
         $nombreTramite = $tipoTramite->descripcion;
-        return [$tipoTramite,$requisitos,$nombreTramite];
+        
+        return [$requisitos];
     }
 
     public function test2()//AG
