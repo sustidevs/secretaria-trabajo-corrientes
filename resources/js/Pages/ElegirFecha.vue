@@ -9,11 +9,11 @@
             >
                 <v-row>
                     <v-col cols="12" sm="12" lg="6">
-                        <descripcion class="justify-center text-2xl pb-2" texto="Seleccione una de las fechas disponibles"/>
+                        <label-input class="pb-2" texto="Seleccione una de las fechas disponibles"/>
                         <autocomplete-field icon="mdi-calendar-month"/>
                     </v-col>
                     <v-col cols="12" sm="12" lg="6">
-                        <descripcion class="justify-center text-2xl pb-2" texto="Seleccione un horario disponible"/>
+                        <label-input class="pb-2" texto="Seleccione un horario disponible"/>
                         <autocomplete-field icon="mdi-clock-time-nine"/>
                     </v-col>
                 </v-row>
@@ -42,11 +42,11 @@
 <script>
 import LayoutNoRegistrado from "../Layouts/LayoutNoRegistrado";
 import TituloTramite from '../Componentes/TituloTramite';
+import LabelInput from '../Componentes/LabelInput.vue';
 import AutocompleteField from '../Componentes/AutocompleteField.vue';
-import Descripcion from '../Componentes/Descripcion';
 export default {
     name: 'Formulario',
-    components: { LayoutNoRegistrado, TituloTramite, AutocompleteField, Descripcion},
+    components: { LayoutNoRegistrado, TituloTramite, AutocompleteField, LabelInput},
     props: {
         texto: String,
     },

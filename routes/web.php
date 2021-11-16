@@ -12,6 +12,7 @@ Route::inertia('/delegaciones', 'Delegaciones');
 Route::inertia('/organigrama', 'Organigrama');
 Route::inertia('/requisitos', 'Requisitos');
 Route::inertia('/formulario', 'Formulario');
+Route::inertia('/formulario-asesoramiento-juridico', 'FormularioAJuridico');
 Route::inertia('/elegir-fecha', 'ElegirFecha');
 
  ///         REGISTRADO         ///

@@ -15,6 +15,6 @@ export default {
 
 <style>
   .inputText{
-    font-size: 22px !important;
+    font-size: 24px !important;
   }
 </style>
