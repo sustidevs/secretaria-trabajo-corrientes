@@ -4,10 +4,10 @@
             <div class="m-2 items-center">
                 <titulo-tramite texto="Solicitud de turno"/>
                 <descripcion class="justify-center text-2xl pb-7"
-                    texto="Complete el siguiente formulario con los datos correspondientes para obtener un turno."/>
+                    texto="Complete el siguiente formulario con los datos del reclamante y del abogado para obtener un turno."/>
             </div>
             <v-stepper v-model="e1">
-                <v-stepper-header class="light-green lighten-1">
+                <v-stepper-header>
                     <v-stepper-step class="MyriadPro-Cond text-xl" color="light-green darken-3" :complete="e1 > 1" step="1">
                         DATOS DEL RECLAMANTE
                     </v-stepper-step>
@@ -124,11 +124,16 @@
                     </v-stepper-content>
 
                     <v-stepper-content step="3">
-                        <v-card
-                        class="mb-12"
-                        color="grey lighten-1"
-                        height="200px"
-                        ></v-card>
+                        <v-row>
+                            <v-col cols="12" sm="12" lg="6">
+                                <label-input texto="Tipo de Trámite"/>
+                                <autocomplete-field icon="mdi-file-document-multiple"/>
+                            </v-col>
+                            <v-col cols="12" sm="12" lg="6">
+                                <label-input texto="Delegación"/>
+                                <autocomplete-field icon="mdi-map-marker"/>
+                            </v-col>
+                        </v-row>
 
                         <v-row justify="center" class="py-7">
                             <v-col cols="3">
@@ -142,7 +147,6 @@
                                 </v-btn>
                             </v-col>
                         </v-row>
-
                     </v-stepper-content>
                 </v-stepper-items>
             </v-stepper>
