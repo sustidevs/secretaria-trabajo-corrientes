@@ -142,9 +142,11 @@
                                 </v-btn>
                             </v-col>
                             <v-col cols="3">
-                                <v-btn color="light-green darken-1" elevation="0" dark @click="e1 = 3" block height="55">
-                                    <div class="MyriadPro-Cond text-xl">Elegir fecha del turno</div>
-                                </v-btn>
+                                <inertia-link href='/elegir-fecha'>
+                                    <v-btn color="light-green darken-1" elevation="0" dark block height="55">
+                                        <div class="MyriadPro-Cond text-xl">Elegir fecha del turno</div>
+                                    </v-btn>
+                                </inertia-link>
                             </v-col>
                         </v-row>
                     </v-stepper-content>
