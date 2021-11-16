@@ -99,7 +99,7 @@ class PersonaSeeder extends Seeder
         ]);
         Persona::create([//Delegado
             'dni' => '24195548', 
-            'nombre' => 'Raul',
+            'nombre' => 'Raúl',
             'apellido' => 'Albuquerque',
             'telefono' => '',
             'correo' => 'rubencardozo@gmail.com',
