@@ -16,9 +16,16 @@ class TramiteController extends Controller
     public function requisitos($id)
     {
         $tipoTramite = TiposTramite::FindOrFail($id);
-        return [$tipoTramite->id, 
-                $tipoTramite->descripcion,
-                $tipoTramite->requisitos];
+        $requisitos = $tipoTramite->listadoRequisitos();
+        //dd($requisitos);
+        $nombreTramite = $tipoTramite->descripcion;
+        //dd($tipoTramite);
+        $pdf = PDF::loadView('requisitos',
+        [
+            'requisitos'=> $requisitos,
+            'nombreTramite'=> $nombreTramite,
+        ]);
+        return $pdf->inline('requisitos.pdf');
     }
 
     /**

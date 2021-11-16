@@ -21,7 +21,6 @@ class TiposTramite extends Model
         return $this->hasMany(Requisito::class);
     }
 
-/*Juan C
     public function tipoRequisitos($tipoRequisito)
     {
         return $this->requisitos->where('tipo', $tipoRequisito);
@@ -36,6 +35,6 @@ class TiposTramite extends Model
                                     'horarios'    =>  $this->tipoRequisitos(5),]);
         return $arrayRequisitos;
     }
-*/
+
 
 }
