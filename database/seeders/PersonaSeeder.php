@@ -79,7 +79,7 @@ class PersonaSeeder extends Seeder
         ]);
         Persona::create([//Delegado
             'dni' => '13325115', 
-            'nombre' => 'Jose Agustin',
+            'nombre' => 'José Agustín',
             'apellido' => 'Ramirez',
             'telefono' => '',
             'correo' => 'ramirezja@gmail.com',
@@ -89,7 +89,7 @@ class PersonaSeeder extends Seeder
         ]);
         Persona::create([//Delegado
             'dni' => '14442546', 
-            'nombre' => 'Ruben',
+            'nombre' => 'Rubén',
             'apellido' => 'Cardozo',
             'telefono' => '',
             'correo' => 'rubencardozo@gmail.com',
@@ -99,7 +99,7 @@ class PersonaSeeder extends Seeder
         ]);
         Persona::create([//Delegado
             'dni' => '24195548', 
-            'nombre' => 'Raul',
+            'nombre' => 'Raúl',
             'apellido' => 'Albuquerque',
             'telefono' => '',
             'correo' => 'rubencardozo@gmail.com',
@@ -109,8 +109,8 @@ class PersonaSeeder extends Seeder
         ]);
         Persona::create([//Delegado
             'dni' => '21700855', 
-            'nombre' => 'Antonio Jose Maria',
-            'apellido' => 'Lopez',
+            'nombre' => 'Antonio José María',
+            'apellido' => 'López',
             'telefono' => '',
             'correo' => 'ajmlopez01@gmail.com',
             'domicilio' => '',
