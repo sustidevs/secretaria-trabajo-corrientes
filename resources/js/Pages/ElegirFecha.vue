@@ -9,11 +9,11 @@
             >
                 <v-row>
                     <v-col cols="12" sm="12" lg="6">
-                        <descripcion class="justify-center text-2xl" texto="Seleccione una de las fechas disponibles"/>
+                        <descripcion class="justify-center text-2xl pb-2" texto="Seleccione una de las fechas disponibles"/>
                         <autocomplete-field icon="mdi-calendar-month"/>
                     </v-col>
                     <v-col cols="12" sm="12" lg="6">
-                        <descripcion class="justify-center text-2xl" texto="Seleccione un horario disponible"/>
+                        <descripcion class="justify-center text-2xl pb-2" texto="Seleccione un horario disponible"/>
                         <autocomplete-field icon="mdi-clock-time-nine"/>
                     </v-col>
                 </v-row>
