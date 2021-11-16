@@ -26,7 +26,7 @@ Route::get('/test2', [prueba::class,'test2']);
 ///////////////////////////////////////////////////////
 Route::inertia('/organigrama', 'Organigrama');
 Route::inertia('/requisitos', 'Requisitos');
-
+Route::inertia('/formulario', 'Formulario');
 
 Route::inertia('/login', 'Login');
 Route::inertia('/turnos', 'Turnos');
