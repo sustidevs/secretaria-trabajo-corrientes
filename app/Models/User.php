@@ -82,4 +82,18 @@ class User extends Authenticatable
     {
         return $this->hasMany(Turno::class);
     }
+
+    /**
+    * Obtiene los tramites a los que tiene permiso de acceso el usuario
+    * 
+    */
+    public static function getPermission()
+    {
+        $tramites = Auth::User()->getAllPermissions(); //TODO 
+        $arrayTramites = Collect(); 
+        foreach ($tramites as $tramite) {
+            $arrayTramites->push(['id' => $tramite->id, 'name' => $tramite->name]);
+        }
+        return $arrayTramites;
+    }
 }
