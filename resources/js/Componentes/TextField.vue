@@ -4,6 +4,7 @@
       color="light-green darken-1"
       v-model="inputVal"
       outlined
+      hide-details
       :type="tipo"
       :prepend-inner-icon="icon"
   ></v-text-field>

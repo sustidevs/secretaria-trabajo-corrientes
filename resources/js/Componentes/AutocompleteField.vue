@@ -9,6 +9,7 @@
       v-model="inputVal"
       single-line
       item-color="light-green darken-1"
+      :prepend-inner-icon="icon"
   >
   </v-autocomplete>
 </template>
@@ -18,6 +19,7 @@ export default {
   props: {
     data: Array,
     nombre: String,
+    icon: String,
   },
   data() {
     return { inputVal: this.value }
