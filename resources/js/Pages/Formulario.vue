@@ -62,31 +62,65 @@
 
                         <label-input texto="Correo electrónico"/>
                         <text-field icon="mdi-email"/>
-                        
-                        <div class="flex justify-center py-7">
-                            <v-btn color="light-green darken-1" elevation="0" large dark @click="e1 = 2">
+                    
+                        <v-row justify="center" class="py-7">
+                            <v-col cols="3">
+                                <v-btn color="light-green darken-1" elevation="0" dark @click="e1 = 2" block height="55">
                                 <div class="MyriadPro-Cond text-xl">Continuar</div>
                             </v-btn>
-                        </div>
+                            </v-col>
+                        </v-row>
                     </v-stepper-content>
 
                     <v-stepper-content step="2">
-                        <v-card
-                        class="mb-12"
-                        color="grey lighten-1"
-                        height="200px"
-                        ></v-card>
+                        <v-row>
+                            <v-col cols="12" sm="12" lg="6">
+                                <label-input texto="Nombre"/>
+                                <text-field icon="mdi-account"/>
+                            </v-col>
+                            <v-col cols="12" sm="12" lg="6">
+                                <label-input texto="Apellido"/>
+                                <text-field icon="mdi-account"/>
+                            </v-col>
+                        </v-row>
 
-                        <v-btn
-                        color="primary"
-                        @click="e1 = 3"
-                        >
-                        Continuar2
-                        </v-btn>
+                        <v-row>
+                            <v-col cols="12" sm="12" lg="6">
+                                <label-input texto="DNI"/>
+                                <text-field tipo="number" icon="mdi-card-account-details"/>
+                            </v-col>
+                            <v-col cols="12" sm="12" lg="6">
+                                <label-input texto="Teléfono"/>
+                                <text-field tipo="number" icon="mdi-phone"/>
+                            </v-col>
+                        </v-row>
 
-                        <v-btn text>
-                        Cancelar2
-                        </v-btn>
+                        <v-row>
+                            <v-col cols="12" sm="12" lg="6">
+                                <label-input texto="Domicilio"/>
+                                <text-field icon="mdi-home"/>
+                            </v-col>
+                            <v-col cols="12" sm="12" lg="6">
+                                <label-input texto="Localidad"/>
+                                <autocomplete-field icon="mdi-map-marker"/>
+                            </v-col>
+                        </v-row>
+
+                        <label-input texto="Correo electrónico"/>
+                        <text-field icon="mdi-email"/>
+
+                        <v-row justify="center" class="py-7">
+                            <v-col cols="3">
+                                <v-btn elevation="0" @click="e1 = 1" block height="55">
+                                    <div class="MyriadPro-Cond text-xl">Volver</div>
+                                </v-btn>
+                            </v-col>
+                            <v-col cols="3">
+                                <v-btn color="light-green darken-1" elevation="0" dark @click="e1 = 3" block height="55">
+                                    <div class="MyriadPro-Cond text-xl">Continuar</div>
+                                </v-btn>
+                            </v-col>
+                        </v-row>
                     </v-stepper-content>
 
                     <v-stepper-content step="3">
@@ -96,16 +130,19 @@
                         height="200px"
                         ></v-card>
 
-                        <v-btn
-                        color="primary"
-                        @click="e1 = 1"
-                        >
-                        Continuar3
-                        </v-btn>
+                        <v-row justify="center" class="py-7">
+                            <v-col cols="3">
+                                <v-btn elevation="0" @click="e1 = 2" block height="55">
+                                    <div class="MyriadPro-Cond text-xl">Volver</div>
+                                </v-btn>
+                            </v-col>
+                            <v-col cols="3">
+                                <v-btn color="light-green darken-1" elevation="0" dark @click="e1 = 3" block height="55">
+                                    <div class="MyriadPro-Cond text-xl">Elegir fecha del turno</div>
+                                </v-btn>
+                            </v-col>
+                        </v-row>
 
-                        <v-btn text>
-                        Cancelar3
-                        </v-btn>
                     </v-stepper-content>
                 </v-stepper-items>
             </v-stepper>
