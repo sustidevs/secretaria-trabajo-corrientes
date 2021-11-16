@@ -1,11 +1,14 @@
 <template>
-    <navbar-registrado/>
+    <layout-registrado>
+        ola
+    </layout-registrado>
 </template>
 
 <script>
 import NavbarRegistrado from "../Layouts/Componentes/NavbarRegistrado";
+import LayoutRegistrado from "../Layouts/LayoutRegistrado";
 
 export default {
-    components: {NavbarRegistrado}
+    components: {NavbarRegistrado,LayoutRegistrado}
 }
 </script>
