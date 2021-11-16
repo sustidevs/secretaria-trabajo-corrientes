@@ -1,5 +1,5 @@
 <template>
-    <div class="MyriadPro-LightCond text-justify text-2xl pt-3">
+    <div class="MyriadPro-Cond text-justify text-2xl pt-3">
         {{texto}}
     </div>
 </template>
