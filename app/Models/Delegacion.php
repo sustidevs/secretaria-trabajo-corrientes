@@ -14,9 +14,9 @@ class Delegacion extends Model
     /**
     * Los usuarios (empleados/delegados) que pertenece a la delegacion.
     */
-    public function empleados()
+    public function users()
     {
-        return $this->belongsToMany(User::class, 'delegados', 'delegacion_id', 'user_id');
+        return $this->hasMany(User::class);
     }
     
     public function oficinas()
@@ -27,5 +27,22 @@ class Delegacion extends Model
     public function localidad()
     {
         return $this->belongsTo(Localidad::class);
+    }
+
+    public function localidadNombre()
+    {
+        $nombreLocalidadDireccion = $this->localidad->nombre . ' ('.$this->direccion .')';
+        return  $nombreLocalidadDireccion;
+    }
+
+    public static function localidadesDireccion()
+    {
+        $arrayDelegaciones= collect();
+        $delegaciones = Delegacion::All()->except(['12']);
+        foreach ($delegaciones as $delegacion)
+        {
+            $arrayDelegaciones->push(['id' => $delegacion->id, 'nombre' => $delegacion->localidadNombre()]);
+        }
+        return  $arrayDelegaciones;
     }
 }
