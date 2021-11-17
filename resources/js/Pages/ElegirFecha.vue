@@ -28,12 +28,12 @@
                     </inertia-link>
                 </v-col>
                 <v-col cols="3">
-                    <v-btn color="light-green darken-1" elevation="0" dark block height="55" @click="!this.dialog">
+                    <v-btn color="light-green darken-1" elevation="0" dark block height="55" @click="show = true">
                         <div class="MyriadPro-Cond text-xl">Solicitar turno</div>
                     </v-btn>
                 </v-col>
             </v-row>
-            <modal-turno/>
+            <modal-turno :dialog="show"/>
         </v-container>
     </LayoutNoRegistrado>
 </template>
@@ -47,9 +47,13 @@ import ModalTurno from '../Componentes/Modals/ModalTurno';
 export default {
     name: 'ElegirFecha',
     components: { LayoutNoRegistrado, TituloTramite, AutocompleteField, LabelInput, ModalTurno},
-    props: {
-        dialog: Boolean,
+    
+    data () {
+        return {
+            show: false,
+        }
     },
+
 }
 </script>
 
