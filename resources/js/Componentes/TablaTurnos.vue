@@ -30,21 +30,6 @@ export default {
             { text: 'Actions', value: 'actions', sortable: false },
         ],
         desserts: [],
-        editedIndex: -1,
-        editedItem: {
-            name: '',
-            calories: 0,
-            fat: 0,
-            carbs: 0,
-            protein: 0,
-        },
-        defaultItem: {
-            name: '',
-            calories: 0,
-            fat: 0,
-            carbs: 0,
-            protein: 0,
-        },
     }),
 
     created () {

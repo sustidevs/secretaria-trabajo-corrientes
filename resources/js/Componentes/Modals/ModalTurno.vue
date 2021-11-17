@@ -78,7 +78,7 @@
                 <v-card-actions>
                     <v-row justify="center" class="py-5">
                         <v-col cols="6">
-                            <v-btn elevation="0" block height="40" color="light-grey lighten-5" @click="close()">
+                            <v-btn elevation="0" block height="40" color="light-grey lighten-5" @click="close">
                                 <div class="MyriadPro-Cond text-xl">Aceptar</div>
                             </v-btn>
                         </v-col>
@@ -105,7 +105,7 @@ export default {
     },
     methods: {
         close(){
-            this.dialog=false;
+            this.$emit('cerrar')
         },
     }
 }
