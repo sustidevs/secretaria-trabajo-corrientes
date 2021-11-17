@@ -5,6 +5,7 @@ use App\Http\Controllers\prueba;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\TramiteController;
+use App\Http\Controllers\DelegacionController;
 
 
  //         NO REGISTRADO - PAGINA PUBLICA          ///Seleccione un Tipo de Trámite
@@ -18,8 +19,14 @@ Route::inertia('/elegir-fecha', 'ElegirFecha');
 
  ///         REGISTRADO         ///
  Route::inertia('/login', 'Login');
- Route::inertia('/turnos', 'Turnos');
+ Route::group(['middleware' => 'auth'], function(){
+    Route::inertia('/turnos', 'Turnos');
+ });
 
+ //DELEGACIONES/////////////////////////////////////////////////////////////
+ Route::get('/delegacion-index', [DelegacionController::class,'index']);
+ Route::get('/delegacion-create', [DelegacionController::class,'create']);
+ //////////////////////////////////////////////////////////////////////////
 
 //TEST//////////////////////////////////////////////////
 Route::get('/test', [prueba::class,'test']);

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Localidad;
+use App\Models\Delegacion;
 use Illuminate\Http\Request;
 
 class DelegacionController extends Controller
@@ -13,7 +15,8 @@ class DelegacionController extends Controller
      */
     public function index()
     {
-        //
+        $delegaciones = Delegacion::all();
+        return $delegaciones;
     }
 
     /**
@@ -23,7 +26,8 @@ class DelegacionController extends Controller
      */
     public function create()
     {
-        //
+        $localidades = Localidad::all();
+        return $localidades;
     }
 
     /**
@@ -34,7 +38,14 @@ class DelegacionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $delegacion = new Delegacion();
+        $delegacion->localidad_id = $request->localidad_id;
+        $delegacion->delegado_id = 1; //El id 1 indica que no tiene delegado.
+        $delegacion->telefono = $request->telefono;
+        $delegacion->correo = $request->correo;
+        $delegacion->direccion = $request->direccion;
+        $delegacion->save();
     }
 
     /**
