@@ -1,6 +1,6 @@
 <template>
     <v-data-table
-        class="font elevation-5 mx-3 grey lighten-4 elevation-1 mytable"
+        class="font elevation-5 grey lighten-4 elevation-1 mytable"
         :headers="headers" :items="desserts" sort-by="calories">
         <template v-slot:item.actions="{ item }">
             <v-btn elevation="0" small class="mr-2 my-2 py-5" align="center" @click="this.asistencia(1)">
@@ -149,7 +149,6 @@ export default {
 
 .mytable thead {
     background-color: #558B2F !important;
-
     font-family: "MyriadPro-Cond",serif !important;
 }
 
@@ -159,6 +158,6 @@ export default {
 }
 
 .v-data-table > .v-data-table__wrapper > table > tbody > tr:hover{
-    background-color: #DCEDC8 !important;
+    background-color: #E8F5E9 !important;
 }
 </style>
