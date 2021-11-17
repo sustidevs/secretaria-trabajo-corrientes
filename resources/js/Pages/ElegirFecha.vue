@@ -18,7 +18,7 @@
                     </v-col>
                 </v-row>
             </v-card>
-            
+
             <v-row justify="center" class="py-7">
                 <v-col cols="3">
                     <inertia-link href='/'>
@@ -33,7 +33,7 @@
                     </v-btn>
                 </v-col>
             </v-row>
-            <modal-turno :dialog="show"/>
+            <modal-turno :dialog="show" @cerrar="show = false"/>
         </v-container>
     </LayoutNoRegistrado>
 </template>
@@ -47,7 +47,7 @@ import ModalTurno from '../Componentes/Modals/ModalTurno';
 export default {
     name: 'ElegirFecha',
     components: { LayoutNoRegistrado, TituloTramite, AutocompleteField, LabelInput, ModalTurno},
-    
+
     data () {
         return {
             show: false,

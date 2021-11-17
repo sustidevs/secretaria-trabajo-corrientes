@@ -9,12 +9,19 @@
                 </v-btn>
             </template>
         </v-data-table>
+
+        <modal-abogados :solicitante="name_soli" :dialog="show" @cerrar="show = false"/>
     </div>
 </template>
 
 <script>
+import ModalAbogados from "./Modals/ModalAbogados";
+
 export default {
+    components: {ModalAbogados},
     data: () => ({
+        show: false,
+        name_soli: "pepe",
         headers: [
             {
                 text: 'Dessert (100g serving)',
@@ -126,11 +133,8 @@ export default {
             ]
         },
 
-        asignar (item) {
-            this.form.abogado_id= n;
-            this.ver= true;
-            this.dialog2=true;
-            this.hidden= false;
+        asignar () {
+            this.show=true;
         },
     },
 }
