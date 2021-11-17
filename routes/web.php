@@ -7,7 +7,7 @@ use Illuminate\Foundation\Application;
 use App\Http\Controllers\TramiteController;
 
 
- //         NO REGISTRADO - PAGINA PUBLICA          ///
+ //         NO REGISTRADO - PAGINA PUBLICA          ///Seleccione un Tipo de Trámite
 Route::inertia('/', 'Inicio');
 Route::inertia('/delegaciones', 'Delegaciones');
 Route::inertia('/organigrama', 'Organigrama');
@@ -19,7 +19,7 @@ Route::inertia('/elegir-fecha', 'ElegirFecha');
  ///         REGISTRADO         ///
  Route::inertia('/login', 'Login');
  Route::inertia('/turnos', 'Turnos');
- 
+
 
 //TEST//////////////////////////////////////////////////
 Route::get('/test', [prueba::class,'test']);
