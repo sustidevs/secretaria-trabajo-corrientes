@@ -4,6 +4,7 @@ use Inertia\Inertia;
 use App\Http\Controllers\prueba;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
+use App\Http\Controllers\TramiteController;
 
 
  //         NO REGISTRADO - PAGINA PUBLICA          ///
@@ -25,3 +26,7 @@ Route::get('/test', [prueba::class,'test']);
 Route::get('/test2', [prueba::class,'test2']);
 ///////////////////////////////////////////////////////
 
+///////TRAMITE/////////////////////////////////////////
+Route::get('/index-tramites', [TramiteController::class, 'index']);
+Route::post('/show-tramites', [TramiteController::class, 'show']);
+///////////////////////////////////////////////////////
