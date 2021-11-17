@@ -9,11 +9,11 @@
             >
                 <v-row>
                     <v-col cols="12" sm="12" lg="6">
-                        <label-input class="pb-2" texto="Seleccione una de las fechas disponibles"/>
+                        <label-input class="pb-2" texto="Seleccione una fecha"/>
                         <autocomplete-field icon="mdi-calendar-month"/>
                     </v-col>
                     <v-col cols="12" sm="12" lg="6">
-                        <label-input class="pb-2" texto="Seleccione un horario disponible"/>
+                        <label-input class="pb-2" texto="Seleccione un horario"/>
                         <autocomplete-field icon="mdi-clock-time-nine"/>
                     </v-col>
                 </v-row>
@@ -28,13 +28,12 @@
                     </inertia-link>
                 </v-col>
                 <v-col cols="3">
-                    <inertia-link href=''>
-                        <v-btn color="light-green darken-1" elevation="0" dark block height="55">
-                            <div class="MyriadPro-Cond text-xl">Solicitar turno</div>
-                        </v-btn>
-                    </inertia-link>
+                    <v-btn color="light-green darken-1" elevation="0" dark block height="55" @click="show = true">
+                        <div class="MyriadPro-Cond text-xl">Solicitar turno</div>
+                    </v-btn>
                 </v-col>
             </v-row>
+            <modal-turno :dialog="show"/>
         </v-container>
     </LayoutNoRegistrado>
 </template>
@@ -42,14 +41,19 @@
 <script>
 import LayoutNoRegistrado from "../Layouts/LayoutNoRegistrado";
 import TituloTramite from '../Componentes/TituloTramite';
-import LabelInput from '../Componentes/LabelInput.vue';
-import AutocompleteField from '../Componentes/AutocompleteField.vue';
+import LabelInput from '../Componentes/LabelInput';
+import AutocompleteField from '../Componentes/AutocompleteField';
+import ModalTurno from '../Componentes/Modals/ModalTurno';
 export default {
-    name: 'Formulario',
-    components: { LayoutNoRegistrado, TituloTramite, AutocompleteField, LabelInput},
-    props: {
-        texto: String,
+    name: 'ElegirFecha',
+    components: { LayoutNoRegistrado, TituloTramite, AutocompleteField, LabelInput, ModalTurno},
+    
+    data () {
+        return {
+            show: false,
+        }
     },
+
 }
 </script>
 
