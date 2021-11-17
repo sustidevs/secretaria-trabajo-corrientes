@@ -137,5 +137,8 @@ class PersonaSeeder extends Seeder
             'localidad_id' => '26',
             'tipo'=>'5',
         ]);
+
+        
+
     }
 }

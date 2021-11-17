@@ -14,9 +14,13 @@ class DelegadoSeeder extends Seeder
      */
     public function run()
     {
+        //Delegado de capital
         Delegado::create([
-            'user_id' => '10',
-            'delegacion_id' => '3795045905',
+            'user_id' => '1',
+            'delegacion_id' => '3',
         ]);
+
+
+
     }
 }

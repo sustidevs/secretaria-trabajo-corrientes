@@ -14,15 +14,18 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
+            TiposTramiteSeeder::class,
+            PermissionSeeder::class,
             FeriadoSeeder::class,
             LocalidadSeeder::class,
             DiaSeeder::class,
-            TiposTramiteSeeder::class,
             DelegacionSeeder::class,
             OficinaSeeder::class,
             HorariosAtencionSeeder::class,
             RequisitoSeeder::class,
-            PersonaSeeder::class
+            PersonaSeeder::class,
+            UserSeeder::class,
+            DelegadoSeeder::class
         ]);
     }
 }
