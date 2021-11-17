@@ -8,10 +8,10 @@
                     <card-inspectores img="./images/Inspectores/alegre-sonia.png" title="Alegre, Sonia Verónica" description="DNI: 27.189.949"/>
                 </v-col>
                 <v-col cols="12" lg="3" md="6" xs="12">
-                    <card-inspectores img="./images/Inspectores/hinneburg-conrado.png" title="Hinnerburg Conrado, Federico" description="DNI: 27.900.243"/>
+                    <card-inspectores img="./images/Inspectores/hinneburg-conrado.png" title="Hinneburg Conrado, Federico" description="DNI: 34.825.154"/>
                 </v-col>
                 <v-col cols="12" lg="3" md="6" xs="12">
-                    <card-inspectores img="./images/Inspectores/centurion-lourdes.png" title="Centurión, Lourdes Marianela" description="DNI: 34.825.301"/>
+                    <card-inspectores img="./images/Inspectores/centurion-lourdes.png" title="Centurión, Lourdes Marianela" description="DNI: 36.112.279"/>
                 </v-col>
                 <v-col cols="12" lg="3" md="6" xs="12">
                     <card-inspectores img="./images/Inspectores/aranda-carlos.png" title="Aranda, Carlos Javier" description="DNI: 34.825.301"/>
@@ -35,10 +35,10 @@
                     <card-inspectores img="./images/Inspectores/godoy-hugo.png" title="Godoy, Hugo Daniel" description="DNI: 22.086.952"/>
                 </v-col>
                 <v-col cols="12" lg="3" md="6" xs="12">
-                    <card-inspectores img="./images/Inspectores/badia-oscar.png" title="Badia, Oscar" description="DNI: 27.900.243"/>
+                    <card-inspectores img="./images/Inspectores/badia-oscar.png" title="Badia, Oscar" description="DNI: 27.900.234"/>
                 </v-col>
                 <v-col cols="12" lg="3" md="6" xs="12">
-                    <card-inspectores img="./images/Inspectores/garcia-santiago.png" title="García, Santiago Bernardo" description="DNI: 31.549.025"/>
+                    <card-inspectores img="./images/Inspectores/garcia-santiago.png" title="García, Santiago Bernardo" description="DNI: 31.594.025"/>
                 </v-col>
                 <v-col cols="12" lg="3" md="6" xs="12">
                     <card-inspectores img="./images/Inspectores/lopez-jesica.png" title="López, Jesica Elizabeth" description="DNI: 34.093.052"/>
