@@ -107,7 +107,7 @@ import TextField from '../Componentes/TextField';
 import LabelInput from '../Componentes/LabelInput.vue';
 import AutocompleteField from '../Componentes/AutocompleteField.vue';
 export default {
-    name: 'Formulario',
+    name: 'FormularioAJuridico',
     components: { LayoutNoRegistrado, TituloTramite, Descripcion, TextField, LabelInput, AutocompleteField},
     props: {
         texto: String,
