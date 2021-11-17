@@ -99,4 +99,37 @@ class User extends Authenticatable
         }
         return $arrayTramites;
     }
+
+    /**
+    * Retorna un array con los datos de todos los usuarios
+    * 
+    */
+    public static function index()
+    {
+        $Users = User::all();
+        $arrayUsers = Collect(); 
+        foreach ($users as $user) {
+            if ($user->cuil != null){
+                $cuil = $user->cuil;
+            }
+            else {
+                $cuil = 'Sin Cuil';
+            }
+            $arrayUsers->push(['user_id' => $user->id, 
+                               'persona_id' => $user->persona_id,
+                               'oficina_id' => $user->oficina_id,
+                               'oficina' => $user->oficina->tipoTramite->descripcion,
+                               'delegacion' => $user->oficina->delegacion->localidadNombre(),
+                               'cuil' => $cuil,
+                               'email' => $user->email,
+                               'dni' => $user->persona->dni,
+                               'nombre_user' => $user->persona->apellidoyNombre(), 
+                               'telefono' => $user->persona->telefono, 
+                               'domicilio' => $user->persona->domicilio, 
+                               'localidad_id' => $user->persona->localidad_id, 
+                               'localidad' => $user->persona->localidad->nombre, //TODO Falta tipo de usuario
+                            ]);
+        }
+        return $arrayUsers;
+    }
 }
