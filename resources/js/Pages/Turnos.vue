@@ -48,7 +48,8 @@
 
         <v-divider class="my-5"></v-divider>
 
-        <tabla-turnos/>
+        <tabla-turnos-asesoramiento/>
+        <!--<tabla-turnos/>-->
     </layout-registrado>
 </template>
 
@@ -57,8 +58,9 @@ import NavbarRegistrado from "../Layouts/Componentes/NavbarRegistrado";
 import LayoutRegistrado from "../Layouts/LayoutRegistrado";
 import TablaTurnos from "../Componentes/TablaTurnos";
 import BotonTramitesArea from "../Componentes/BotonTramitesArea";
+import TablaTurnosAsesoramiento from "../Componentes/TablaTurnosAsesoramiento";
 
 export default {
-    components: {NavbarRegistrado,LayoutRegistrado,TablaTurnos,BotonTramitesArea}
+    components: {NavbarRegistrado,LayoutRegistrado,TablaTurnos,BotonTramitesArea,TablaTurnosAsesoramiento}
 }
 </script>
