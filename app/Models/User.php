@@ -8,6 +8,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -18,6 +19,7 @@ class User extends Authenticatable
     use HasFactory;
     use HasProfilePhoto;
     use Notifiable;
+    use SoftDeletes;
     use TwoFactorAuthenticatable;
     use HasRoles;
 
@@ -87,6 +89,22 @@ class User extends Authenticatable
     }
 
     /**
+    * Obtiene un array con todos los tipos de usuarios
+    * 
+    */
+    public static function tiposUsuario()
+    {
+        $arrayTipoUsers = Collect();
+        $arrayTipoUsers->push(['id' => 1, 'descripcion' => "Coordinadidor General"]);
+        $arrayTipoUsers->push(['id' => 2, 'descripcion' => "Auditor"]);
+        $arrayTipoUsers->push(['id' => 3, 'descripcion' => "Coordinador"]);
+        $arrayTipoUsers->push(['id' => 4, 'descripcion' => "Delegado"]);
+        $arrayTipoUsers->push(['id' => 5, 'descripcion' => "Administrador de Área"]);
+        $arrayTipoUsers->push(['id' => 8, 'descripcion' => "Empleado"]); 
+        return $arrayTipoUsers;
+    }
+
+    /**
     * Obtiene los tramites a los que tiene permiso de acceso el usuario
     * 
     */
@@ -106,7 +124,7 @@ class User extends Authenticatable
     */
     public static function index()
     {
-        $Users = User::all();
+        $users = User::withTrashed()->get();
         $arrayUsers = Collect(); 
         foreach ($users as $user) {
             if ($user->cuil != null){
@@ -118,7 +136,7 @@ class User extends Authenticatable
             $arrayUsers->push(['user_id' => $user->id, 
                                'persona_id' => $user->persona_id,
                                'oficina_id' => $user->oficina_id,
-                               'oficina' => $user->oficina->tipoTramite->descripcion,
+                               'oficina' => $user->oficina->tiposTramite->descripcion,
                                'delegacion' => $user->oficina->delegacion->localidadNombre(),
                                'cuil' => $cuil,
                                'email' => $user->email,

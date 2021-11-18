@@ -56,6 +56,10 @@ Route::post('/store-abogado', [PersonaController::class, 'storeAbogado']);
 
 ///////USERS////////////////////////////////////////
 Route::get('/index-users', [UserController::class, 'index']);
-Route::post('/create-user', [UserController::class, 'create']);
-
+Route::get('/create-user', [UserController::class, 'create']);
+Route::post('/store-user', [UserController::class, 'store']);
+Route::post('/edit-user', [UserController::class, 'edit']);
+Route::post('/update-user', [UserController::class, 'update']);
+Route::post('/destroy-user', [UserController::class, 'destroy']);
+Route::post('/restore-user', [UserController::class, 'restore']);
 ///////////////////////////////////////////////////////
