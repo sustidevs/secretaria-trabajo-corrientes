@@ -7,6 +7,7 @@ use Illuminate\Foundation\Application;
 use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\TramiteController;
 use App\Http\Controllers\DelegacionController;
+use App\Http\Controllers\FormularioController;
 
 
  //         NO REGISTRADO - PAGINA PUBLICA          ///Seleccione un Tipo de Trámite
@@ -39,6 +40,10 @@ Route::get('/test2', [prueba::class,'test2']);
 Route::get('/index-tramites', [TramiteController::class, 'index']);
 Route::post('/show-tramites', [TramiteController::class, 'show']);
 ///////////////////////////////////////////////////////
+
+//FORMULARIO/////////////////////////////////////////////////////////////////////////
+Route::get('/formulario-create', [FormularioController::class, 'create']);
+////////////////////////////////////////////////////////////////////////////////////
 
 ///////PERSONAS////////////////////////////////////////
 Route::get('/index-personas', [PersonaController::class, 'index']);
