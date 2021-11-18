@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use App\Models\Feriado;
-use App\Models\Oficina;
 use App\Models\TipoTramite;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
@@ -97,7 +96,7 @@ class Oficina extends Model
                                 ->where('estado',0);                        
          $arrayTurnos = Collect();
          foreach ($turnos as $turno) {
-             $motivo = TipoTramite::findOrFail($turno->motivo)->descripcion;
+             $motivo = TiposTramite::findOrFail($turno->motivo)->descripcion;
              $arrayTurnos->push(['id' => $turno->id,
                                  'hora' => $turno->darFormatoHora(),
                                  'solicitante_id' => $turno->solicitante_id,
@@ -125,7 +124,7 @@ class Oficina extends Model
             $fecha = date("d/m/Y", strtotime($turno->fecha));
             $fecha = $fecha.' - '.$turno->darFormatoHora();
             if ($turno->motivo != null){
-                $motivo = TipoTramite::findOrFail($turno->motivo)->descripcion;
+                $motivo = TiposTramite::findOrFail($turno->motivo)->descripcion;
             }
             else {
                 $motivo = null;
