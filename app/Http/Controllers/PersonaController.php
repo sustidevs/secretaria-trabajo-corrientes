@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Persona;
+use App\Models\Localidad;
 use Illuminate\Http\Request;
 
 class PersonaController extends Controller
@@ -39,8 +40,83 @@ class PersonaController extends Controller
 
     public function edit(Request $request)
     {
-        $solicitante = Persona::findOrFail($request->id)->where('tipo', 7)->get();
-        return response()->json($solicitante, 200);
+        $persona = Persona::findOrFail($request->id);
+        $localidades= Localidad::all()->except(['27']);//Excepto Todas
+        return response()->json([$persona, $localidades], 200);
+        /*return Inertia::render('Vista',
+                                ['dataPersona' => $persona,
+                                 'dataLocalidades' => $localidades,]);*/
+    
     }
     
+    /**
+    * Abogados Internos
+    *
+    */
+    public function indexAbogadosInternos()
+    {
+        $abogados_internos = Persona::abogadoInternos();
+        return response()->json($abogados_internos, 200);
+    }
+
+    /**
+    * Store para Abogados Internos
+    *
+    */
+    public function storeAbogado(Request $request)
+    {
+        $persona = new Persona;
+        $persona->dni = $request->dni;
+        $persona->nombre = $request->nombre;
+        $persona->apellido = $request->apellido;
+        $persona->telefono = $request->telefono;
+        $persona->correo = $request->correo;
+        $persona->domicilio = $request->domicilio;
+        $persona->localidad_id = $request->localidad_id;
+        $persona->tipo = 9; //Abogado Interno
+
+        if ($persona->save())
+        {
+            return response()->json([$persona->datosPersona()], 200);
+            /*return Inertia::render('Vista',
+                                 'dataPersona' => $persona,]);*/
+        }
+       
+    }
+    /**
+    * Update para Abogados Internos
+    *
+    */
+    public function updateAbogado(Request $request)
+    {
+        $personaUpdate = Persona::findOrFail($request ->id);
+        $personaUpdate->dni = $request->dni;
+        $personaUpdate->nombre = $request->nombre;
+        $personaUpdate->apellido = $request->apellido;
+        $personaUpdate->telefono = $request->telefono;
+        $personaUpdate->domicilio = $request->domicilio;
+        $personaUpdate->correo = $request->correo;
+        $personaUpdate->localidad_id = $request->localidad_id;
+        $personaUpdate->tipo = 9;//Abogado Interno
+        
+        if ($personaUpdate->save())
+        {
+            return response()->json([$personaUpdate->datosPersona()], 200);
+            /*return Inertia::render('Vista',
+                                 'dataPersona' => $personaUpdate,]);*/
+        }
+       
+    }
+
+    /**
+    * Abogados Internos
+    *
+    */
+    public function createAbogado()
+    {
+        $localidades= Localidad::all()->except(['27']);//Excepto Todas
+        return response()->json([$localidades], 200);
+        /*return Inertia::render('Vista',
+                                 'dataLocalidades' => $localidades,]);*/
+    }
 }

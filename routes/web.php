@@ -47,10 +47,15 @@ Route::get('/index-delegados', [PersonaController::class, 'indexDelegados']);
 Route::get('/index-abogados', [PersonaController::class, 'indexAbogados']);
 Route::get('/index-solicitante', [PersonaController::class, 'indexSolicitantes']);
 Route::get('/index-admins', [PersonaController::class, 'indexAdminAreas']);
-Route::post('/edit-personas', [PersonaController::class, 'edit']);
+Route::get('/create-abogado', [PersonaController::class, 'createAbogado']);
+Route::get('/abogados-internos', [PersonaController::class, 'indexAbogadosInternos']);
+Route::post('/edit-persona', [PersonaController::class, 'edit']);
+Route::post('/update-abogado', [PersonaController::class, 'updateAbogado']);
+Route::post('/store-abogado', [PersonaController::class, 'storeAbogado']);
 ///////////////////////////////////////////////////////
 
 ///////USERS////////////////////////////////////////
 Route::get('/index-users', [UserController::class, 'index']);
 Route::post('/create-user', [UserController::class, 'create']);
+
 ///////////////////////////////////////////////////////
