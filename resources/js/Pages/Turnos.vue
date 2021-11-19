@@ -57,10 +57,9 @@
 import NavbarRegistrado from "../Layouts/Componentes/NavbarRegistrado";
 import LayoutRegistrado from "../Layouts/LayoutRegistrado";
 import TablaTurnos from "../Componentes/TablaTurnos";
-import BotonTramitesArea from "../Componentes/BotonTramitesArea";
 import TablaTurnosAsesoramiento from "../Componentes/TablaTurnosAsesoramiento";
 
 export default {
-    components: {NavbarRegistrado,LayoutRegistrado,TablaTurnos,BotonTramitesArea,TablaTurnosAsesoramiento}
+    components: {NavbarRegistrado,LayoutRegistrado,TablaTurnos,TablaTurnosAsesoramiento}
 }
 </script>
