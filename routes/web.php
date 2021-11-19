@@ -4,6 +4,7 @@ use Inertia\Inertia;
 use App\Http\Controllers\prueba;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\TramiteController;
 use App\Http\Controllers\DelegacionController;
@@ -57,4 +58,14 @@ Route::get('/abogados-internos', [PersonaController::class, 'indexAbogadosIntern
 Route::post('/edit-persona', [PersonaController::class, 'edit']);
 Route::post('/update-abogado', [PersonaController::class, 'updateAbogado']);
 Route::post('/store-abogado', [PersonaController::class, 'storeAbogado']);
+///////////////////////////////////////////////////////
+
+///////USERS////////////////////////////////////////
+Route::get('/index-users', [UserController::class, 'index']);
+Route::get('/create-user', [UserController::class, 'create']);
+Route::post('/store-user', [UserController::class, 'store']);
+Route::post('/edit-user', [UserController::class, 'edit']);
+Route::post('/update-user', [UserController::class, 'update']);
+Route::post('/destroy-user', [UserController::class, 'destroy']);
+Route::post('/restore-user', [UserController::class, 'restore']);
 ///////////////////////////////////////////////////////

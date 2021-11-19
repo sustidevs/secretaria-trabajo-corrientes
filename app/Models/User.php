@@ -8,6 +8,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -18,6 +19,7 @@ class User extends Authenticatable
     use HasFactory;
     use HasProfilePhoto;
     use Notifiable;
+    use SoftDeletes;
     use TwoFactorAuthenticatable;
     use HasRoles;
 
@@ -87,6 +89,22 @@ class User extends Authenticatable
     }
 
     /**
+    * Obtiene un array con todos los tipos de usuarios
+    * 
+    */
+    public static function tiposUsuario()
+    {
+        $arrayTipoUsers = Collect();
+        $arrayTipoUsers->push(['id' => 1, 'descripcion' => "Coordinadidor General"]);
+        $arrayTipoUsers->push(['id' => 2, 'descripcion' => "Auditor"]);
+        $arrayTipoUsers->push(['id' => 3, 'descripcion' => "Coordinador"]);
+        $arrayTipoUsers->push(['id' => 4, 'descripcion' => "Delegado"]);
+        $arrayTipoUsers->push(['id' => 5, 'descripcion' => "Administrador de Área"]);
+        $arrayTipoUsers->push(['id' => 8, 'descripcion' => "Empleado"]); 
+        return $arrayTipoUsers;
+    }
+
+    /**
     * Obtiene los tramites a los que tiene permiso de acceso el usuario
     * 
     */
@@ -98,5 +116,38 @@ class User extends Authenticatable
             $arrayTramites->push(['id' => $tramite->id, 'name' => $tramite->name]);
         }
         return $arrayTramites;
+    }
+
+    /**
+    * Retorna un array con los datos de todos los usuarios
+    * 
+    */
+    public static function index()
+    {
+        $users = User::withTrashed()->get();
+        $arrayUsers = Collect(); 
+        foreach ($users as $user) {
+            if ($user->cuil != null){
+                $cuil = $user->cuil;
+            }
+            else {
+                $cuil = 'Sin Cuil';
+            }
+            $arrayUsers->push(['user_id' => $user->id, 
+                               'persona_id' => $user->persona_id,
+                               'oficina_id' => $user->oficina_id,
+                               'oficina' => $user->oficina->tiposTramite->descripcion,
+                               'delegacion' => $user->oficina->delegacion->localidadNombre(),
+                               'cuil' => $cuil,
+                               'email' => $user->email,
+                               'dni' => $user->persona->dni,
+                               'nombre_user' => $user->persona->apellidoyNombre(), 
+                               'telefono' => $user->persona->telefono, 
+                               'domicilio' => $user->persona->domicilio, 
+                               'localidad_id' => $user->persona->localidad_id, 
+                               'localidad' => $user->persona->localidad->nombre, //TODO Falta tipo de usuario
+                            ]);
+        }
+        return $arrayUsers;
     }
 }
