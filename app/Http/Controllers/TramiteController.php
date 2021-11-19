@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\TiposTramite;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class TramiteController extends Controller
 {
@@ -50,10 +51,8 @@ class TramiteController extends Controller
         $requisitos = $tipoTramite->listadoRequisitos();
         $tramite = collect(['id'    => $tipoTramite->id,
                             'nombre'=> $tipoTramite->descripcion]);
-        return response()->json($tramite, 200);
-        /*
-        return Inertia::render('RequisitosTramites/RequisitosReclamo', ['dataRequisitos' => $requisitos,
-                                                                        'tramite'        => $tramite]);*/
+        return Inertia::render('Requisitos', ['dataRequisitos' => $requisitos,
+                                                                        'tramite'        => $tramite]);
     }
 
     public function edit($id)
