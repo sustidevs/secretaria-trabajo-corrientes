@@ -19,6 +19,6 @@ export default {
 
 <style>
 .siz{
-    font-size: 40px !important;
+    font-size: 50px !important;
 }
 </style>

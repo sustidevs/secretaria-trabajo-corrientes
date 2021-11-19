@@ -1,30 +1,32 @@
 <template>
     <v-row>
         <v-col cols="12" xl="4" lg="4" md="6" sm="12" xs="12">
-            <card title="Ratificación" img="./images/cardTramites/ratificacion.svg" textoBoton="ver requisitos"></card>
+            <boton-tramites title="Ratificación" img="./images/cardTramites/ratificacion.svg" link="ratificacion"/>
+        </v-col>
+
+        <v-col cols="12" xl="4" lg="4" md="6" sm="12" xs="12">
+             <boton-tramites title="Consignación" img="./images/cardTramites/consignacion.svg" link="ratificacion"/>
         </v-col>
         <v-col cols="12" xl="4" lg="4" md="6" sm="12" xs="12">
-            <card title="Consignación" img="./images/cardTramites/consignacion.svg" textoBoton="ver requisitos"></card>
+            <boton-tramites title="Rúbrica" img="./images/cardTramites/rubrica.svg" link="ratificacion"/>
         </v-col>
         <v-col cols="12" xl="4" lg="4" md="6" sm="12" xs="12">
-            <card title="Rúbrica" img="./images/cardTramites/rubrica.svg" textoBoton="ver requisitos"></card>
+            <boton-tramites title="Mesa de Entradas"  img="./images/cardTramites/mesaEntrada.svg" link="ratificacion"/>
         </v-col>
         <v-col cols="12" xl="4" lg="4" md="6" sm="12" xs="12">
-            <card title="Mesa de Entradas" img="./images/cardTramites/mesaEntrada.svg" textoBoton="ver requisitos"></card>
+            <boton-tramites title="Formulación de Reclamos" img="./images/cardTramites/formulacionReclamos.svg" link="ratificacion"/>
         </v-col>
         <v-col cols="12" xl="4" lg="4" md="6" sm="12" xs="12">
-            <card title="Formulación de Reclamos" img="./images/cardTramites/formulacionReclamos.svg" textoBoton="ver requisitos"></card>
-        </v-col>
-        <v-col cols="12" xl="4" lg="4" md="6" sm="12" xs="12">
-            <card title="Asesoramiento Jurídico Gratuito" img="./images/cardTramites/asesoramiento.svg" textoBoton="ver requisitos"></card>
+            <boton-tramites title="Asesoramiento Jurídico Gratuito" img="./images/cardTramites/asesoramiento.svg" link="ratificacion"/>
         </v-col>
     </v-row>
 </template>
 
 <script>
 import Card from "../Componentes/Card";
+import BotonTramites from "../Componentes/BotonTramites.vue"
 export default {
     name: "CardTramites",
-    components: {Card}
+    components: {Card, BotonTramites}
 }
 </script>
