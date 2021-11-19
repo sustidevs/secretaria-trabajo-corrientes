@@ -1,6 +1,6 @@
 <template>
  <v-hover v-slot="{ hover }" >
-    <a href="link">
+    <a :href="link">
             <v-card :color="hover ? 'light-green darken-1' : 'grey lighten-4'" :class="hover ? 'white--text' : 'grey--text text--darken-3'" class="pa-4" rounded="xl">
               
                 <v-row justify="center" align="center">
@@ -25,7 +25,6 @@ export default {
         img: String,
         link:String,
         textoBoton: String,
-        link:String,
     },
 }
 </script>

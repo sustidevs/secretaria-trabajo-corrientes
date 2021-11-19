@@ -2,19 +2,20 @@
     <layout-no-registrado>
         <div>
             <div class="MyriadPro-Cond sizText text-justify green--text text--darken-4"> TRÁMITE </div>
-            <titulo-tramite texto="Formulación de Reclamos"/>
+            <titulo-tramite :texto="this.tramite.nombre"/>
             <descripcion class="mb-7" texto="Los requisitos deberán ser presentados de manera presencial el día y la hora en que se le asignará el turno."/>
             <card-como-solicitar-turno/>
             <v-divider/>
             <v-row class="pt-10 pb-16">
                 <v-col cols="12" xl="8" lg="8" md="12" sm="12" xs="12">
-                    <card-documentacion-obligatoria/>
+                    <card-documentacion-obligatoria :datos="this.dataRequisitos" />
                 </v-col>
                 <v-col cols="12" xl="4" lg="4" md="12" sm="12" xs="12">
                     <card-verde titulo="Atención al público" texto1="Días:" descripcion1="Lunes, martes, miércoles y jueves." texto2="Horarios:" descripcion2="08:00h, 09:00h, 10:00h, 11:00h, 12:00h."/>
                     <card-verde titulo="Delegaciones" texto1="Sede Central:" descripcion1="San Juan 1317, Corrientes Capital."/>
                 </v-col>
             </v-row>
+            
             <!-- CHECKBOX
             <v-row class="px-3">
                 <v-col cols="12">
@@ -70,7 +71,13 @@ import CardMasInformacion from '../Componentes/Cards/CardMasInformacion.vue';
 
 export default {
     name: "Requisitos",
-    components: {LayoutNoRegistrado, Titulo, TituloTramite, Descripcion, CardComoSolicitarTurno, CardDocumentacionObligatoria, CardVerde, CardMasInformacion, }
+
+    components: {LayoutNoRegistrado, Titulo, TituloTramite, Descripcion, CardComoSolicitarTurno, CardDocumentacionObligatoria, CardVerde, CardMasInformacion },
+
+      props: {
+        dataRequisitos: Object,
+        tramite: Object,
+    },
 }
 </script>
 

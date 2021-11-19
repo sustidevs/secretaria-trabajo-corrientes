@@ -21,6 +21,15 @@ Route::inertia('/formulario', 'Formulario');
 Route::inertia('/formulario-asesoramiento-juridico', 'FormularioAJuridico');
 Route::inertia('/elegir-fecha', 'ElegirFecha');
 
+//Requisitos
+Route::get('/asesoramiento-juridico', [TramiteController::class,'show'])->defaults('id', '1');
+Route::get('/formulacion-reclamos', [TramiteController::class,'show'])->defaults('id', '2');
+Route::get('/mesa-entradas', [TramiteController::class,'show'])->defaults('id', '3');
+Route::get('/ratificacion', [TramiteController::class,'show'])->defaults('id', '4');
+Route::get('/consignacion-presentacion-documentacion', [TramiteController::class,'show'])->defaults('id', '5');
+Route::get('/consignacion-retiro-documentacion', [TramiteController::class,'show'])->defaults('id', '6');
+Route::get('/rubrica', [TramiteController::class,'show'])->defaults('id', '7');
+
  ///         REGISTRADO         ///
  Route::inertia('/login', 'Login');
  Route::group(['middleware' => 'auth'], function(){
