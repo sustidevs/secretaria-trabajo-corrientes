@@ -30,6 +30,9 @@ Route::get('/consignacion-presentacion-documentacion', [TramiteController::class
 Route::get('/consignacion-retiro-documentacion', [TramiteController::class,'show'])->defaults('id', '6');
 Route::get('/rubrica', [TramiteController::class,'show'])->defaults('id', '7');
 
+//PDF
+Route::get('/descargar-pdf/{id}', [TramiteController::class, 'requisitos'])->where('id', '[1-7]');
+
  ///         REGISTRADO         ///
  Route::inertia('/login', 'Login');
  Route::group(['middleware' => 'auth'], function(){

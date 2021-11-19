@@ -15,43 +15,7 @@
                     <card-verde titulo="Delegaciones" texto1="Sede Central:" descripcion1="San Juan 1317, Corrientes Capital."/>
                 </v-col>
             </v-row>
-            
-            <!-- CHECKBOX
-            <v-row class="px-3">
-                <v-col cols="12">
-                    <a :href="'/verRequisitos/' + this.tramite.id" target="_blank">
-                        <v-btn outlined color="success" justify="center">
-                            <v-flex align="center">
-                                <v-icon color="success" class="pr-2">mdi-file-download-outline</v-icon>
-                                <div class="MyriadPro-LightCond green--text font-bold text-xl">
-                                    DESCARGAR LA DOCUMENTACIÓN OBLIGATORIA
-                                </div>
-                            </v-flex>
-                        </v-btn>
-                    </a>
-                </v-col>
-                <v-col cols="12">
-                    <div class="pb-5">
-                        <v-form ref="form" v-model="valid" lazy-validation>
-                            <v-checkbox v-model="checkbox" :rules="[v => !!v || 'Debes seleccionar para continuar.']"
-                                        label="He leído y me he notificado de la documentación necesaria para dicho trámite."
-                                        required color="light-green darken-1"/>
-                            <v-btn :disabled="!checkbox" color="light-green darken-1" @click="validate"
-                                    v-show="this.tramite.id >1">
-                                <inertia-link :href="'/solicitar-turnos'" >
-                                    <a class="white--text MyriadPro-Cond text-xl" >Solicitá tu turno</a>
-                                </inertia-link>
-                            </v-btn>
-                            <v-btn :disabled="!checkbox" color="light-green darken-1" @click="validate"
-                                    v-show="this.tramite.id===1">
-                                <inertia-link :href="'/solicitar-turnos'" >
-                                    <a class="white--text MyriadPro-Cond text-xl" >Solicitá tu turno</a>
-                                </inertia-link>
-                            </v-btn>
-                        </v-form>
-                    </div>
-                </v-col>
-            </v-row>  -->
+            <checkbox/>
             <v-divider class="my-2"/>
             <card-mas-informacion/>
         </div>
@@ -67,12 +31,13 @@ import CardComoSolicitarTurno from '../Componentes/Cards/CardComoSolicitarTurno.
 import CardDocumentacionObligatoria from '../Componentes/Cards/CardDocumentacionObligatoria.vue';
 import CardVerde from '../Componentes/Cards/CardVerde.vue';
 import CardMasInformacion from '../Componentes/Cards/CardMasInformacion.vue';
+import Checkbox from "../Componentes/Checkbox.vue"
 
 
 export default {
     name: "Requisitos",
 
-    components: {LayoutNoRegistrado, Titulo, TituloTramite, Descripcion, CardComoSolicitarTurno, CardDocumentacionObligatoria, CardVerde, CardMasInformacion },
+    components: {Checkbox,LayoutNoRegistrado, Titulo, TituloTramite, Descripcion, CardComoSolicitarTurno, CardDocumentacionObligatoria, CardVerde, CardMasInformacion },
 
       props: {
         dataRequisitos: Object,
