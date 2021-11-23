@@ -16,13 +16,27 @@ use PDF;
 
 class FormularioController extends Controller
 {
-    public function create()
+    public function createForm()
     {
         $delegaciones= Delegacion::localidadesDireccion();
         $localidades = Localidad::All()->except(['26']);
         $tiposTramites = TiposTramite::All()->except(['1']);
 
-        return Inertia::render('FormularioTurno/Formulario',
+        return Inertia::render('Formulario',
+        [
+            'dataDelegaciones'  => $delegaciones,
+            'dataLocalidades'   => $localidades,
+            'dataTramites'      => $tiposTramites
+        ]);
+    }
+
+    public function createFormA()
+    {
+        $delegaciones= Delegacion::localidadesDireccion();
+        $localidades = Localidad::All()->except(['26']);
+        $tiposTramites = TiposTramite::All()->except(['1']);
+
+        return Inertia::render('FormularioAJuridico',
         [
             'dataDelegaciones'  => $delegaciones,
             'dataLocalidades'   => $localidades,

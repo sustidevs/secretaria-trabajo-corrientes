@@ -19,9 +19,18 @@
                                         label="He leído y me he notificado de la documentación necesaria para dicho trámite."
                                         required color="light-green darken-1"/>
                             <v-btn :disabled="!checkbox" color="light-green darken-1" @click="validate">
-                                <inertia-link :href="'/formulario'" >
+                                <div v-if="this.tramite_id === 1">
+                                   <inertia-link :href="'/solicitar-asesoramiento'" >
                                     <a class="white--text MyriadPro-Cond text-xl" >Solicitá tu turno</a>
-                                </inertia-link>
+                                    </inertia-link>
+                                </div>
+
+                                <div v-if="this.tramite_id > 1">
+                                   <inertia-link :href="'/solicitar-turno'" >
+                                    <a class="white--text MyriadPro-Cond text-xl" >Solicitá tu turno</a>
+                                    </inertia-link>
+                                </div>
+
                             </v-btn>
                         </v-form>
                     </div>
@@ -32,7 +41,7 @@
 <script>
 export default {
     props: {
-        tramite_id: String,
+        tramite_id: Number,
     },
 
     data () {

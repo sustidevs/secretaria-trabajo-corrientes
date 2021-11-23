@@ -17,8 +17,8 @@ Route::inertia('/delegaciones', 'Delegaciones');
 Route::inertia('/organigrama', 'Organigrama');
 Route::inertia('/inspectores', 'Inspectores');
 Route::inertia('/requisitos', 'Requisitos');
-Route::inertia('/formulario', 'Formulario');
-Route::inertia('/formulario-asesoramiento-juridico', 'FormularioAJuridico');
+Route::get('/solicitar-turno', [FormularioController::class,'createForm']);
+Route::get('/solicitar-asesoramiento', [FormularioController::class,'createFormA']);
 Route::inertia('/elegir-fecha', 'ElegirFecha');
 
 //Requisitos
