@@ -15,7 +15,7 @@
                     <card-verde titulo="Delegaciones" texto1="Sede Central:" descripcion1="San Juan 1317, Corrientes Capital."/>
                 </v-col>
             </v-row>
-            <checkbox/>
+            <checkbox :tramite_id="this.tramite.id"/>
             <v-divider class="my-2"/>
             <card-mas-informacion/>
         </div>
