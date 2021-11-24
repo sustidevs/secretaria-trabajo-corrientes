@@ -9,7 +9,7 @@ use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\TramiteController;
 use App\Http\Controllers\DelegacionController;
 use App\Http\Controllers\FormularioController;
-
+use App\Http\Controllers\LogoutController;
 
  //         NO REGISTRADO - PAGINA PUBLICA          ///Seleccione un Tipo de Trámite
 Route::inertia('/', 'Inicio');
@@ -23,8 +23,7 @@ Route::get('/solicitar-asesoramiento', [FormularioController::class,'createFormA
 Route::post('/solicitar-turno', [FormularioController::class,'storeTurnos']);
 Route::post('/guardar-turno', [FormularioController::class,'storeTurnos']);
 
-Route::inertia('/elegir-fecha', 'ElegirFecha');
-
+Route::post('/cerrar-sesion', [LogoutController::class, 'logout'])->name('cerrar-sesion');
 
 //Requisitos
 Route::get('/asesoramiento-juridico', [TramiteController::class,'show'])->defaults('id', '1');
@@ -39,7 +38,8 @@ Route::get('/rubrica', [TramiteController::class,'show'])->defaults('id', '7');
 Route::get('/descargar-pdf/{id}', [TramiteController::class, 'requisitos'])->where('id', '[1-7]');
 
  ///         REGISTRADO         ///
- Route::inertia('/login', 'Login');
+ Route::inertia('/ingresar', 'Login')->name('ingresar');
+
  Route::group(['middleware' => 'auth'], function(){
     Route::inertia('/turnos', 'Turnos');
  });
