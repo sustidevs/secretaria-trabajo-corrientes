@@ -149,27 +149,71 @@
                             </v-col>
                             <v-col cols="12" sm="12" lg="6">
                                 <label-input texto="Delegación"/>
-                                <autocomplete-field v-model="form.delegacion_id" nombre="nombre" :data="this.dataDelegaciones" icon="mdi-map-marker"/>
+                                <autocomplete-field  v-model="form.delegacion_id" nombre="nombre" :data="this.dataDelegaciones" icon="mdi-map-marker"/>
                             </v-col>
+
+
                         </v-row>
 
-                        <v-row justify="center" class="py-7">
-                            <v-col cols="3">
+<v-row justify="center">
+                 <inertia-link href="/solicitar-turno" :data="{ tramite:form.tipos_tramite_id }" preserve-state>
+                              <v-btn  color="light-green darken-1" elevation="0" dark block height="55">
+                                        <div class="MyriadPro-Cond text-xl">Buscar fecha y hora disponibles</div>
+                                    </v-btn>
+                          </inertia-link>
+</v-row>
+             
+                
+
+                <div v-if="buscoFecha">
+                    <v-row>
+                        <v-col cols="12" sm="12" lg="6">
+                        <label-input class="pb-2" texto="Seleccione una fecha"/>
+                             <select class="rounded bg-gray-100 w-full focus:ring-2 focus:ring-black"
+                                            label="Localidad"  v-model="form.fecha">
+                                        <option v-for="(horarios, fecha) in dataFechas" :key="fecha" >
+                                            {{fecha}}
+                                        </option>
+                                    </select>
+                    </v-col>
+                    
+                      <v-col cols="12" sm="12" lg="6">
+                        <label-input class="pb-2" texto="Seleccione un horario"/>
+                        <select class="rounded bg-gray-100 w-full focus:ring-2 focus:ring-black"
+                                            label="Localidad" v-model="form.hora">
+                                        <option v-for="i in getHorario(dataFechas,form.fecha)" :key="i"
+                                               >
+                                            {{ i }}
+                                        </option>
+                                    </select>
+                    </v-col>
+                    </v-row>
+
+                                            <v-row justify="center" class="py-7">
+                            
+                            <!--<v-col cols="3">
                                 <v-btn elevation="0" @click="e1 = 2" block height="55">
                                     <div class="MyriadPro-Cond text-xl">Volver</div>
                                 </v-btn>
-                            </v-col>
+                            </v-col>-->
                             <v-col cols="3">
                                     <v-btn type="submit" color="light-green darken-1" elevation="0" dark block height="55">
-                                        <div class="MyriadPro-Cond text-xl">Elegir fecha del turno</div>
+                                        <div class="MyriadPro-Cond text-xl">Confirmar Turno</div>
                                     </v-btn>
                             </v-col>
                         </v-row>
+
+                </div>
+
                     </v-stepper-content>
                 </v-stepper-items>
                 
             </v-stepper>
                         </form>
+
+                                    <modal-turno :dataTurno="this.dataTurno"
+                         :dialog="dialog" @cerrar="show = false"/>
+
 
         </v-container>
     </LayoutNoRegistrado>
@@ -182,11 +226,12 @@ import Descripcion from '../Componentes/Descripcion';
 import TextField from '../Componentes/TextField';
 import LabelInput from '../Componentes/LabelInput.vue';
 import AutocompleteField from '../Componentes/AutocompleteField.vue';
+import ModalTurno from '../Componentes/Modals/ModalTurno';
 import { Inertia } from '@inertiajs/inertia'
 
 export default {
     name: 'Formulario',
-    components: { LayoutNoRegistrado, TituloTramite, Descripcion, TextField, LabelInput, AutocompleteField},
+    components: { ModalTurno, LayoutNoRegistrado, TituloTramite, Descripcion, TextField, LabelInput, AutocompleteField},
 
     props: {
         errors: Object,
@@ -195,11 +240,14 @@ export default {
         dataTramites: Array,
         tramiteAsesoramiento: Boolean,
         verifica_turno: Boolean,
-        dataTurno: Array,
+        dataTurno: Object,
+        dataFechas: Object,
+        buscoFecha: Boolean,
     },
 
     data () {
         return {
+        dialog:false,
         e1: 1,
         form: this.$inertia.form ({
                 //Reclamante
@@ -220,14 +268,19 @@ export default {
                 correop: null,
                 posee_abogado: true,
                 //Turno
-                delegacion_id: null,
+                delegacion_id: 3,
                 tipos_tramite_id: null,
+                fecha:null,
+                hora:null,
             }),
         }
     },
 
     methods: {
-        
+         getHorario (items, fecha) {
+            return items [fecha]
+        },
+
         submit() {
             this.loader = 'loading';
             Inertia.post('/solicitar-turno', this.form, {

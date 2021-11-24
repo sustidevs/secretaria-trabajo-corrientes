@@ -20,8 +20,9 @@ Route::inertia('/requisitos', 'Requisitos');
 
 Route::get('/solicitar-turno', [FormularioController::class,'createForm']);
 Route::get('/solicitar-asesoramiento', [FormularioController::class,'createFormA']);
-Route::post('/solicitar-turno', [FormularioController::class,'storeDatos']);
+Route::post('/solicitar-turno', [FormularioController::class,'storeTurnos']);
 Route::post('/guardar-turno', [FormularioController::class,'storeTurnos']);
+
 Route::inertia('/elegir-fecha', 'ElegirFecha');
 
 
