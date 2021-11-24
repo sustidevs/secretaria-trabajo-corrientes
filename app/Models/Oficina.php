@@ -15,7 +15,7 @@ class Oficina extends Model
 
     public function delegacion()
     {
-        return $this->belongsTo(Delegacion::class);
+        return $this->belongsTo(Delegacion::class, 'id');
     }
     
     public function tiposTramite()
@@ -48,7 +48,7 @@ class Oficina extends Model
 
     public function diasAtencion()
     {
-        return $this->belongsToMany(Dia::class,'horario_atenciones', 'oficina_id', 'dia_id');
+        return $this->belongsToMany(Dia::class,'horarios_atencion', 'oficina_id', 'dia_id');
     }
 
     /**
@@ -58,7 +58,7 @@ class Oficina extends Model
     public function scopeGetOficina($query, $delegacion_id, $tipoTramite_id)
     {
         return $query->where('delegacion_id',$delegacion_id)
-                     ->where('tipo_tramite_id',$tipoTramite_id)
+                     ->where('tipos_tramite_id',$tipoTramite_id)
                      ->first();
     }
 
@@ -215,7 +215,7 @@ class Oficina extends Model
     public function fechasDisponibles()
     {
         //Si el tipo de tramite es igual a 2 (Formulacion de Reclamos), el turno se fija a partir de los 14 dias.
-        if ($this->tipoTramite->id == 2) {
+        if ($this->tiposTramite->id == 2) {
             $fecha = new Carbon('now');
             $fecha = $fecha->addDay(14); 
         } else {
