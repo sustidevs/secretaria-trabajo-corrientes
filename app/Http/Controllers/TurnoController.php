@@ -8,6 +8,8 @@ use Inertia\Inertia;
 use App\Models\Oficina;
 use App\Models\Persona;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 //use App\Jobs\EnviaMailCancelacionTurno;
 
 class TurnoController extends Controller
@@ -28,7 +30,6 @@ class TurnoController extends Controller
             $oficina = Oficina::findOrFail($oficina_id);
             $turnos = $oficina->turnosHoy();
         }
-
         $tipo_tramite_id = $oficina->tipo_tramite_id;
         if ($request->tipo_tramite_id != null) {
             $turnos = Turno::get_turnos_by_tramite($request->tipo_tramite_id);
@@ -37,7 +38,7 @@ class TurnoController extends Controller
         $abogadosInternos = Persona::abogadosInternos();
         $hoy = Carbon::now();
         $fecha = Carbon::createFromFormat('Y-m-d', $hoy->toDateString())->format('d/m/Y');
-        return Inertia::render('TurnosRegistrado/TurnosR', ['dataAbogados'  => $abogadosInternos,
+        return Inertia::render('Turnos', ['dataAbogados'  => $abogadosInternos,
                                                             'dataTurnos'    => $turnos,
                                                             'dataFecha'     => $fecha, 
                                                             'dataTramites'  => $tramites, 

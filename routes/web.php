@@ -10,6 +10,7 @@ use App\Http\Controllers\TramiteController;
 use App\Http\Controllers\DelegacionController;
 use App\Http\Controllers\FormularioController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\TurnoController;
 
  //         NO REGISTRADO - PAGINA PUBLICA          ///Seleccione un Tipo de Trámite
 Route::inertia('/', 'Inicio');
@@ -41,7 +42,7 @@ Route::get('/descargar-pdf/{id}', [TramiteController::class, 'requisitos'])->whe
  Route::inertia('/ingresar', 'Login')->name('ingresar');
 
  Route::group(['middleware' => 'auth'], function(){
-    Route::inertia('/turnos', 'Turnos');
+   Route::resource('turnos', TurnoController::class)->middleware('auth');
  });
 
  //DELEGACIONES/////////////////////////////////////////////////////////////

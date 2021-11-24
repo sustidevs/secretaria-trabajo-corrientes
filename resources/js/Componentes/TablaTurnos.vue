@@ -15,20 +15,12 @@
 
 <script>
 export default {
+
+    props: {
+        headers: Array
+    },
+
     data: () => ({
-        headers: [
-            {
-                text: 'Dessert (100g serving)',
-                align: 'start',
-                sortable: false,
-                value: 'name',
-            },
-            { text: 'Calories', value: 'calories' },
-            { text: 'Fat (g)', value: 'fat' },
-            { text: 'Carbs (g)', value: 'carbs' },
-            { text: 'Protein (g)', value: 'protein' },
-            { text: 'Actions', value: 'actions', sortable: false },
-        ],
         desserts: [],
     }),
 
