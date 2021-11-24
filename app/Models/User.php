@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Models\Permission;
 
 class User extends Authenticatable
 {
@@ -104,7 +105,7 @@ class User extends Authenticatable
         return $arrayTipoUsers;
     }
 
-    /**
+/**
     * Obtiene los tramites a los que tiene permiso de acceso el usuario
     * 
     */
@@ -112,6 +113,11 @@ class User extends Authenticatable
     {
         $tramites = Auth::User()->getAllPermissions(); //TODO 
         $arrayTramites = Collect(); 
+
+        if ($tramites->count() == 1 && $tramites->first()->name == "todos" ){
+            $tramites = Permission::all()->except(['8']);//Excepto Todos;
+        }
+
         foreach ($tramites as $tramite) {
             $arrayTramites->push(['id' => $tramite->id, 'name' => $tramite->name]);
         }
