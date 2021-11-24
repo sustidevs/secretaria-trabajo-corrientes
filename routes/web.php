@@ -17,9 +17,13 @@ Route::inertia('/delegaciones', 'Delegaciones');
 Route::inertia('/organigrama', 'Organigrama');
 Route::inertia('/inspectores', 'Inspectores');
 Route::inertia('/requisitos', 'Requisitos');
+
 Route::get('/solicitar-turno', [FormularioController::class,'createForm']);
 Route::get('/solicitar-asesoramiento', [FormularioController::class,'createFormA']);
+Route::post('/solicitar-turno', [FormularioController::class,'storeDatos']);
+Route::post('/guardar-turno', [FormularioController::class,'storeTurnos']);
 Route::inertia('/elegir-fecha', 'ElegirFecha');
+
 
 //Requisitos
 Route::get('/asesoramiento-juridico', [TramiteController::class,'show'])->defaults('id', '1');
