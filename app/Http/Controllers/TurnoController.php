@@ -24,7 +24,7 @@ class TurnoController extends Controller
         }
         else 
         {
-            $oficina_id = Oficina::getOficina(Auth::User()->oficina->delegacion_id, $tramites->first()['id'])->id;
+            $oficina_id = Oficina::getOficina(3, $tramites->first()['id'])->id; //Auth::User()->oficina->delegacion_id
             $oficina = Oficina::findOrFail($oficina_id);
             $turnos = $oficina->turnosHoy();
         }
@@ -55,7 +55,7 @@ class TurnoController extends Controller
         } 
         else
         {
-            $oficina_id = Oficina::getOficina(Auth::User()->oficina->delegacion_id, $tramites->first()['id'])->id;
+            $oficina_id = Oficina::getOficina(3, $tramites->first()['id'])->id; //Auth::User()->oficina->delegacion_id
             $oficina = Oficina::findOrFail($oficina_id);
         }
 		$turnos = Collect([]);
@@ -63,9 +63,9 @@ class TurnoController extends Controller
         $tipo_tramite_id = $oficina->tipo_tramite_id;
         if ($request->tipo_tramite_id != null) 
         {
-            $delegacion_id = Auth::User()->oficina->delegacion_id;
+            $delegacion_id = '3';//Auth::User()->oficina->delegacion_id;
             $tipo_tramite_id = $request->tipo_tramite_id;
-            $oficina = Oficina::getOficina($delegacion_id, $tipo_tramite_id);           
+            $oficina = Oficina::getOficina($delegacion_id, $tipo_tramite_id);
             $turnos = $oficina->turnos_by_date($request->fecha, $request->fecha2);
             return Inertia::render('TurnosRegistrado/HistorialTurnos', ['dataAbogados'  => $abogadosInternos,
                                                                         'dataTurnos'    => $turnos,
@@ -84,7 +84,7 @@ class TurnoController extends Controller
     {
         $tramites = User::getPermission();
         $ayer = Carbon::yesterday()->toDateString();
-        $delegacion_id = Auth::User()->oficina->delegacion_id;
+        $delegacion_id = '3'; //Auth::User()->oficina->delegacion_id;
         $oficina = Oficina::getOficina($delegacion_id, $request->tipo_tramite_id);
         $turnos = $oficina->turnos_by_date($request->fecha, $request->fecha2);
         $abogadosInternos = Persona::abogadosInternos();
@@ -255,7 +255,7 @@ class TurnoController extends Controller
     {
         // $request = new Request;
         // $request->tipo_tramite_id = 1;
-        $delegacion_id = Auth::User()->oficina->delegacion_id;
+        $delegacion_id = '3'; //Auth::User()->oficina->delegacion_id;
         $getOficina = Oficina::getOficina($delegacion_id, $request->tipo_tramite_id);
         Turno::turnos_cancelados($getOficina->id);
         return 'vista que corresponda';
