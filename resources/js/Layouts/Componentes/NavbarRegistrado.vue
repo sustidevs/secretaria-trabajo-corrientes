@@ -30,9 +30,10 @@
                     <v-card-actions>
                         <v-spacer></v-spacer>
                          <form method="POST" @submit.prevent="logout">
-                             <v-btn class="MyriadProBlackCond" block text @click="menu = false">
-                            Salir <v-icon class="pl-5">mdi-export</v-icon>
-                            </v-btn>
+                             <button type="submit" align="center">
+                    <a class="MyriadPro-LightCond text-2xl white--text">Cerrar sesión</a>
+                    <v-icon class="pl-2" align="center">mdi-logout</v-icon>
+                </button>
                          </form>
                         
                     </v-card-actions>
