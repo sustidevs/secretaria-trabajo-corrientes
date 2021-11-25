@@ -35,7 +35,7 @@ return [
     
     'pdf' => [
         'enabled' => true,
-        'binary' => '"C:\wkhtmltopdf\bin\wkhtmltopdf"',
+        'binary' => env('PDF_BINARY'),
         'timeout' => false,
         'options' => array(),
         'env'     => array(),

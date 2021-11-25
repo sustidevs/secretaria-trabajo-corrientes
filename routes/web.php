@@ -25,8 +25,6 @@ Route::post('/solicitar-turno', [FormularioController::class,'storeTurnos']);
 
 Route::post('/asistencia', [TurnoController::class,'cambiarEstado']);
 
-
-
 Route::post('/cerrar-sesion', [LogoutController::class, 'logout'])->name('cerrar-sesion');
 
 //Requisitos
@@ -42,7 +40,7 @@ Route::get('/rubrica', [TramiteController::class,'show'])->defaults('id', '7');
 Route::get('/descargar-pdf/{id}', [TramiteController::class, 'requisitos'])->where('id', '[1-7]');
 
  ///         REGISTRADO         ///
- Route::inertia('/ingresar', 'Login')->name('ingresar');
+ Route::inertia('/ingresar', 'Login')->name('login');
 
  Route::group(['middleware' => 'auth'], function(){
    Route::resource('turnos', TurnoController::class)->middleware('auth');
