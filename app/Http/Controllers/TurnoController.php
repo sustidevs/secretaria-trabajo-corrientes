@@ -40,7 +40,6 @@ class TurnoController extends Controller
             $turnos = Turno::get_turnos_by_tramite($request->tramite);
             $tipo_tramite_id = $request->tramite;
         } 
-
         $abogadosInternos = Persona::abogadosInternos();
         $hoy = Carbon::now();
         $fecha = Carbon::createFromFormat('Y-m-d', $hoy->toDateString())->format('d/m/Y');
@@ -114,11 +113,14 @@ class TurnoController extends Controller
         $tramites = User::getPermission();
         $hoy = Carbon::now();
         $fecha = Carbon::createFromFormat('Y-m-d', $hoy->toDateString())->format('d/m/Y');
-        return Inertia::render('Turnos', ['dataAbogados'  => $abogadosInternos,
+
+        return redirect()->action([TurnoController::class, 'index'],
+                                      ['tramite'=>$request->tipo_tramite_id]);
+        /*return Inertia::render('Turnos', ['dataAbogados'  => $abogadosInternos,
                                                             'dataTurnos'    => $turnos,
                                                             'dataFecha'     => $fecha, 
                                                             'dataTramites'  => $tramites, 
-                                                            'tipoTramite'   => $tipo_tramite_id]);
+                                                            'tipoTramite'   => $tipo_tramite_id]);*/
     }
     public function create()
     {

@@ -149,7 +149,7 @@ class Oficina extends Model
                                 'nombre_abogado' => $turno->abogado->apellidoyNombre() . ' (DNI: '.$turno->abogado->dni.')',
                                 //'dni_abogado' => $turno->abogado->dni,
                                 'estado_id' => $turno->estado,
-                                'tipo_tramite_id' => $turno->oficina->tipo_tramite_id,
+                                'tipo_tramite_id' => $turno->oficina->tipos_tramite_id,
                                 'estado_nombre' => $turno->getEstado(),
                                 'motivo' => $motivo,
                             ]);
