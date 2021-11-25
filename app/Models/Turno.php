@@ -45,7 +45,7 @@ class Turno extends Model
     {
         $turno = $this;
         $fecha = date("d/m/Y", strtotime($turno->fecha));//cambia el formato de la fecha.
-        $ubicacion = $turno->oficina->delegacion->direccion .', '.$turno->oficina->delegacion->localidad->nombre;
+        $ubicacion = 'San Juan 1317, Corrientes,Capital';
         $nombreAbogado = $turno->abogado->nombre.' '.$turno->abogado->apellido;
         $hora = new Carbon('2010-05-16 '.$turno->hora);
         $arrayTurno = collect([ 
