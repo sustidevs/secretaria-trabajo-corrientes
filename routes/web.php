@@ -22,7 +22,10 @@ Route::inertia('/requisitos', 'Requisitos');
 Route::get('/solicitar-turno', [FormularioController::class,'createForm']);
 Route::get('/solicitar-asesoramiento', [FormularioController::class,'createFormA']);
 Route::post('/solicitar-turno', [FormularioController::class,'storeTurnos']);
-Route::post('/guardar-turno', [FormularioController::class,'storeTurnos']);
+
+Route::post('/asistencia', [TurnoController::class,'cambiarEstado']);
+
+
 
 Route::post('/cerrar-sesion', [LogoutController::class, 'logout'])->name('cerrar-sesion');
 

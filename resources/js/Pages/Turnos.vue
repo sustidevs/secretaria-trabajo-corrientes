@@ -15,31 +15,32 @@
 
         <v-divider class="my-2"></v-divider>
 
-        <v-row class="my-2">
                 <div class="MyriadPro-Cond grey--text text--darken-4 text-2xl my-2">
                     Seleccione un Tipo de Trámite
                 </div>
                 
-            <div v-for="tramite in dataTramites" :key="tramite.id" :value="tramite.id">
-                                <v-btn-toggle v-model="toggle_exclusive">
-                        <v-hover v-slot="{ hover }" >
-                            <v-btn rounded width="auto" :class="hover ? 'light-green darken-3' : 'grey lighten-3'" class="pa-5 mr-4 grey--text text--darken-4">
-                                <div class="d-flex flex-column justify-center">
-                                    <div :class="hover ? 'white--text' : 'black--text'" class="MyriadPro-Cond  text-2xl">
-                                                                            {{ tramite.name }}
-
-                                    </div>
-                                </div>
-                            </v-btn>
-                        </v-hover>
-                    </v-btn-toggle>
-            </div>
-        </v-row>
+                   
+                        <v-row justify="center" align="center">
+                             <v-btn-toggle  v-for="tramite in dataTramites" :key="tramite.id" :value="tramite.id"  v-model="toggle_exclusive">
+                                                                <v-hover v-slot="{ hover }" >
+                                                                     <inertia-link href="/turnos" :data="{ tramite: tramite.id }" preserve-state>
+                                                                        <v-btn :value="tramite.id" rounded width="auto" :class="hover ? 'light-green darken-3' : 'grey lighten-3'" class="pa-5 ma-4 grey--text text--darken-4">
+                                                                        
+                                                                                <div :class="hover ? 'white--text' : 'black--text'" class="MyriadPro-Cond  text-2xl">
+                                                                                    {{ tramite.name }}
+                                                                                </div>
+                                                                        </v-btn>
+                                                                     </inertia-link>
+                                                                </v-hover>
+                             </v-btn-toggle>
+                        </v-row>
+                            
+           
 
         <v-divider class="my-5"></v-divider>
 
         <!--<tabla-turnos-asesoramiento/>-->
-        <tabla-turnos :headers="this.headers"/>
+        <tabla-turnos :turnos="this.dataTurnos" />
     </layout-registrado>
 </template>
 
@@ -62,6 +63,7 @@ export default {
 
         data () {
         return {
+            toggle_exclusive: 0,
             headers: [
                 { text: 'TURNO', align: 'start', value: 'orden_turno', class:'green darken-2 white--text'},
                 { text: 'HORA', align: 'start', value: 'hora', class:'green darken-2 white--text'},
@@ -72,30 +74,6 @@ export default {
             ],
             tipo_tramite_id: this.tipoTramite,
         }
-    },
-
-        computed: {
-        datos () {
-            return this.dataTurnos
-        }
-    },
-    methods: {
-        buscar_por_tramite (tipo_id) {
-            this.$inertia.post('/turnos', tipo_id)
-        },
-        asistio (item) {
-            item.estado = 1;
-            this.$inertia.post('/turnos', item)
-        },
-        ausente (item) {
-            item.estado = 2;
-            this.$inertia.post('/turnos', item)
-        },
-        getColor (estado_nombre) {
-            if (estado_nombre === 'Ausente') return 'ausente--text'
-            else if (estado_nombre === 'Presente') return 'presente--text'
-            else return 'pendiente--text'
-        },
     },
 
 

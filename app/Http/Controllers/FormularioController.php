@@ -128,7 +128,6 @@ class FormularioController extends Controller
         $verifica_turno = Turno::verifica_si_existe($datosPersona->id,$oficina->id);
         if ($verifica_turno->count() > 1) {
             $dataTurno = $verifica_turno->first()->datosTurno();
-           dd ($dataTurno);
             return Inertia::render('Formulario', 
             [   
                                 'oficina_id' => $oficina->id,
@@ -142,7 +141,7 @@ class FormularioController extends Controller
             ]);
         } 
         else {
-            return Inertia::render('ElegirFecha', 
+            return Inertia::render('Formulario', 
             [   
                                 'oficina_id' => $oficina->id,
                                 'delegacion' => $delegacion,
@@ -159,7 +158,6 @@ class FormularioController extends Controller
 
     public function storeTurnos(Request $request)
     {
-
         $persona = Persona::si_existe($request->dni);
         if ($persona == null ) {
             $datosPersona = new Persona();
@@ -197,6 +195,7 @@ class FormularioController extends Controller
             $datosAbogado->correo = $request->correop;
             $datosAbogado->tipo = 6;
             $datosAbogado->save();
+
             $dataAbogado =  $datosAbogado->datosPersona(); 
             $tipoTramite = $request->tipos_tramite_id;
             $delegacion= 3;
@@ -209,29 +208,28 @@ class FormularioController extends Controller
             $oficina = Oficina::getOficina($delegacion, $tipoTramite);  
         }
         
-            $fecha = Carbon::createFromFormat('d/m/Y', $request->fecha)->format('Y-m-d');
-           
-             $turno = new Turno();
-            $turno->oficina_id = $request->tipos_tramite_id;
-            $oficina = Oficina::findOrFail($turno->oficina_id);
-
-            //Si abogado_id == null, el tramite es asesoramiento juridoco ya que No posee abogado
-            if ($datosAbogado->id== null){
-                $turno->posee_abogado = false;
-                $turno->abogado_id = 3; //hace referecia a un solicitante sin abogado
-                $turno->motivo = $oficina->tipos_tramite_id;
-            }
-            else{
-                $turno->posee_abogado = true;
-                $turno->abogado_id = $datosAbogado->id;
-            }
-            $turno->user_id = 1;
-            $turno->solicitante_id = $datosPersona->id;
-            $turno->fecha = $fecha; 
-            $turno->hora = $request->hora;
-            $turno->conciliacion_positiva = true; //$request->conciliacion_positiva;
-            $turno->estado = 0;
-            $turno->save();
+        $turno = new Turno();
+        $turno->oficina_id = $oficina->id;
+        $oficina = Oficina::findOrFail($oficina->id);
+        $turno->abogado_id = 3; 
+        $turno->user_id = 1;
+        //Si abogado_id == null, el tramite es asesoramiento juridoco ya que No posee abogado
+        if ($datosAbogado->id == null){
+            $turno->posee_abogado = false;
+            $turno->abogado_id = 3; //hace referecia a un solicitante sin abogado
+            $turno->motivo = $oficina->tipo_tramite_id;
+        }
+        else{
+            $turno->posee_abogado = true;
+            $turno->abogado_id = $datosAbogado->id;
+        }
+        $fecha = Carbon::createFromFormat('d/m/Y', $request->fecha)->format('Y-m-d');
+        $turno->solicitante_id = $datosPersona->id;
+        $turno->fecha = $fecha; 
+        $turno->hora = $request->hora;
+        $turno->conciliacion_positiva = true; //$request->conciliacion_positiva;
+        $turno->estado = 0;
+        $turno->save();
 
            //* Session::forget('url_previa');
             /**dispatch(new EnviaMailConfirmacionJob($turno));**/

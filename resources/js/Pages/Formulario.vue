@@ -268,7 +268,6 @@ export default {
                 correop: null,
                 posee_abogado: true,
                 //Turno
-                delegacion_id: 3,
                 tipos_tramite_id: null,
                 fecha:null,
                 hora:null,
