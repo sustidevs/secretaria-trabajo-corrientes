@@ -60,17 +60,15 @@
                                 <label-input texto="Domicilio"/>
                                 <text-field  v-model="form.domicilio"  icon="mdi-home"/>
                             </v-col>
+                            
                             <v-col cols="12" sm="12" lg="6">
                                 <div v-if="errors.localidad" class="MyriadPro-Cond  text-xl red--text">{{ errors.localidad }}</div>
                                 <label-input texto="Localidad"/>
                                 <autocomplete-field :data="dataLocalidades" nombre="nombre"  v-model="form.localidad" icon="mdi-map-marker"/>
                             </v-col>
-                        <!--
+                        
                         </v-row>
-                        <div v-if="errors.correop" class=" MyriadPro-Cond text-xl red--text">{{ errors.correop }}</div>
-                        <label-input texto="Correo electrónico"/>
-                        <text-field v-model="form.correop" icon="mdi-email"/>
-                        -->
+
                         <v-row>
                         <div v-if="errors.correo" class="MyriadPro-Cond  text-xl red--text">{{ errors.correo}}</div>
                         <label-input texto="Correo electrónico"/>
@@ -121,7 +119,9 @@
                                 <label-input texto="Domicilio"/>
                                 <text-field v-model="form.domiciliop" icon="mdi-home"/>
                             </v-col>
+
                             <v-col cols="12" sm="12" lg="6">
+                                <div v-if="errors.localidadp" class="MyriadPro-Cond  text-xl red--text">{{ errors.localidadp }}</div>
                                 <label-input texto="Localidad"/>
                                 <autocomplete-field :data="dataLocalidades" nombre="nombre" v-model="form.localidadp" icon="mdi-map-marker"/>
                             </v-col>
