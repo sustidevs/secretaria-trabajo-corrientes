@@ -68,7 +68,7 @@
                         </v-row>
 
                         <label-input texto="Correo electrónico"/>
-                        <text-field icon="mdi-email"/>
+                        <text-field v-model="form.correo" icon="mdi-email"/>
                     
                         <v-row justify="center" class="py-7">
                             <v-col cols="3">
@@ -111,7 +111,7 @@
                         <v-row>
                             <v-col cols="12" sm="12" lg="6">
                                 <label-input texto="Domicilio"/>
-                                <text-field icon="mdi-home"/>
+                                <text-field v-model="form.domiciliop" icon="mdi-home"/>
                             </v-col>
                             <v-col cols="12" sm="12" lg="6">
                                 <label-input texto="Localidad"/>
