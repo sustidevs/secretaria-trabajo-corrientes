@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use Carbon\Carbon;
 use Inertia\Inertia;
 use App\Models\Turno;
@@ -12,7 +13,7 @@ use App\Models\Delegacion;
 use Illuminate\Support\Str;
 use App\Models\TiposTramite;
 use Illuminate\Http\Request;
-use PDF;
+use App\Http\Requests\StoreFormularioRequest;
 
 class FormularioController extends Controller
 {
@@ -156,8 +157,9 @@ class FormularioController extends Controller
         }  
     }
 
-    public function storeTurnos(Request $request)
+    public function storeTurnos(StoreFormularioRequest $request)
     {
+        dd($request);
         $persona = Persona::si_existe($request->dni);
         if ($persona == null ) {
             $datosPersona = new Persona();

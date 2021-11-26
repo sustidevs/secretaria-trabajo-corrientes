@@ -60,15 +60,20 @@
                                 <label-input texto="Domicilio"/>
                                 <text-field  v-model="form.domicilio"  icon="mdi-home"/>
                             </v-col>
+                            
                             <v-col cols="12" sm="12" lg="6">
                                 <div v-if="errors.localidad" class="MyriadPro-Cond  text-xl red--text">{{ errors.localidad }}</div>
                                 <label-input texto="Localidad"/>
                                 <autocomplete-field :data="dataLocalidades" nombre="nombre"  v-model="form.localidad" icon="mdi-map-marker"/>
                             </v-col>
+                        
                         </v-row>
 
+                        <v-row>
+                        <div v-if="errors.correo" class="MyriadPro-Cond  text-xl red--text">{{ errors.correo}}</div>
                         <label-input texto="Correo electrónico"/>
-                        <text-field icon="mdi-email"/>
+                        <text-field v-model="form.correo" icon="mdi-email"/>
+                        </v-row>
                     
                         <v-row justify="center" class="py-7">
                             <v-col cols="3">
@@ -110,10 +115,13 @@
 
                         <v-row>
                             <v-col cols="12" sm="12" lg="6">
+                                <div v-if="errors.domiciliop" class="MyriadPro-Cond  text-xl red--text">{{ errors.domiciliop }}</div>
                                 <label-input texto="Domicilio"/>
-                                <text-field icon="mdi-home"/>
+                                <text-field v-model="form.domiciliop" icon="mdi-home"/>
                             </v-col>
+
                             <v-col cols="12" sm="12" lg="6">
+                                <div v-if="errors.localidadp" class="MyriadPro-Cond  text-xl red--text">{{ errors.localidadp }}</div>
                                 <label-input texto="Localidad"/>
                                 <autocomplete-field :data="dataLocalidades" nombre="nombre" v-model="form.localidadp" icon="mdi-map-marker"/>
                             </v-col>
