@@ -18,6 +18,7 @@ Route::inertia('/delegaciones', 'Delegaciones');
 Route::inertia('/organigrama', 'Organigrama');
 Route::inertia('/inspectores', 'Inspectores');
 Route::inertia('/requisitos', 'Requisitos');
+Route::inertia('/tramites', 'Tramites');
 
 Route::get('/solicitar-turno', [FormularioController::class,'createForm']);
 Route::get('/solicitar-asesoramiento', [FormularioController::class,'createFormA']);
