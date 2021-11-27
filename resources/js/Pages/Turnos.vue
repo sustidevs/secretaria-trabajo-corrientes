@@ -12,7 +12,7 @@
                 </div>
             </v-col>
         </v-row>
-
+        
         <v-divider class="my-2"></v-divider>
 
                 <div class="MyriadPro-Cond grey--text text--darken-4 text-2xl my-2">
@@ -39,7 +39,7 @@
         <v-divider class="my-5"></v-divider>
 
         <!--<tabla-turnos-asesoramiento/>-->
-        <tabla-turnos :turnos="this.dataTurnos" />
+        <tabla-turnos :turnos="this.dataTurnos" :tipo_tramite="toggle_exclusive"/>
     </layout-registrado>
 </template>
 
