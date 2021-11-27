@@ -159,7 +159,6 @@ class FormularioController extends Controller
 
     public function storeTurnos(StoreFormularioRequest $request)
     {
-        dd($request);
         $persona = Persona::si_existe($request->dni);
         if ($persona == null ) {
             $datosPersona = new Persona();
