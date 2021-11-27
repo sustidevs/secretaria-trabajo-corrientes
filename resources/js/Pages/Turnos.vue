@@ -19,7 +19,6 @@
                     Seleccione un Tipo de Trámite
                 </div>
                 
-                   
                         <v-row justify="center" align="center">
                              <v-btn-toggle  v-for="tramite in dataTramites" :key="tramite.id" :value="tramite.id"  v-model="toggle_exclusive">
                                                                 <v-hover v-slot="{ hover }" >
