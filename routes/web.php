@@ -11,6 +11,7 @@ use App\Http\Controllers\DelegacionController;
 use App\Http\Controllers\FormularioController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\TurnoController;
+use App\Http\Controllers\AbogadoController;
 
  //         NO REGISTRADO - PAGINA PUBLICA          ///Seleccione un Tipo de Trámite
 Route::inertia('/', 'Inicio');
@@ -90,3 +91,8 @@ Route::post('/update-user', [UserController::class, 'update']);
 Route::post('/destroy-user', [UserController::class, 'destroy']);
 Route::post('/restore-user', [UserController::class, 'restore']);
 ///////////////////////////////////////////////////////
+
+Route::get('/nuevo-abogado', [PersonaController::class, 'createAbogado']);
+Route::get('/abogados', [PersonaController::class, 'indexAbogadosInternos']);
+Route::post('/nuevo-abogado', [PersonaController::class, 'storeAbogado']);
+

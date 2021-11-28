@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Persona;
 use App\Models\Localidad;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class PersonaController extends Controller
 {
@@ -115,8 +116,6 @@ class PersonaController extends Controller
     public function createAbogado()
     {
         $localidades= Localidad::all()->except(['27']);//Excepto Todas
-        return response()->json([$localidades], 200);
-        /*return Inertia::render('Vista',
-                                 'dataLocalidades' => $localidades,]);*/
+    return Inertia::render('AddAbogado',['dataLocalidades' => $localidades]);
     }
 }
