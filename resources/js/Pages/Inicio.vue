@@ -6,10 +6,10 @@
             <card-tramites class="pt-8 pb-16"/>
     
             <v-row class="pt-8 pb-16">
-                <v-col cols="12" lg="8" sm="12" xs="12">
+                <v-col cols="12" lg="9" sm="12" xs="12">
                     <carrousel/>
                 </v-col>
-                <v-col cols="12" lg="4" sm="12" xs="12">
+                <v-col cols="12" lg="3" sm="12" xs="12">
                     <card-bolsa-trabajo/>
                 </v-col>
             </v-row>

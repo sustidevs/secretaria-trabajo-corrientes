@@ -23,7 +23,6 @@
                     </v-data-table>
                 </v-col>
 
-           <form @submit.prevent="submit">
                 <v-col cols="12" lg="4" align="center" justify="center" class="my-6">
                     <img  max-height="250" width="250" :src="('./images/abogado-search.png')">
                     <div class="MyriadPro-Cond grey--text text--darken-4 text-3xl ">
@@ -47,7 +46,6 @@
                         </v-col>
                     </v-row>
                 </v-col>
-</form>
             </v-row>
        
     </layout-registrado>
@@ -61,6 +59,7 @@ export default {
     name: 'ModalTurno',
     components: {LayoutRegistrado},
     props: {
+        dataTurno: Array,
         solicitante: Array,
         dataAbogados:Array,
     },
@@ -76,14 +75,6 @@ export default {
             {text: 'Asignar', value: 'actions', sortable: false},
         ],
         desserts: [],
-
-        form: this.$inertia.form ({
-                //Reclamante
-                turno_id: null,
-                abogado_id: null,
-                tipo_tramite_id: 1,
-        })
-
     }),
 
     created() {
@@ -93,6 +84,8 @@ export default {
     methods: {
 
         submit() {
+            turno_id = this.dataTurno.id,
+            abogado_d= this.
             Inertia.post('/asignar', this.form, {
                 onSuccess: page => {
                     this.dialog = true;
@@ -105,6 +98,7 @@ export default {
         },
 
         seleccionar_abogado(item) {
+            this.abogado_id = item.id
             this.abogado = item.nombre + '  '  + item.apellido
         },
 
