@@ -93,6 +93,6 @@ Route::post('/restore-user', [UserController::class, 'restore']);
 ///////////////////////////////////////////////////////
 
 Route::get('/nuevo-abogado', [PersonaController::class, 'createAbogado']);
-Route::get('/abogados', [PersonaController::class, 'indexAbogadosInternos']);
+Route::get('/asignar', [PersonaController::class, 'indexAbogadosInternos']);
 Route::post('/nuevo-abogado', [PersonaController::class, 'storeAbogado']);
 
