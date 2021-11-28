@@ -1,7 +1,6 @@
 <template>
-    <v-dialog v-model="dialog" width="auto">
-        <v-card class="pa-4" width="auto" hover elevation="12" rounded="xl">
-
+    <layout-registrado>
+        
             <v-row class="pa-5" justify="center" align="center">
                     <div class="MyriadPro-Cond grey--text text--darken-4 text-4xl ">
                         Listado de Abogados
@@ -17,7 +16,7 @@
                         :headers="headers" :items="dataAbogados" sort-by="calories">
                         <template v-slot:item.actions="{ item }">
                             <v-btn elevation="0" small class="mr-2 my-2 py-5" align="center"
-                                   @click="this.asistencia(1)">
+                                   @click="seleccionar_abogado(item)">
                                 <v-icon large file color="grey darken-1" medium align="center">mdi-check</v-icon>
                             </v-btn>
                         </template>
@@ -27,10 +26,10 @@
                 <v-col cols="12" lg="4" align="center" justify="center" class="my-6">
                     <img  max-height="250" width="250" :src="('./images/abogado-search.png')">
                     <div class="MyriadPro-Cond grey--text text--darken-4 text-3xl ">
-                        Solicitante: {{ solicitante }}
+                        Solicitante: {{ solicitante.nombre }}
                     </div>
                     <div class="MyriadPro-Cond grey--text text--darken-4 text-3xl ">
-                        Abogado seleccionado: Frozen Ypgurt
+                        Abogado seleccionado: {{abogado}}
                     </div>
 
                     <v-row no-gutters class="py-6 px-2">
@@ -49,33 +48,29 @@
                 </v-col>
 
             </v-row>
-        </v-card>
-    </v-dialog>
+       
+    </layout-registrado>
 </template>
 
 <script>
+import LayoutRegistrado from "../Layouts/LayoutRegistrado";
 
 export default {
     name: 'ModalTurno',
-
+    components: {LayoutRegistrado},
     props: {
-        dialog: Boolean,
-        solicitante: String,
+        solicitante: Array,
         dataAbogados:Array,
     },
 
     data: () => ({
+        abogado: 'Aun no ha seleccionado un abogado',
         headers: [
-            {
-                text: 'Dessert (100g serving)',
-                align: 'start',
-                sortable: false,
-                value: 'name',
-            },
-            {text: 'Calories', value: 'calories'},
-            {text: 'Fat (g)', value: 'fat'},
-            {text: 'Carbs (g)', value: 'carbs'},
-            {text: 'Protein (g)', value: 'protein'},
+            {text: 'Nombre', value: 'nombre'},
+            {text: 'Apellido', value: 'apellido'},
+            {text: 'Localidad', value: 'localidad'},
+            {text: 'Correo', value: 'correo'},
+            {text: 'Telefono', value: 'telefono'},
             {text: 'Asignar', value: 'actions', sortable: false},
         ],
         desserts: [],
@@ -85,8 +80,12 @@ export default {
         this.initialize()
     },
 
-
     methods: {
+
+        seleccionar_abogado(item) {
+            this.abogado = item.nombre + '  '  + item.apellido
+        },
+
         close() {
             this.$emit('cerrar')
         },
@@ -180,3 +179,4 @@ export default {
     font-size: 28px !important;
 }
 </style>
+

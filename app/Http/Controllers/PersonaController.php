@@ -54,10 +54,12 @@ class PersonaController extends Controller
     * Abogados Internos
     *
     */
-    public function indexAbogadosInternos()
+    public function indexAbogadosInternos(Request $request)
     {
-        $abogados_internos = Persona::abogadoInternos();
-        return response()->json($abogados_internos, 200);
+        $persona = Persona::si_existe($request->dni);
+        
+        $abogados_internos = Persona::abogadosInternos();
+        return Inertia::render('ListadoAbogadosAsignar',['dataAbogados' => $abogados_internos, 'solicitante' => $persona]);
     }
 
     /**
