@@ -1,6 +1,5 @@
 <template>
     <layout-registrado>
-
         <v-row no-gutters class="my-6">
             <v-col cols="12" lg="6" justify="start">
                 <div class="MyriadPro-Cond grey--text text--darken-4 text-5xl">
@@ -9,47 +8,45 @@
             </v-col>
             <v-col cols="12" lg="6" align="end" justify="end">
                 <div class="MyriadPro-Cond grey--text text--darken-4 text-5xl">
-                    27-11-2021
+                    {{this.dataFecha}}
                 </div>
             </v-col>
         </v-row>
 
         <v-divider class="my-2"></v-divider>
 
-        <v-row class="my-2">
-            <v-col cols="12" lg="6">
                 <div class="MyriadPro-Cond grey--text text--darken-4 text-2xl my-2">
                     Seleccione un Tipo de Trámite
                 </div>
-
-                <v-btn-toggle v-model="toggle_exclusive">
-                    <v-hover v-slot="{ hover }" >
-                        <v-btn rounded width="auto" :class="hover ? 'light-green darken-3' : 'grey lighten-3'" class="pa-5 mr-4 grey--text text--darken-4">
-                            <div class="d-flex flex-column justify-center">
-                                <div :class="hover ? 'white--text' : 'black--text'" class="MyriadPro-Cond  text-2xl">
-                                    Consignación
-                                </div>
-                            </div>
-                        </v-btn>
-                    </v-hover>
-
-                    <v-hover v-slot="{ hover }" >
-                        <v-btn rounded width="auto" :class="hover ? 'light-green darken-3' : 'grey lighten-3'" class="pa-5 grey--text text--darken-4">
-                            <div class="d-flex flex-column justify-center">
-                                <div :class="hover ? 'white--text' : 'black--text'" class="MyriadPro-Cond  text-2xl">
-                                    Consignación
-                                </div>
-                            </div>
-                        </v-btn>
-                    </v-hover>
-                </v-btn-toggle>
-            </v-col>
-        </v-row>
+                
+                        <v-row justify="center" align="center">
+                             <v-btn-toggle  v-for="tramite in dataTramites" :key="tramite.id" :value="tramite.id"  v-model="toggle_exclusive">
+                                                                <v-hover v-slot="{ hover }" >
+                                                                     <inertia-link href="/turnos" :data="{ tramite: tramite.id }" preserve-state>
+                                                                        <v-btn :value="tramite.id" rounded width="auto" :class="hover ? 'light-green darken-3' : 'grey lighten-3'" class="pa-5 ma-4 grey--text text--darken-4">
+                                                                        
+                                                                                <div :class="hover ? 'white--text' : 'black--text'" class="MyriadPro-Cond  text-2xl">
+                                                                                    {{ tramite.name }}
+                                                                                </div>
+                                                                        </v-btn>
+                                                                     </inertia-link>
+                                                                </v-hover>
+                             </v-btn-toggle>
+                        </v-row>
+                            
+           
 
         <v-divider class="my-5"></v-divider>
 
-        <tabla-turnos-asesoramiento/>
-        <!--<tabla-turnos/>-->
+<div v-if="toggle_exclusive === 1">
+<tabla-turnos-asesoramiento/>
+</div>
+
+<div v-else>
+     <tabla-turnos :turnos="this.dataTurnos" />
+</div>
+
+       
     </layout-registrado>
 </template>
 
@@ -60,6 +57,31 @@ import TablaTurnos from "../Componentes/TablaTurnos";
 import TablaTurnosAsesoramiento from "../Componentes/TablaTurnosAsesoramiento";
 
 export default {
-    components: {NavbarRegistrado,LayoutRegistrado,TablaTurnos,TablaTurnosAsesoramiento}
+    components: {NavbarRegistrado,LayoutRegistrado,TablaTurnos,TablaTurnosAsesoramiento},
+
+    props: {
+        dataTurnos: Array,
+        dataFecha: String,
+        dataTramites: Array,
+        tipoTramite: String,
+        dataAbogados: Array
+    },
+
+        data () {
+        return {
+            toggle_exclusive: 0,
+            headers: [
+                { text: 'TURNO', align: 'start', value: 'orden_turno', class:'green darken-2 white--text'},
+                { text: 'HORA', align: 'start', value: 'hora', class:'green darken-2 white--text'},
+                { text: 'SOLICITANTE', value: 'nombre_dni_solicitante', class:'green darken-2 white--text' },
+                { text: 'ABOGADO', value: 'nombre_abogado', class:'green darken-2 white--text' },
+                { text: 'ESTADO', align: 'start', value: 'estado_nombre', class:'green darken-2 white--text' },
+                { text: 'ASISTENCIA', align: 'center', value: 'estado', sortable: false, class:'green darken-2 white--text' },
+            ],
+            tipo_tramite_id: this.tipoTramite,
+        }
+    },
+
+
 }
 </script>

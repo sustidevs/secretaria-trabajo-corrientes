@@ -2,7 +2,6 @@
     <v-app-bar class="px-7" color="#393b44">
         <a href="/"><img  max-height="110" width="210" :src="('./images/logo-horizontal-secret.svg')"></a>
         <v-spacer></v-spacer>
-
         <div class="text-center">
             <v-menu
                 v-model="menu"
@@ -11,8 +10,8 @@
                 transition="slide-y-transition"
             >
                 <template v-slot:activator="{ on, attrs }">
-                    <v-btn width="200" height="60" class="MyriadPro-Cond white--text" color="transparent" elevation="0" file v-bind="attrs" v-on="on">
-                        <v-icon width="200" height="60" class="mr-5">mdi-account-circle</v-icon> Maria Perez
+                    <v-btn  width="200" height="60" class="MyriadPro-Cond white--text" color="transparent" elevation="0" file v-bind="attrs" v-on="on">
+                        <v-icon width="200" height="60" class="mr-5">mdi-account-circle</v-icon> 
                     </v-btn>
                 </template>
 
@@ -20,7 +19,7 @@
                     <v-list class="MyriadPro-Cond">
                         <v-list-item>
                             <v-list-item-content>
-                                <v-list-item-title>maria@corre.com</v-list-item-title>
+                                <v-list-item-title>{{this.$page.props.user.email}}</v-list-item-title>
                                 <v-list-item-subtitle>Capital</v-list-item-subtitle>
                             </v-list-item-content>
                         </v-list-item>
@@ -30,9 +29,13 @@
 
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn class="MyriadProBlackCond" block text @click="menu = false">
-                            Salir <v-icon class="pl-5">mdi-export</v-icon>
-                        </v-btn>
+                         <form method="POST" @submit.prevent="logout">
+                             <button type="submit" align="center">
+                    <a class="MyriadPro-LightCond text-2xl white--text">Cerrar sesión</a>
+                    <v-icon class="pl-2" align="center">mdi-logout</v-icon>
+                </button>
+                         </form>
+                        
                     </v-card-actions>
                 </v-card>
             </v-menu>
@@ -44,6 +47,10 @@
 export default {
     name: "NavbarRegistrado",
 
+    props: {
+      user: Object,
+    },
+
     data: () => ({
         fav: true,
         menu: false,
@@ -53,7 +60,7 @@ export default {
 
     methods: {
         logout() {
-            this.$inertia.post(route('cerrar-sesion'));
+            this.$inertia.post('/cerrar-sesion');
         },
     }
 }

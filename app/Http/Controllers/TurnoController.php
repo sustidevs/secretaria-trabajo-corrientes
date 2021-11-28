@@ -7,7 +7,11 @@ use App\Models\User;
 use Inertia\Inertia;
 use App\Models\Oficina;
 use App\Models\Persona;
+use App\Models\Turno;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
+
 //use App\Jobs\EnviaMailCancelacionTurno;
 
 class TurnoController extends Controller
@@ -29,15 +33,17 @@ class TurnoController extends Controller
             $turnos = $oficina->turnosHoy();
         }
 
-        $tipo_tramite_id = $oficina->tipo_tramite_id;
-        if ($request->tipo_tramite_id != null) {
-            $turnos = Turno::get_turnos_by_tramite($request->tipo_tramite_id);
-            $tipo_tramite_id = $request->tipo_tramite_id;
+    
+        $tipo_tramite_id = $oficina->tipos_tramite_id;
+
+        if ($request->tramite != null) {
+            $turnos = Turno::get_turnos_by_tramite($request->tramite);
+            $tipo_tramite_id = $request->tramite;
         } 
         $abogadosInternos = Persona::abogadosInternos();
         $hoy = Carbon::now();
         $fecha = Carbon::createFromFormat('Y-m-d', $hoy->toDateString())->format('d/m/Y');
-        return Inertia::render('TurnosRegistrado/TurnosR', ['dataAbogados'  => $abogadosInternos,
+        return Inertia::render('Turnos', ['dataAbogados'  => $abogadosInternos,
                                                             'dataTurnos'    => $turnos,
                                                             'dataFecha'     => $fecha, 
                                                             'dataTramites'  => $tramites, 
@@ -107,11 +113,14 @@ class TurnoController extends Controller
         $tramites = User::getPermission();
         $hoy = Carbon::now();
         $fecha = Carbon::createFromFormat('Y-m-d', $hoy->toDateString())->format('d/m/Y');
-        return Inertia::render('TurnosRegistrado/TurnosR', ['dataAbogados'  => $abogadosInternos,
+
+        return redirect()->action([TurnoController::class, 'index'],
+                                      ['tramite'=>$request->tipo_tramite_id]);
+        /*return Inertia::render('Turnos', ['dataAbogados'  => $abogadosInternos,
                                                             'dataTurnos'    => $turnos,
                                                             'dataFecha'     => $fecha, 
                                                             'dataTramites'  => $tramites, 
-                                                            'tipoTramite'   => $tipo_tramite_id]);
+                                                            'tipoTramite'   => $tipo_tramite_id]);*/
     }
     public function create()
     {

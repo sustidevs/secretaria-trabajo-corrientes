@@ -41,8 +41,10 @@
 <script>
 export default {
     data() {
+
         return {
             show1:false,
+            error: false,
             form: this.$inertia.form({
                 email: '',
                 password: '',
@@ -50,12 +52,13 @@ export default {
         }
     },
     methods: {
+        
         submit() {
             this.form.post(this.route('login'), {
                 onError: () => window.alert("Verifique sus datos ingresados"),
             })
         }
-    }
+        }
 }
 </script>
 

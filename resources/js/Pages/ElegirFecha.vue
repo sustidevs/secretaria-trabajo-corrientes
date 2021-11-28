@@ -1,20 +1,33 @@
 <template>
     <LayoutNoRegistrado>
         <v-container class="py-4">
-            <div class="m-2 items-center">
+             <form @submit.prevent="submit">
+                 <div class="m-2 items-center">
                 <titulo-tramite class="pb-7" texto="Solicitud de turno"/>
             </div>
+            
             <v-card
                 elevation="0"
             >
                 <v-row>
                     <v-col cols="12" sm="12" lg="6">
                         <label-input class="pb-2" texto="Seleccione una fecha"/>
-                        <autocomplete-field icon="mdi-calendar-month"/>
+                             <select class="rounded bg-gray-100 w-full focus:ring-2 focus:ring-black"
+                                            label="Localidad"  v-model="form.fecha">
+                                        <option v-for="(horarios, fecha) in dataFechas" :key="fecha" name="delegacion_id">
+                                            {{fecha}}
+                                        </option>
+                                    </select>
                     </v-col>
                     <v-col cols="12" sm="12" lg="6">
                         <label-input class="pb-2" texto="Seleccione un horario"/>
-                        <autocomplete-field icon="mdi-clock-time-nine"/>
+                        <select class="rounded bg-gray-100 w-full focus:ring-2 focus:ring-black"
+                                            label="Localidad" v-model="form.hora">
+                                        <option v-for="i in getHorario(dataFechas,form.fecha)" :key="i"
+                                                name="delegacion_id">
+                                            {{ i }}
+                                        </option>
+                                    </select>
                     </v-col>
                 </v-row>
             </v-card>
@@ -28,12 +41,14 @@
                     </inertia-link>
                 </v-col>
                 <v-col cols="3">
-                    <v-btn color="light-green darken-1" elevation="0" dark block height="55" @click="show = true">
+                    <v-btn type="submit" color="light-green darken-1" elevation="0" dark block height="55" @click="show = true">
                         <div class="MyriadPro-Cond text-xl">Solicitar turno</div>
                     </v-btn>
                 </v-col>
             </v-row>
-            <modal-turno :dialog="show" @cerrar="show = false"/>
+             </form>
+            <modal-turno :dataTurno="this.dataTurno"
+                         :dialog="guardo" @cerrar="show = false"/>
         </v-container>
     </LayoutNoRegistrado>
 </template>
@@ -44,16 +59,59 @@ import TituloTramite from '../Componentes/TituloTramite';
 import LabelInput from '../Componentes/LabelInput';
 import AutocompleteField from '../Componentes/AutocompleteField';
 import ModalTurno from '../Componentes/Modals/ModalTurno';
+import { Inertia } from '@inertiajs/inertia'
+
 export default {
     name: 'ElegirFecha',
     components: { LayoutNoRegistrado, TituloTramite, AutocompleteField, LabelInput, ModalTurno},
 
+    props: {
+        errors: Object,
+        oficina_id: Number,
+        delegacion: Number,
+        tipoTramite: Number,
+        dataFechas: Object,
+        dataSolicitante: Object,
+        dataAbogado: Object,
+        dataTurno: Array,
+        guardo: {type: Boolean, default: false}
+    },
+
     data () {
         return {
             show: false,
+                 
+             form: this.$inertia.form ({
+                //Oficina
+                oficina_id: this.oficina_id,
+                //Solicitante
+                solicitante_id: this.dataSolicitante.id,
+                //Abogado
+                abogado_id: this.dataAbogado.id,
+                //Turno
+                fecha: null,
+                hora: null,
+            }),
         }
     },
 
+    methods: {
+         getHorario (items, fecha) {
+            return items [fecha]
+        },
+        submit() {
+            this.loader = 'loading';
+            Inertia.post('/guardar-turno', this.form, {
+                onSuccess: page => {
+                    this.form.reset();
+                    this.dialog=true;
+                },
+                onError: errors => {
+                    this.error= true;
+                },
+            })
+        },
+    }
 }
 </script>
 

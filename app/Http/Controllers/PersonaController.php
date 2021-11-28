@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Persona;
 use App\Models\Localidad;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class PersonaController extends Controller
 {
@@ -53,10 +54,12 @@ class PersonaController extends Controller
     * Abogados Internos
     *
     */
-    public function indexAbogadosInternos()
+    public function indexAbogadosInternos(Request $request)
     {
-        $abogados_internos = Persona::abogadoInternos();
-        return response()->json($abogados_internos, 200);
+        $persona = Persona::si_existe($request->dni);
+        
+        $abogados_internos = Persona::abogadosInternos();
+        return Inertia::render('ListadoAbogadosAsignar',['dataAbogados' => $abogados_internos, 'solicitante' => $persona]);
     }
 
     /**
@@ -115,8 +118,6 @@ class PersonaController extends Controller
     public function createAbogado()
     {
         $localidades= Localidad::all()->except(['27']);//Excepto Todas
-        return response()->json([$localidades], 200);
-        /*return Inertia::render('Vista',
-                                 'dataLocalidades' => $localidades,]);*/
+    return Inertia::render('AddAbogado',['dataLocalidades' => $localidades]);
     }
 }

@@ -9,7 +9,9 @@ use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\TramiteController;
 use App\Http\Controllers\DelegacionController;
 use App\Http\Controllers\FormularioController;
-
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\TurnoController;
+use App\Http\Controllers\AbogadoController;
 
  //         NO REGISTRADO - PAGINA PUBLICA          ///Seleccione un Tipo de Trámite
 Route::inertia('/', 'Inicio');
@@ -17,9 +19,16 @@ Route::inertia('/delegaciones', 'Delegaciones');
 Route::inertia('/organigrama', 'Organigrama');
 Route::inertia('/inspectores', 'Inspectores');
 Route::inertia('/requisitos', 'Requisitos');
+
 Route::get('/solicitar-turno', [FormularioController::class,'createForm']);
 Route::get('/solicitar-asesoramiento', [FormularioController::class,'createFormA']);
-Route::inertia('/elegir-fecha', 'ElegirFecha');
+Route::post('/solicitar-turno', [FormularioController::class,'storeTurnos']);
+
+Route::post('/asistencia', [TurnoController::class,'cambiarEstado']);
+
+
+
+Route::post('/cerrar-sesion', [LogoutController::class, 'logout'])->name('cerrar-sesion');
 
 //Requisitos
 Route::get('/asesoramiento-juridico', [TramiteController::class,'show'])->defaults('id', '1');
@@ -34,9 +43,10 @@ Route::get('/rubrica', [TramiteController::class,'show'])->defaults('id', '7');
 Route::get('/descargar-pdf/{id}', [TramiteController::class, 'requisitos'])->where('id', '[1-7]');
 
  ///         REGISTRADO         ///
- Route::inertia('/login', 'Login');
+ Route::inertia('/ingresar', 'Login')->name('ingresar');
+
  Route::group(['middleware' => 'auth'], function(){
-    Route::inertia('/turnos', 'Turnos');
+   Route::resource('turnos', TurnoController::class)->middleware('auth');
  });
 
  //DELEGACIONES/////////////////////////////////////////////////////////////
@@ -81,3 +91,8 @@ Route::post('/update-user', [UserController::class, 'update']);
 Route::post('/destroy-user', [UserController::class, 'destroy']);
 Route::post('/restore-user', [UserController::class, 'restore']);
 ///////////////////////////////////////////////////////
+
+Route::get('/nuevo-abogado', [PersonaController::class, 'createAbogado']);
+Route::get('/asignar', [PersonaController::class, 'indexAbogadosInternos']);
+Route::post('/nuevo-abogado', [PersonaController::class, 'storeAbogado']);
+
