@@ -41,7 +41,7 @@ export default {
                 {
                     orden_turno: '1',
                     hora: 159,
-                    dni: 41842296,
+                    dni: 41842294,
                     nombre_dni_solicitante: 6.0,
                     estado_nombre: 24,
                 },

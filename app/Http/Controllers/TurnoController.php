@@ -40,6 +40,7 @@ class TurnoController extends Controller
             $turnos = Turno::get_turnos_by_tramite($request->tramite);
             $tipo_tramite_id = $request->tramite;
         } 
+
         $abogadosInternos = Persona::abogadosInternos();
         $hoy = Carbon::now();
         $fecha = Carbon::createFromFormat('Y-m-d', $hoy->toDateString())->format('d/m/Y');
@@ -218,6 +219,7 @@ class TurnoController extends Controller
                                       ['tipo_tramite_id'=>$request->tipo_tramite_id]);
         }
     }
+
 
     public function estadoConciliacion(Request $request)
     {

@@ -159,7 +159,6 @@ class FormularioController extends Controller
 
     public function storeTurnos(StoreFormularioRequest $request)
     {
-        dd($request);
         $persona = Persona::si_existe($request->dni);
         if ($persona == null ) {
             $datosPersona = new Persona();
@@ -177,7 +176,6 @@ class FormularioController extends Controller
         $datosPersona->correo = $request->correo;
         $datosPersona->tipo = 7;
         $datosPersona->save();
-
         if ($request->posee_abogado == true)
         {
             $abogado = Persona::si_existe($request->dnip);
