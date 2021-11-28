@@ -38,8 +38,15 @@
 
         <v-divider class="my-5"></v-divider>
 
-        <!--<tabla-turnos-asesoramiento/>-->
-        <tabla-turnos :turnos="this.dataTurnos" />
+<div v-if="toggle_exclusive === 1">
+<tabla-turnos-asesoramiento/>
+</div>
+
+<div v-else>
+     <tabla-turnos :turnos="this.dataTurnos" />
+</div>
+
+       
     </layout-registrado>
 </template>
 
