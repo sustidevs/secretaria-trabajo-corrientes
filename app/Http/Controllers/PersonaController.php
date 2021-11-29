@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Persona;
 use App\Models\Localidad;
+use App\Models\Turno;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -56,10 +57,10 @@ class PersonaController extends Controller
     */
     public function indexAbogadosInternos(Request $request)
     {
+        
         $persona = Persona::si_existe($request->dni);
-        $turno = Turno::findOrFail($request->orden_turno);
         $abogados_internos = Persona::abogadosInternos();
-        return Inertia::render('ListadoAbogadosAsignar',['dataAbogados' => $abogados_internos, 'solicitante' => $persona, 'dataTurno' => $turno]);
+        return Inertia::render('ListadoAbogadosAsignar',['dataAbogados' => $abogados_internos, 'solicitante' => $persona]);
     }
 
     /**

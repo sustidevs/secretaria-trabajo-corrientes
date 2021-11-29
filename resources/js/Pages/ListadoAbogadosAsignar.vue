@@ -26,15 +26,14 @@
                 <v-col cols="12" lg="4" align="center" justify="center" class="my-6">
                     <img  max-height="250" width="250" :src="('./images/abogado-search.png')">
                     <div class="MyriadPro-Cond grey--text text--darken-4 text-3xl ">
-                        Solicitante: {{ solicitante.nombre }}
+                        Solicitante:  Maria Perez 
                     </div>
                     <div class="MyriadPro-Cond grey--text text--darken-4 text-3xl ">
                         Abogado seleccionado: {{abogado}}
                     </div>
-
                     <v-row no-gutters class="py-6 px-2">
                         <v-col cols="12" lg="6">
-                            <v-btn elevation="0" block height="40" color="#558B2F" class="white--text">
+                            <v-btn @click="submit()" elevation="0" block height="40" color="#558B2F" class="white--text">
                                 <div class="MyriadPro-Cond text-xl">Confirmar</div>
                             </v-btn>
                         </v-col>
@@ -59,12 +58,13 @@ export default {
     name: 'ModalTurno',
     components: {LayoutRegistrado},
     props: {
-        dataTurno: Array,
+        turno: Number,
         solicitante: Array,
         dataAbogados:Array,
     },
 
     data: () => ({
+        abogado_id: null,
         abogado: 'Aun no ha seleccionado un abogado',
         headers: [
             {text: 'Nombre', value: 'nombre'},
@@ -84,9 +84,13 @@ export default {
     methods: {
 
         submit() {
-            turno_id = this.dataTurno.id,
-            abogado_d= this.
-            Inertia.post('/asignar', this.form, {
+            let form = {
+                turno_id: this.turno,
+                abogado_id: this.abogado_id,
+                tipo_tramite_id: 1,
+            }
+            console.log(form)
+            Inertia.post('/asignacion', form, {
                 onSuccess: page => {
                     this.dialog = true;
                     this.form.reset();
@@ -98,6 +102,7 @@ export default {
         },
 
         seleccionar_abogado(item) {
+            console.log(item.id)
             this.abogado_id = item.id
             this.abogado = item.nombre + '  '  + item.apellido
         },
