@@ -45,7 +45,7 @@ class StoreFormularioRequest extends FormRequest
                 //'hora' => 'required',
                 //'fecha' => 'required',
                 'tipos_tramite_id' => 'required',
-                'delegacion_id' => 'required',
+                //'delegacion_id' => 'required',
             ];
         
         }
@@ -63,7 +63,7 @@ class StoreFormularioRequest extends FormRequest
                 //'fecha' => 'required',
                 'tipo_tramite_id' => 'required',
                 'localidad' => 'required',
-                'delegacion_id' => 'required',
+               // 'delegacion_id' => 'required',
             ];
         }
     }
@@ -111,7 +111,7 @@ class StoreFormularioRequest extends FormRequest
                 //'fecha.required' => 'Debe seleccionar una fecha disponible',
                 //'hora.required' => 'Debe seleccionar una hora disponible',
                 'tipo_tramite_id.required' => 'Debe seleccionar un tipo de trámite',
-                'delegacion_id.required' => 'Debe seleccionar una delegación',
+                //'delegacion_id.required' => 'Debe seleccionar una delegación',
             ];
         }
         else
@@ -136,7 +136,7 @@ class StoreFormularioRequest extends FormRequest
                 //'fecha.required' => 'Debe seleccionar una fecha disponible',
                 //'hora.required' => 'Debe seleccionar una hora disponible',
                 'tipo_tramite_id.required' => 'Debe seleccionar un motivo',
-                'delegacion_id.required' => 'Debe seleccionar una delegación',
+               // 'delegacion_id.required' => 'Debe seleccionar una delegación',
                 ];
         }
     }

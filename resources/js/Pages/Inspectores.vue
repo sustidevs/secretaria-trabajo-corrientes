@@ -1,9 +1,8 @@
 <template>
     <LayoutNoRegistrado>
-        <v-container class="mb-5">
-            <titulo-tramite texto="Inspectores"/>
-            <descripcion class="justify-center text-2xl pb-16" texto="Ley 2.477 Art. 2 Inc. B, Art. 11, 12 y 13 - Disposición N°78/18."/>
-            <v-row>
+            <Titulo texto="Inspectores"/>
+            <descripcion-big texto="Ley 2.477 Art. 2 Inc. B, Art. 11, 12 y 13 - Disposición N°78/18."/>
+            <v-row class="mb-5">
                 <v-col cols="12" lg="3" md="6" xs="12">
                     <card-inspectores img="./images/Inspectores/alegre-sonia.png" title="Alegre, Sonia Verónica" description="DNI: 27.189.949"/>
                 </v-col>
@@ -53,7 +52,6 @@
                     <card-inspectores img="./images/Inspectores/pruyas-elvira.png" title="Pruyas, Elvira Patricia" description="DNI: 24.033.886"/>
                 </v-col>
             </v-row>
-        </v-container>
     </LayoutNoRegistrado>
 </template>
 
@@ -62,12 +60,16 @@ import LayoutNoRegistrado from "../Layouts/LayoutNoRegistrado"
 import CardInspectores from "../Componentes/Cards/CardInspectores"
 import TituloTramite from '../Componentes/TituloTramite'
 import Descripcion from '../Componentes/Descripcion';
+import Titulo from '../Componentes/Titulo';
+import DescripcionBig from "../Componentes/DescripcionBig.vue";
 export default {
     components: {
         LayoutNoRegistrado,
         CardInspectores,
         TituloTramite,
         Descripcion,
+        Titulo,
+        DescripcionBig
     },
 }
 </script>

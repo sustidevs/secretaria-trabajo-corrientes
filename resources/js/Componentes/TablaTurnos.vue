@@ -1,6 +1,20 @@
 <template>
+<div>
+         <v-alert
+    v-model="show"
+    border="left"
+      type="success"
+    class="MyriadPro-Cond white--text alertSize"
+     dismissible
+>
+Se marco la asistencia del solicitante {{ this.solicitante }} y su abogado {{ this.abogado }} con exito
+
+<v-icon @click="show = false"> mdi-close-thick </v-icon>
+</v-alert>
+
+
                     <v-data-table  :headers="headers" :items="turnos" item-key="name" sort-by="turno"
-                              class="font elevation-5 mx-3 grey lighten-4 mytable" :mobile-breakpoint="0">
+                              class="font elevation-5 grey lighten-4 mytable" :mobile-breakpoint="0">
                     <template v-slot:item.estado="{ item }">
                         <v-btn small class="mr-2 my-2" align="center" @click="asistio(item)">
                             <v-icon color="grey darken-1" medium align="center">mdi-check-bold</v-icon>
@@ -20,17 +34,25 @@
                         </v-alert>
                     </template>
                 </v-data-table>
+</div>
+               
 </template>
 
 <script>
+import AlertAsistencia from "../Componentes/AlertaAsistencia.vue"
+import { Inertia } from '@inertiajs/inertia'
 export default {
+    
+    components: {AlertAsistencia},
 
     props: {
-        turnos: Array
+        turnos: Array,
+        tipo_tramite: Number
     },
 
     data () {
         return {
+            show: false,
             headers: [
                 { text: 'TURNO', align: 'start', value: 'orden_turno', class:'green darken-2 white--text'},
                 { text: 'HORA', align: 'start', value: 'hora', class:'green darken-2 white--text'},
@@ -40,6 +62,8 @@ export default {
                 { text: 'ASISTENCIA', align: 'center', value: 'estado', sortable: false, class:'green darken-2 white--text' },
             ],
             tipo_tramite_id: this.tipoTramite,
+            solicitante: '',
+            abogado: ''
         }
     },
 
@@ -47,11 +71,31 @@ export default {
     methods: {
         asistio (item) {
             item.estado = 1;
-            this.$inertia.post('/asistencia', item)
+            Inertia.post('/asistencia', item, {
+                onSuccess: page => {
+                    this.solicitante= item.nombre_dni_solicitante
+                    this.abogado = item.nombre_abogado
+                    this.show = true;
+                    this.$inertia.get('/turnos', {tramite: tipo_tramite})
+                },
+                onError: errors => {
+                    this.error= true;
+                },
+            })
+
         },
         ausente (item) {
             item.estado = 2;
-            this.$inertia.post('/asistencia', item)
+                Inertia.post('/asistencia', item, {
+                onSuccess: page => {
+                    this.show = true;
+                    this.$inertia.get('/turnos', {tramite: tipo_tramite})
+                    
+                },
+                onError: errors => {
+                    this.error= true;
+                },
+            })
         },
         getColor (estado_nombre) {
             if (estado_nombre === 'Ausente') return 'ausente--text'
