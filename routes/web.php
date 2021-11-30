@@ -22,9 +22,12 @@ Route::inertia('/requisitos', 'Requisitos');
 Route::inertia('/tramites', 'Tramites');
 
 Route::get('/solicitar-turno', [FormularioController::class,'createForm']);
-Route::get('/solicitar-asesoramiento', [FormularioController::class,'createFormA']);
 Route::post('/solicitar-turno', [FormularioController::class,'storeTurnos']);
 Route::get('/ver-comprobante/{id}', [FormularioController::class,'comprobanteTurno']);
+
+Route::get('/solicitar-asesoramiento', [FormularioController::class,'createFormA']);
+Route::post('/solicitar-asesoramiento', [FormularioController::class,'storeTurnos']);
+
 Route::post('/asistencia', [TurnoController::class,'cambiarEstado']);
 
 
@@ -96,4 +99,5 @@ Route::post('/restore-user', [UserController::class, 'restore']);
 Route::get('/nuevo-abogado', [PersonaController::class, 'createAbogado']);
 Route::get('/asignar', [PersonaController::class, 'indexAbogadosInternos']);
 Route::post('/nuevo-abogado', [PersonaController::class, 'storeAbogado']);
+
 
