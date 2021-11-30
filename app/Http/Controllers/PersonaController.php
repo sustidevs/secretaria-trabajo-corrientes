@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Persona;
 use App\Models\Localidad;
+use App\Models\Turno;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreAbogadoRequest;
 use App\Http\Requests\UpdateAbogadoRequest;
@@ -59,8 +60,8 @@ class PersonaController extends Controller
     */
     public function indexAbogadosInternos(Request $request)
     {
-        $persona = Persona::si_existe($request->dni);
         
+        $persona = Persona::si_existe($request->dni);
         $abogados_internos = Persona::abogadosInternos();
         return Inertia::render('ListadoAbogadosAsignar',['dataAbogados' => $abogados_internos, 'solicitante' => $persona]);
     }
