@@ -24,7 +24,7 @@ Route::inertia('/tramites', 'Tramites');
 Route::get('/solicitar-turno', [FormularioController::class,'createForm']);
 Route::get('/solicitar-asesoramiento', [FormularioController::class,'createFormA']);
 Route::post('/solicitar-turno', [FormularioController::class,'storeTurnos']);
-
+Route::get('/ver-comprobante/{id}', [FormularioController::class,'comprobanteTurno']);
 Route::post('/asistencia', [TurnoController::class,'cambiarEstado']);
 
 Route::post('/cerrar-sesion', [LogoutController::class, 'logout'])->name('cerrar-sesion');

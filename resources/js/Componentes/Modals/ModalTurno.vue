@@ -92,7 +92,7 @@
                                  </inertia-link>
                                     
 
-                                <a :href="'/verComprobante/' + this.dataTurno.turno_id" target="_blank">
+                                <a :href="'/ver-comprobante/' + this.dataTurno.turno_id" target="_blank">
                                     <v-btn
                                         class="ma-2 MyriadPro-Cond text-xl"
                                         color="light-green darken-1"

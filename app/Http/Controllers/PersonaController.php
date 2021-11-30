@@ -6,7 +6,10 @@ use App\Models\Persona;
 use App\Models\Localidad;
 use App\Models\Turno;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreAbogadoRequest;
+use App\Http\Requests\UpdateAbogadoRequest;
 use Inertia\Inertia;
+
 
 class PersonaController extends Controller
 {
@@ -67,7 +70,7 @@ class PersonaController extends Controller
     * Store para Abogados Internos
     *
     */
-    public function storeAbogado(Request $request)
+    public function storeAbogado(StoreAbogadoRequest $request)
     {
         $persona = new Persona;
         $persona->dni = $request->dni;
@@ -91,7 +94,7 @@ class PersonaController extends Controller
     * Update para Abogados Internos
     *
     */
-    public function updateAbogado(Request $request)
+    public function updateAbogado(UpdateAbogadoRequest $request)
     {
         $personaUpdate = Persona::findOrFail($request ->id);
         $personaUpdate->dni = $request->dni;

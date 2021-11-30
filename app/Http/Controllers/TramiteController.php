@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\TiposTramite;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use PDF;
 
 class TramiteController extends Controller
 {
@@ -21,7 +22,7 @@ class TramiteController extends Controller
         //dd($requisitos);
         $nombreTramite = $tipoTramite->descripcion;
         //dd($tipoTramite);
-        $pdf = PDF::loadView('requisitos',
+        $pdf = PDF::loadView('pdfRequisitos',
         [
             'requisitos'=> $requisitos,
             'nombreTramite'=> $nombreTramite,
