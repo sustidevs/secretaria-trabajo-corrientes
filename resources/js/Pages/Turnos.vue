@@ -12,14 +12,13 @@
                 </div>
             </v-col>
         </v-row>
-
+        
         <v-divider class="my-2"></v-divider>
 
                 <div class="MyriadPro-Cond grey--text text--darken-4 text-2xl my-2">
                     Seleccione un Tipo de Trámite
                 </div>
                 
-                   
                         <v-row justify="center" align="center">
                              <v-btn-toggle  v-for="tramite in dataTramites" :key="tramite.id" :value="tramite.id"  v-model="toggle_exclusive">
                                                                 <v-hover v-slot="{ hover }" >
@@ -39,8 +38,15 @@
 
         <v-divider class="my-5"></v-divider>
 
-        <!--<tabla-turnos-asesoramiento/>-->
-        <tabla-turnos :turnos="this.dataTurnos" />
+<div v-if="toggle_exclusive === 1">
+<tabla-turnos-asesoramiento/>
+</div>
+
+<div v-else>
+     <tabla-turnos :turnos="this.dataTurnos" />
+</div>
+
+       
     </layout-registrado>
 </template>
 

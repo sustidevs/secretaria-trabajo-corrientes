@@ -14,7 +14,7 @@
                 <v-col cols="12" lg="8">
                     <v-data-table
                         class="font elevation-5 grey lighten-4 elevation-1 mytable my-4"
-                        :headers="headers" :items="desserts" sort-by="calories">
+                        :headers="headers" :items="dataAbogados" sort-by="calories">
                         <template v-slot:item.actions="{ item }">
                             <v-btn elevation="0" small class="mr-2 my-2 py-5" align="center"
                                    @click="this.asistencia(1)">
@@ -61,6 +61,7 @@ export default {
     props: {
         dialog: Boolean,
         solicitante: String,
+        dataAbogados:Array,
     },
 
     data: () => ({

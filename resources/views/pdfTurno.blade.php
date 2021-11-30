@@ -29,7 +29,7 @@
         </table>
 
         <p style="font-size:28px"><strong>Ubicación:</strong> {{$turno->oficina->delegacion->localidadNombre()}}</p>
-        <p style="font-size:28px"><strong>Tipo de trámite:</strong> {{$turno->oficina->tipoTramite->descripcion}}</p>
+        <p style="font-size:28px"><strong>Tipo de trámite:</strong> {{$turno->oficina->tiposTramite->descripcion}}</p>
       </div>
 
       <div class="" style="margin-top:20px; margin-bot:20px"><h1>Datos del solicitante</h1>

@@ -11,6 +11,7 @@ use App\Http\Controllers\DelegacionController;
 use App\Http\Controllers\FormularioController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\TurnoController;
+use App\Http\Controllers\AbogadoController;
 
  //         NO REGISTRADO - PAGINA PUBLICA          ///Seleccione un Tipo de Trámite
 Route::inertia('/', 'Inicio');
@@ -18,11 +19,12 @@ Route::inertia('/delegaciones', 'Delegaciones');
 Route::inertia('/organigrama', 'Organigrama');
 Route::inertia('/inspectores', 'Inspectores');
 Route::inertia('/requisitos', 'Requisitos');
+Route::inertia('/tramites', 'Tramites');
 
 Route::get('/solicitar-turno', [FormularioController::class,'createForm']);
 Route::get('/solicitar-asesoramiento', [FormularioController::class,'createFormA']);
 Route::post('/solicitar-turno', [FormularioController::class,'storeTurnos']);
-
+Route::get('/ver-comprobante/{id}', [FormularioController::class,'comprobanteTurno']);
 Route::post('/asistencia', [TurnoController::class,'cambiarEstado']);
 
 
@@ -90,3 +92,8 @@ Route::post('/update-user', [UserController::class, 'update']);
 Route::post('/destroy-user', [UserController::class, 'destroy']);
 Route::post('/restore-user', [UserController::class, 'restore']);
 ///////////////////////////////////////////////////////
+
+Route::get('/nuevo-abogado', [PersonaController::class, 'createAbogado']);
+Route::get('/asignar', [PersonaController::class, 'indexAbogadosInternos']);
+Route::post('/nuevo-abogado', [PersonaController::class, 'storeAbogado']);
+
