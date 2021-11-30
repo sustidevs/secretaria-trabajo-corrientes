@@ -135,6 +135,9 @@
                     </v-stepper-content>
                 </v-stepper-items>
             </v-stepper>
+
+            <modal-turno :dataTurno="this.dataTurno" :dialog="dialog" @cerrar="show = false"/>
+
         </v-container>
     </LayoutNoRegistrado>
 </template>
@@ -146,10 +149,11 @@ import Descripcion from '../Componentes/Descripcion';
 import TextField from '../Componentes/TextField';
 import LabelInput from '../Componentes/LabelInput.vue';
 import AutocompleteField from '../Componentes/AutocompleteField.vue';
+import ModalTurno from '../Componentes/Modals/ModalTurno';
 import {Inertia} from "@inertiajs/inertia";
 export default {
     name: 'FormularioAJuridico',
-    components: { LayoutNoRegistrado, TituloTramite, Descripcion, TextField, LabelInput, AutocompleteField},
+    components: { ModalTurno, LayoutNoRegistrado, TituloTramite, Descripcion, TextField, LabelInput, AutocompleteField},
     props: {
         texto: String,
         errors: Object,
