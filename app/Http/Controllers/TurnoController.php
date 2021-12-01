@@ -40,7 +40,7 @@ class TurnoController extends Controller
             $turnos = Turno::get_turnos_by_tramite($request->tramite);
             $tipo_tramite_id = $request->tramite;
         } 
-
+        
         $abogadosInternos = Persona::abogadosInternos();
         $hoy = Carbon::now();
         $fecha = Carbon::createFromFormat('Y-m-d', $hoy->toDateString())->format('d/m/Y');
@@ -193,14 +193,31 @@ class TurnoController extends Controller
         return 'funciono';
     }
 
-        /* 
+    /* 
+    * Asigna es Abogado al turno Asesoramiento Juridico.
+    * Asi funcionaba en el repositorio viejo.
+    * 
+    */
+    public function update(Request $request)
+    {  
+        $turno = Turno::findOrFail($request->turno_id);
+        $abogado = Persona::findOrFail($request->abogado_id);
+        $turno->abogado_id = $abogado->id;
+        $turno->posee_abogado = true;      
+        $turno->save();  
+           
+        return redirect()->action([TurnoController::class, 'index'],['tramite'=>$request->tipo_tramite_id]);     
+    }
+
+    /* 
     * Update que combina los metoods cambiar estado y asignar abogado.
     * Si el tipo de tramite es asesoramiento juridico asigna un abogado al turno.
     * Sino modifica el estado a Presente o Asente.
+    * No Esta Conectado con la vista.
     */
-    public function update(Request $request) // update_2 repositorio viejo
+    public function update_2(Request $request) // update_2 repositorio viejo
     {  
-        if ($request->tipo_tramite_id == 1) 
+        if ($request->tipo_tramite_id == 1) // hace lo mismo que el metodo  update
         {
             $turno = Turno::findOrFail($request->turno_id);
             $abogado = Persona::findOrFail($request->abogado_id);
@@ -208,15 +225,15 @@ class TurnoController extends Controller
             $turno->posee_abogado = true;      
             $turno->save();   
             return redirect()->action([TurnoController::class, 'index'],
-                                      ['tipo_tramite_id'=>$request->tipo_tramite_id]);
+                                      ['tramite'=>$request->tipo_tramite_id]);
         }
-        else 
+        else // hace lo mismo que el metodo CambiarEstado
         {
             $turno = Turno::findOrFail($request->id);
             $turno->estado = $request->estado;
             $turno->save();
             return redirect()->action([TurnoController::class, 'index'],
-                                      ['tipo_tramite_id'=>$request->tipo_tramite_id]);
+                                      ['tramite'=>$request->tipo_tramite_id]);
         }
     }
 
