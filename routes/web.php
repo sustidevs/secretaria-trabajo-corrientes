@@ -30,8 +30,6 @@ Route::post('/solicitar-asesoramiento', [FormularioController::class,'storeTurno
 
 Route::post('/asistencia', [TurnoController::class,'cambiarEstado']);
 
-
-
 Route::post('/cerrar-sesion', [LogoutController::class, 'logout'])->name('cerrar-sesion');
 
 //Requisitos
@@ -99,5 +97,4 @@ Route::post('/restore-user', [UserController::class, 'restore']);
 Route::get('/nuevo-abogado', [PersonaController::class, 'createAbogado']);
 Route::get('/asignar', [PersonaController::class, 'indexAbogadosInternos']);
 Route::post('/nuevo-abogado', [PersonaController::class, 'storeAbogado']);
-
-
+Route::post('/asignar', [TurnoController::class, 'update']);

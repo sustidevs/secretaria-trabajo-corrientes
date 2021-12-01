@@ -206,8 +206,7 @@ class FormularioController extends Controller
         $datosPersona->correo = $request->correo;
         $datosPersona->tipo = 7;
         $datosPersona->save();
-
-        if ($request->posee_abogado)
+        if ($request->posee_abogado == true)
         {
             $abogado = Persona::si_existe($request->dnip);
             if ($abogado == null ) {
