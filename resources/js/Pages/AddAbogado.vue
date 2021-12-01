@@ -2,54 +2,59 @@
     <layout-registrado>
         <titulo texto="Añadir Abogado"/>
                      <form @submit.prevent="submit">
-                                                 <v-row>
+                         <v-row class="py-4">
                             <v-col cols="12" sm="12" lg="6">
-                                <div v-if="errors.nombrep" class="MyriadPro-Cond text-xl red--text">{{ errors.nombrep }}</div>
+                                <div v-if="errors.nombre" class="MyriadPro-Cond text-xl red--text">{{ errors.nombre }}</div>
                                 <label-input texto="Nombre"/>
                                 <text-field  v-model="form.nombre" icon="mdi-account"/>
                             </v-col>
                             <v-col cols="12" sm="12" lg="6">
-                                <div v-if="errors.apellidop" class="MyriadPro-Cond text-xl red--text">{{ errors.apellidop }}</div>
+                                <div v-if="errors.apellido" class="MyriadPro-Cond text-xl red--text">{{ errors.apellido }}</div>
                                 <label-input texto="Apellido"/>
                                 <text-field v-model="form.apellido"   icon="mdi-account"/>
                             </v-col>
                         </v-row>
 
-                        <v-row>
+                        <v-row class="py-2">
                             <v-col cols="12" sm="12" lg="6">
-                                <div v-if="errors.dnip" class=" MyriadPro-Cond  text-xl red--text">{{ errors.dnip }}</div>
+                                <div v-if="errors.dni" class=" MyriadPro-Cond  text-xl red--text">{{ errors.dni }}</div>
                                 <label-input texto="DNI"/>
                                 <text-field v-model.number="form.dni" tipo="number" icon="mdi-card-account-details"/>
                             </v-col>
                             <v-col cols="12" sm="12" lg="6">
-                                 <div v-if="errors.telefono" class="MyriadPro-Cond text-xl red--text">{{ errors.telefonop }}</div>
+                                 <div v-if="errors.telefono" class="MyriadPro-Cond text-xl red--text">{{ errors.telefono }}</div>
                                 <label-input texto="Teléfono"/>
                                 <text-field  v-model.number="form.telefono"  tipo="number" icon="mdi-phone"/>
                             </v-col>
                         </v-row>
 
-                         <v-row>
+                         <v-row class="py-2">
                             <v-col cols="12" sm="12" lg="6">
-                                <div v-if="errors.domicilio" class="MyriadPro-Cond  text-xl red--text">{{ errors.domiciliop }}</div>
+                                <div v-if="errors.domicilio" class="MyriadPro-Cond  text-xl red--text">{{ errors.domicilio }}</div>
                                 <label-input texto="Domicilio"/>
                                 <text-field v-model="form.domicilio" icon="mdi-home"/>
                             </v-col>
 
                             <v-col cols="12" sm="12" lg="6">
-                                <div v-if="errors.localidad" class="MyriadPro-Cond  text-xl red--text">{{ errors.localidadp }}</div>
+                                <div v-if="errors.localidad" class="MyriadPro-Cond  text-xl red--text">{{ errors.localidad }}</div>
                                 <label-input texto="Localidad"/>
                                 <autocomplete-field :data="dataLocalidades" nombre="nombre" v-model="form.localidad_id" icon="mdi-map-marker"/>
                             </v-col>
                         </v-row>
 
                         
-                        <div v-if="errors.correop" class=" MyriadPro-Cond text-xl red--text">{{ errors.correop }}</div>
+                        <div v-if="errors.correo" class=" MyriadPro-Cond text-xl red--text">{{ errors.correo }}</div>
                         <label-input texto="Correo electrónico"/>
                         <text-field v-model="form.correo" icon="mdi-email"/>
 
-                                    <v-btn type="submit" color="light-green darken-1" elevation="0" dark block height="55">
-                                        <div class="MyriadPro-Cond text-xl">Confirmar Turno</div>
+
+                            <v-row justify="center" align="center" class="pt-8">
+                                    <v-btn type="submit" color="light-green darken-1" elevation="0" large dark  height="55">
+                                        <div class="MyriadPro-Cond text-xl">Confirmar</div>
                                     </v-btn>
+                            </v-row>
+
+
 
                      </form>
     </layout-registrado>

@@ -1,14 +1,23 @@
 <template>
     <div>
-        <v-data-table
-            class="font elevation-5 grey lighten-4 elevation-1 mytable"
-            :headers="headers" :items="desserts" sort-by="calories">
-            <template v-slot:item.actions="{ item }">
-                <v-btn elevation="0" small class="mr-2 my-2 pa-5" align="center" @click="asignar(item)">
-                    <v-icon color="grey darken-1" medium align="center">mdi-account-arrow-right</v-icon>
-                </v-btn>
-            </template>
-        </v-data-table> </div>
+        <v-row>
+                <div class="MyriadPro-Cond py-8 pl-4">
+                    <v-btn color="#558B2F" block rounded href="/nuevo-abogado">
+                        <a class="white--text text-xl" > Añadir Abogado </a>
+                    </v-btn>
+                </div>
+        </v-row>
+
+            <v-data-table
+                class="font elevation-5 grey lighten-4 elevation-1 mytable"
+                :headers="headers" :items="desserts" sort-by="calories">
+                <template v-slot:item.actions="{ item }">
+                    <v-btn elevation="0" small class="mr-2 my-2 pa-5" align="center" @click="asignar(item)">
+                        <v-icon color="grey darken-1" medium align="center">mdi-account-arrow-right</v-icon>
+                    </v-btn>
+                </template>
+            </v-data-table> 
+        </div>
 </template>
 
 <script>
