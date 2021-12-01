@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Localidad;
 use App\Models\Delegacion;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreDelegacionRequest;
 
 class DelegacionController extends Controller
 {
@@ -36,7 +37,7 @@ class DelegacionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreDelegacionRequest $request)
     {
         
         $delegacion = new Delegacion();
