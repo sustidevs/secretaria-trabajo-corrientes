@@ -1,6 +1,7 @@
 <template>
     <v-app-bar class="px-7" color="#393b44">
-        <a href="/"><img  max-height="110" width="210" :src="('./images/logo-horizontal-secret.svg')"></a>
+        <a href="/turnos"><img  max-height="110" width="210" :src="('./images/logo-horizontal-secret.svg')"></a>
+        <a href="/turnos">Turnos</a>
         <v-spacer></v-spacer>
         <div class="text-center">
             <v-menu
@@ -11,7 +12,7 @@
             >
                 <template v-slot:activator="{ on, attrs }">
                     <v-btn  width="200" height="60" class="MyriadPro-Cond white--text" color="transparent" elevation="0" file v-bind="attrs" v-on="on">
-                        <v-icon width="200" height="60" class="mr-5">mdi-account-circle</v-icon> 
+                        <v-icon width="200" height="60" class="mr-5">mdi-account-circle</v-icon>
                     </v-btn>
                 </template>
 
@@ -35,7 +36,7 @@
                     <v-icon class="pl-2" align="center">mdi-logout</v-icon>
                 </button>
                          </form>
-                        
+
                     </v-card-actions>
                 </v-card>
             </v-menu>

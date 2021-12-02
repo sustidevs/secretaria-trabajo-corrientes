@@ -20,34 +20,34 @@ class TurnoController extends Controller
     public function index(Request $request)     //TODO REVISAR
     {
         $tramites = User::getPermission();
-        if ($tramites->count() == 1) 
+        if ($tramites->count() == 1)
         {
             $oficina_id = Auth::User()->oficina_id;
             $oficina = Oficina::findOrFail($oficina_id);
             $turnos = $oficina->turnosHoy();
         }
-        else 
+        else
         {
             $oficina_id = Oficina::getOficina(3, $tramites->first()['id'])->id; //Auth::User()->oficina->delegacion_id
             $oficina = Oficina::findOrFail($oficina_id);
             $turnos = $oficina->turnosHoy();
         }
 
-    
+
         $tipo_tramite_id = $oficina->tipos_tramite_id;
 
         if ($request->tramite != null) {
             $turnos = Turno::get_turnos_by_tramite($request->tramite);
             $tipo_tramite_id = $request->tramite;
-        } 
-        
+        }
+
         $abogadosInternos = Persona::abogadosInternos();
         $hoy = Carbon::now();
         $fecha = Carbon::createFromFormat('Y-m-d', $hoy->toDateString())->format('d/m/Y');
         return Inertia::render('Turnos', ['dataAbogados'  => $abogadosInternos,
                                                             'dataTurnos'    => $turnos,
-                                                            'dataFecha'     => $fecha, 
-                                                            'dataTramites'  => $tramites, 
+                                                            'dataFecha'     => $fecha,
+                                                            'dataTramites'  => $tramites,
                                                             'tipoTramite'   => $tipo_tramite_id]);
     }
 
@@ -55,11 +55,11 @@ class TurnoController extends Controller
     {
         $tramites = User::getPermission();
         $ayer = Carbon::yesterday()->toDateString();
-        if ($tramites->count() == 1) 
+        if ($tramites->count() == 1)
         {
             $oficina_id = Auth::User()->oficina_id;
-            $oficina = Oficina::findOrFail($oficina_id);    
-        } 
+            $oficina = Oficina::findOrFail($oficina_id);
+        }
         else
         {
             $oficina_id = Oficina::getOficina(3, $tramites->first()['id'])->id; //Auth::User()->oficina->delegacion_id
@@ -68,7 +68,7 @@ class TurnoController extends Controller
 		$turnos = Collect([]);
         $abogadosInternos = Persona::abogadosInternos();
         $tipo_tramite_id = $oficina->tipo_tramite_id;
-        if ($request->tipo_tramite_id != null) 
+        if ($request->tipo_tramite_id != null)
         {
             $delegacion_id = '3';//Auth::User()->oficina->delegacion_id;
             $tipo_tramite_id = $request->tipo_tramite_id;
@@ -76,14 +76,14 @@ class TurnoController extends Controller
             $turnos = $oficina->turnos_by_date($request->fecha, $request->fecha2);
             return Inertia::render('TurnosRegistrado/HistorialTurnos', ['dataAbogados'  => $abogadosInternos,
                                                                         'dataTurnos'    => $turnos,
-                                                                        'dataFecha'     => $ayer, 
-                                                                        'dataTramites'  => $tramites, 
+                                                                        'dataFecha'     => $ayer,
+                                                                        'dataTramites'  => $tramites,
                                                                         'tipoTramite'   => $tipo_tramite_id]);
-        } 
+        }
         return Inertia::render('TurnosRegistrado/HistorialTurnos', ['dataAbogados'  => $abogadosInternos,
                                                                     'dataTurnos'    => $turnos,
-                                                                    'dataFecha'     => $ayer, 
-                                                                    'dataTramites'  => $tramites, 
+                                                                    'dataFecha'     => $ayer,
+                                                                    'dataTramites'  => $tramites,
                                                                     'tipoTramite'   => $tipo_tramite_id]);
     }
 
@@ -98,8 +98,8 @@ class TurnoController extends Controller
         $tipo_tramite_id = $request->tipo_tramite_id;
         return Inertia::render('TurnosRegistrado/HistorialTurnos', ['dataAbogados'  => $abogadosInternos,
                                                                     'dataTurnos'    => $turnos,
-                                                                    'dataFecha'     => $ayer, 
-                                                                    'dataTramites'  => $tramites, 
+                                                                    'dataFecha'     => $ayer,
+                                                                    'dataTramites'  => $tramites,
                                                                     'tipoTramite'   => $tipo_tramite_id]);
     }
 
@@ -119,8 +119,8 @@ class TurnoController extends Controller
                                       ['tramite'=>$request->tipo_tramite_id]);
         /*return Inertia::render('Turnos', ['dataAbogados'  => $abogadosInternos,
                                                             'dataTurnos'    => $turnos,
-                                                            'dataFecha'     => $fecha, 
-                                                            'dataTramites'  => $tramites, 
+                                                            'dataFecha'     => $fecha,
+                                                            'dataTramites'  => $tramites,
                                                             'tipoTramite'   => $tipo_tramite_id]);*/
     }
     public function create()
@@ -145,12 +145,12 @@ class TurnoController extends Controller
 
     public function buscador_turno(Request $request) //store proyecto viejo
     {
-        if ($request->tipo_id != null) 
+        if ($request->tipo_id != null)
         {
             $turnos = Turno::get_turnos_by_tramite($request->tipo_id);
             $tipo_tramite_id = $request->tipo_id;
         }
-        else 
+        else
         {
             $tipo_tramite_id = $request->tipo_tramite_id;
             $turno = Turno::findOrFail($request->id);
@@ -164,11 +164,11 @@ class TurnoController extends Controller
         $fecha = Carbon::createFromFormat('Y-m-d', $hoy->toDateString())->format('d/m/Y');
         return Inertia::render('TurnosRegistrado/TurnosR', ['dataAbogados'  => $abogadosInternos,
                                                             'dataTurnos'    => $turnos,
-                                                            'dataFecha'     => $fecha, 
-                                                            'dataTramites'  => $tramites, 
+                                                            'dataFecha'     => $fecha,
+                                                            'dataTramites'  => $tramites,
                                                             'tipoTramite'   => $tipo_tramite_id]);
     }
-    
+
     public function comprobanteTurno(Request $request)
     {
         $turno = Turno::findOrFail($request->id);
@@ -178,13 +178,13 @@ class TurnoController extends Controller
         ]);
         return $pdf->inline('comprobante.pdf');
     }
-    
+
     public function mostrarComprobante(Request $request)
     {
         $turno = Turno::findOrFail($request->id);
         return view('pdfTurno')->with(compact('turno'));
     }
-    
+
     public function destroy(Request $request)
     {
         $turnoDelete = Turno::findOrFail($request->id);
@@ -193,37 +193,38 @@ class TurnoController extends Controller
         return 'funciono';
     }
 
-    /* 
+    /*
     * Asigna es Abogado al turno Asesoramiento Juridico.
     * Asi funcionaba en el repositorio viejo.
-    * 
+    *
     */
     public function update(Request $request)
-    {  
+    {
         $turno = Turno::findOrFail($request->turno_id);
         $abogado = Persona::findOrFail($request->abogado_id);
         $turno->abogado_id = $abogado->id;
-        $turno->posee_abogado = true;      
-        $turno->save();  
-           
-        return redirect()->action([TurnoController::class, 'index'],['tramite'=>$request->tipo_tramite_id]);     
+        $turno->posee_abogado = true;
+        $turno->estado = 1;
+        $turno->save();
+
+        return redirect()->action([TurnoController::class, 'index']);
     }
 
-    /* 
+    /*
     * Update que combina los metoods cambiar estado y asignar abogado.
     * Si el tipo de tramite es asesoramiento juridico asigna un abogado al turno.
     * Sino modifica el estado a Presente o Asente.
     * No Esta Conectado con la vista.
     */
     public function update_2(Request $request) // update_2 repositorio viejo
-    {  
+    {
         if ($request->tipo_tramite_id == 1) // hace lo mismo que el metodo  update
         {
             $turno = Turno::findOrFail($request->turno_id);
             $abogado = Persona::findOrFail($request->abogado_id);
             $turno->abogado_id = $abogado->id;
-            $turno->posee_abogado = true;      
-            $turno->save();   
+            $turno->posee_abogado = true;
+            $turno->save();
             return redirect()->action([TurnoController::class, 'index'],
                                       ['tramite'=>$request->tipo_tramite_id]);
         }
@@ -262,17 +263,17 @@ class TurnoController extends Controller
     * $this->verifica_si_existe(10946234);
     *
     */
-    public function verifica_si_existe(Request $request)    
-    {        
+    public function verifica_si_existe(Request $request)
+    {
         $consulta = Persona::all()->where('dni', $request->dni);
-        if ($consulta->isEmpty()) 
+        if ($consulta->isEmpty())
         {
             return false;
         }
         else
         {
             return $consulta->first()->datosPersona();
-        }             
+        }
     }
 
         /**
