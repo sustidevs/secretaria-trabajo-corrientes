@@ -204,9 +204,10 @@ class TurnoController extends Controller
         $abogado = Persona::findOrFail($request->abogado_id);
         $turno->abogado_id = $abogado->id;
         $turno->posee_abogado = true;      
+        $turno->estado = 1;
         $turno->save();  
            
-        return redirect()->action([TurnoController::class, 'index'],['tramite'=>$request->tipo_tramite_id]);     
+        return redirect()->action([TurnoController::class, 'index']);     
     }
 
     /* 

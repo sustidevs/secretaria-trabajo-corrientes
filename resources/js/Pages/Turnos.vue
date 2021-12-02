@@ -38,11 +38,15 @@
 
         <v-divider class="my-5"></v-divider>
 
-<div v-if="toggle_exclusive === 1">
-<tabla-turnos-asesoramiento/>
+<div v-if="toggle_exclusive === 0">
+    
 </div>
 
-<div v-else>
+<div v-if="toggle_exclusive === 1">
+<tabla-turnos-asesoramiento :turnos="this.dataTurnos"/>
+</div>
+
+<div v-if="toggle_exclusive > 1">
      <tabla-turnos :turnos="this.dataTurnos" />
 </div>
 

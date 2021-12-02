@@ -60,10 +60,10 @@ class PersonaController extends Controller
     */
     public function indexAbogadosInternos(Request $request)
     {
-        
-        $persona = Persona::si_existe($request->dni);
+        $turnos = Turno::findOrFail($request->turno);
+        $persona = Persona::findOrFail($turnos->solicitante_id);
         $abogados_internos = Persona::abogadosInternos();
-        return Inertia::render('ListadoAbogadosAsignar',['dataAbogados' => $abogados_internos, 'solicitante' => $persona]);
+        return Inertia::render('ListadoAbogadosAsignar',['dataAbogados' => $abogados_internos, 'solicitante' => $persona, 'turno' => $turnos]);
     }
 
     /**

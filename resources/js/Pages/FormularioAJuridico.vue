@@ -81,9 +81,10 @@
                                 <autocomplete-field v-model="form.tipo_tramite_id" nombre="descripcion" :data="this.dataTramites" icon="mdi-file-document-multiple"/>
                             </v-col>
                             <v-col cols="12" sm="12" lg="6">
-                                <div v-if="errors.delegacion_id" class="MyriadPro-Cond text-xl red--text">{{ errors.delegacion_id }}</div>
-                                <label-input texto="Delegación"/>
-                                <autocomplete-field v-model="form.delegacion_id" nombre="nombre" :data="this.dataDelegaciones" icon="mdi-map-marker"/>
+                                <div class="d-flex row pt-9 justify-center">
+                                  <v-icon color="green">mdi-map-marker</v-icon>
+                                    <div class="MyriadPro-Cond text-3xl my-5 green--text">Delegacion : Corrientes, Capital</div>
+                                </div>
                             </v-col>
                         </v-row>
 

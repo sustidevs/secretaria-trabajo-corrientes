@@ -15,7 +15,7 @@
                         <form @submit.prevent="submit">
 
                             <div class="MyriadPro-Cond text-2xl mb-2" color="grey darken-1">Email</div>
-                            <v-text-field color="light-green darken-1" outlined prepend-inner-icon="mdi-email" v-model="form.email"></v-text-field>
+                            <v-text-field color="light-green darken-1" outlined prepend-inner-icon="mdi-email" v-model="form.cuil"></v-text-field>
 
                             <div class="MyriadPro-Cond text-2xl mb-2" color="grey darken-1">Contraseña</div>
                             <v-text-field
@@ -46,7 +46,7 @@ export default {
             show1:false,
             error: false,
             form: this.$inertia.form({
-                email: '',
+                cuil: '',
                 password: '',
             })
         }

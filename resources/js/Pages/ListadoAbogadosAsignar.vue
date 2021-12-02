@@ -8,7 +8,6 @@
             </v-row>
 
             <v-divider inset></v-divider>
-
             <v-row justify="center" aling-content="center">
                 <v-col cols="12" lg="8">
                     <v-data-table
@@ -26,7 +25,7 @@
                 <v-col cols="12" lg="4" align="center" justify="center" class="my-6">
                     <img  max-height="250" width="250" :src="('./images/abogado-search.png')">
                     <div class="MyriadPro-Cond grey--text text--darken-4 text-3xl ">
-                        Solicitante:  Maria Perez 
+                        Solicitante: {{ solicitante.nombre + '  ' + solicitante.apellido + ',' + ' ' + solicitante.dni }}
                     </div>
                     <div class="MyriadPro-Cond grey--text text--darken-4 text-3xl ">
                         Abogado seleccionado: {{abogado}}
@@ -46,6 +45,33 @@
                     </v-row>
                 </v-col>
             </v-row>
+
+            <v-dialog v-model="this.dialog" persistent width="600">
+                <v-card class="pa-4" width="600" hover elevation="12" rounded="xl">
+
+                    <v-row justify="center" align="center">
+                        <v-col cols="12">
+                            <v-flex>
+                                <v-icon
+                                    color="light-green darken-1"
+                                    large>
+                                    mdi-check-circle
+                                </v-icon>
+                                <div class="MyriadPro-Cond font-bold just text-4xl justify-center ml-2">
+                                    ¡Se ha asignado con éxito!
+                                </div>
+                            </v-flex>
+                        </v-col>
+                        <v-card-actions>
+                            <v-flex class="justify-center">
+                                 <v-btn  class="ma-2 MyriadPro-Cond text-xl" color="light-green lighten-5">Aceptar
+                                    <v-icon dark right medium color="light-green darken-1">mdi-check-circle</v-icon>
+                                </v-btn>
+                            </v-flex>
+                        </v-card-actions>
+                    </v-row>
+                </v-card>
+            </v-dialog>
        
     </layout-registrado>
 </template>
@@ -74,6 +100,7 @@ export default {
             {text: 'Telefono', value: 'telefono'},
             {text: 'Asignar', value: 'actions', sortable: false},
         ],
+        dialog: false,
         desserts: [],
     }),
 
@@ -85,12 +112,11 @@ export default {
 
         submit() {
             let form = {
-                turno_id: this.turno,
+                turno_id: this.turno.id,
                 abogado_id: this.abogado_id,
                 tipo_tramite_id: 1,
             }
-            console.log(form)
-            Inertia.post('/asignacion', form, {
+            Inertia.post('/asignar', form, {
                 onSuccess: page => {
                     this.dialog = true;
                     this.form.reset();
@@ -102,7 +128,6 @@ export default {
         },
 
         seleccionar_abogado(item) {
-            console.log(item.id)
             this.abogado_id = item.id
             this.abogado = item.nombre + '  '  + item.apellido
         },
@@ -110,81 +135,6 @@ export default {
         close() {
             this.$emit('cerrar')
         },
-
-        initialize() {
-            this.desserts = [
-                {
-                    name: 'Frozen Yogurt',
-                    calories: 159,
-                    fat: 6.0,
-                    carbs: 24,
-                    protein: 4.0,
-                },
-                {
-                    name: 'Ice cream sandwich',
-                    calories: 237,
-                    fat: 9.0,
-                    carbs: 37,
-                    protein: 4.3,
-                },
-                {
-                    name: 'Eclair',
-                    calories: 262,
-                    fat: 16.0,
-                    carbs: 23,
-                    protein: 6.0,
-                },
-                {
-                    name: 'Cupcake',
-                    calories: 305,
-                    fat: 3.7,
-                    carbs: 67,
-                    protein: 4.3,
-                },
-                {
-                    name: 'Gingerbread',
-                    calories: 356,
-                    fat: 16.0,
-                    carbs: 49,
-                    protein: 3.9,
-                },
-                {
-                    name: 'Jelly bean',
-                    calories: 375,
-                    fat: 0.0,
-                    carbs: 94,
-                    protein: 0.0,
-                },
-                {
-                    name: 'Lollipop',
-                    calories: 392,
-                    fat: 0.2,
-                    carbs: 98,
-                    protein: 0,
-                },
-                {
-                    name: 'Honeycomb',
-                    calories: 408,
-                    fat: 3.2,
-                    carbs: 87,
-                    protein: 6.5,
-                },
-                {
-                    name: 'Donut',
-                    calories: 452,
-                    fat: 25.0,
-                    carbs: 51,
-                    protein: 4.9,
-                },
-                {
-                    name: 'KitKat',
-                    calories: 518,
-                    fat: 26.0,
-                    carbs: 65,
-                    protein: 7,
-                },
-            ]
-        }
     }
 }
 </script>

@@ -303,5 +303,4 @@ class Oficina extends Model
         $turnos = $this->turnos()->whereBetween('fecha', [$fechaDesde, $fechaHasta])->get();
         return $this->convert_to_array($turnos);;
     }
-
 }
