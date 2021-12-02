@@ -76,9 +76,10 @@
                     <v-stepper-content step="2">
                         <v-row>
                             <v-col cols="12" sm="12" lg="6">
-                                <div v-if="errors.tipo_tramite_id" class="MyriadPro-Cond text-xl red--text">{{ errors.tipo_tramite_id }}</div>
-                                <label-input texto="Seleccione un motivo"/>
-                                <autocomplete-field v-model="form.tipo_tramite_id" nombre="descripcion" :data="this.dataTramites" icon="mdi-file-document-multiple"/>
+                                <div class="d-flex row pt-9 justify-center">
+                                    <v-icon color="green">mdi-map-marker</v-icon>
+                                    <div class="MyriadPro-Cond text-3xl my-5 green--text">Motivo : Asesoramiento Juridico Gratuito</div>
+                                </div>
                             </v-col>
                             <v-col cols="12" sm="12" lg="6">
                                 <div class="d-flex row pt-9 justify-center">
@@ -95,7 +96,7 @@
                                 </v-btn>
                             </v-col>
                             <v-col cols="3">
-                                <inertia-link href='/solicitar-asesoramiento' :data="{ tramite:form.tipo_tramite_id }" preserve-state>
+                                <inertia-link href='/solicitar-asesoramiento' :data="{ tramite: 1 }" preserve-state>
                                     <v-btn color="light-green darken-1" elevation="0" dark block height="55">
                                         <div class="MyriadPro-Cond text-xl">Elegir fecha del turno</div>
                                     </v-btn>
@@ -185,8 +186,8 @@ export default {
                 //Abogado
                 posee_abogado: false,
                 //Turno
-                tipo_tramite_id: null,
-                delegacion_id: null,
+                tipo_tramite_id: 1,
+                delegacion_id: 3,
                 fecha:null,
                 hora:null,
             }),

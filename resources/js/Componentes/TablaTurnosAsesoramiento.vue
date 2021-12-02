@@ -16,7 +16,7 @@
                         <v-icon color="grey darken-1" medium align="center">mdi-account-arrow-right</v-icon>
                     </v-btn>
                 </template>
-            </v-data-table> 
+            </v-data-table>
         </div>
 </template>
 
@@ -36,7 +36,6 @@ export default {
             headers: [
                 { text: 'TURNO', align: 'start', value: 'orden_turno', class:'green darken-2 white--text'},
                 { text: 'HORA', align: 'start', value: 'hora', class:'green darken-2 white--text'},
-                { text: 'DNI', align: 'start', value: 'dni', class:'green darken-2 white--text'},
                 { text: 'SOLICITANTE', value: 'nombre_dni_solicitante', class:'green darken-2 white--text' },
                 { text: 'ESTADO', align: 'start', value: 'estado_nombre', class:'green darken-2 white--text' },
                 { text: 'ASIGNAR', align: 'center', value: 'actions', sortable: false, class:'green darken-2 white--text' },

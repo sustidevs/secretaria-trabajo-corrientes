@@ -1,6 +1,6 @@
 <template>
     <layout-registrado>
-        
+
             <v-row class="pa-5" justify="center" align="center">
                     <div class="MyriadPro-Cond grey--text text--darken-4 text-4xl ">
                         Listado de Abogados
@@ -38,41 +38,20 @@
                         </v-col>
 
                         <v-col cols="12" lg="6">
-                            <v-btn elevation="0" block height="40" color="light-grey lighten-5" @click="close">
-                                <div class="MyriadPro-Cond text-xl">Cancelar</div>
-                            </v-btn>
+                            <inertia-link href="/turnos">
+                                <v-btn elevation="0" block height="40" color="light-grey lighten-5" @click="close">
+                                    <div class="MyriadPro-Cond text-xl">Cancelar</div>
+                                </v-btn>
+                            </inertia-link>
                         </v-col>
                     </v-row>
                 </v-col>
             </v-row>
 
-            <v-dialog v-model="this.dialog" persistent width="600">
-                <v-card class="pa-4" width="600" hover elevation="12" rounded="xl">
+        <div v-if="this.dialog">
+        ola apapapapap
+        </div>
 
-                    <v-row justify="center" align="center">
-                        <v-col cols="12">
-                            <v-flex>
-                                <v-icon
-                                    color="light-green darken-1"
-                                    large>
-                                    mdi-check-circle
-                                </v-icon>
-                                <div class="MyriadPro-Cond font-bold just text-4xl justify-center ml-2">
-                                    ¡Se ha asignado con éxito!
-                                </div>
-                            </v-flex>
-                        </v-col>
-                        <v-card-actions>
-                            <v-flex class="justify-center">
-                                 <v-btn  class="ma-2 MyriadPro-Cond text-xl" color="light-green lighten-5">Aceptar
-                                    <v-icon dark right medium color="light-green darken-1">mdi-check-circle</v-icon>
-                                </v-btn>
-                            </v-flex>
-                        </v-card-actions>
-                    </v-row>
-                </v-card>
-            </v-dialog>
-       
     </layout-registrado>
 </template>
 
@@ -84,9 +63,9 @@ export default {
     name: 'ModalTurno',
     components: {LayoutRegistrado},
     props: {
-        turno: Number,
-        solicitante: Array,
-        dataAbogados:Array,
+        turno: Object,
+        solicitante: Object,
+        dataAbogados:Object,
     },
 
     data: () => ({
@@ -100,13 +79,9 @@ export default {
             {text: 'Telefono', value: 'telefono'},
             {text: 'Asignar', value: 'actions', sortable: false},
         ],
-        dialog: false,
         desserts: [],
+        dialog: false,
     }),
-
-    created() {
-        this.initialize()
-    },
 
     methods: {
 
@@ -119,7 +94,6 @@ export default {
             Inertia.post('/asignar', form, {
                 onSuccess: page => {
                     this.dialog = true;
-                    this.form.reset();
                 },
                 onError: errors => {
                     this.error= true;
