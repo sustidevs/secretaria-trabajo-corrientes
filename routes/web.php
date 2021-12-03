@@ -20,6 +20,7 @@ Route::inertia('/organigrama', 'Organigrama');
 Route::inertia('/inspectores', 'Inspectores');
 Route::inertia('/requisitos', 'Requisitos');
 Route::inertia('/tramites', 'Tramites');
+Route::inertia('/app-trabajo', 'AppTrabajo');
 
 Route::get('/solicitar-turno', [FormularioController::class,'createForm']);
 Route::get('/solicitar-asesoramiento', [FormularioController::class,'createFormA']);
