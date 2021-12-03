@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Persona;
 use App\Models\User;
 use App\Models\Oficina;
 use App\Models\Localidad;
 use App\Models\Delegacion;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use App\Models\TiposTramite;
 use Illuminate\Support\Facades\Hash;
+use Inertia\Inertia;
 use Spatie\Permission\Models\Permission;
 
 class UserController extends Controller
@@ -28,7 +31,7 @@ class UserController extends Controller
         $permisos = Permission::all();
         $localidades= Localidad::all()->except(['27']);//Excepto Todas
         $tipoUsuarios = User::tiposUsuario();
-        return response()->json([$delegaciones,$tipoTramites,$localidades,$tipoUsuarios,$permisos], 200); 
+        return response()->json([$delegaciones,$tipoTramites,$localidades,$tipoUsuarios,$permisos], 200);
         /*return Inertia::render('Vista',
                                 ['dataDelegaciones' => $delegaciones,
                                 ['dataLocalidades' => $localidades,
@@ -49,7 +52,7 @@ class UserController extends Controller
         $persona->localidad_id = $request->localidad_id;
         $persona->tipo = $request->tipo_persona_id;//Es el mismo que User::tiposUsuario()
         $persona->save();
-        
+
         $user = new User;
         $oficina_id = Oficina::getOficina($request->delegacion_id,$request->tipo_tramite_id)->id;
         $user->persona_id = $persona->id;
@@ -61,7 +64,7 @@ class UserController extends Controller
             $user->givePermissionTo(["name"=>$permiso->name]);
         }
         $user->save();
-        return response()->json([$user], 200); 
+        return response()->json([$user], 200);
         /*return Inertia::render('Vista',
                                 ['dataUser' => $user,]);*/
     }
@@ -74,7 +77,7 @@ class UserController extends Controller
         $permisos = Permission::all();
         $localidades= Localidad::all()->except(['27']);//Excepto Todas
         $tipoUsuarios = User::tiposUsuario();
-        return response()->json([$user,$delegaciones,$tipoTramites,$localidades,$tipoUsuarios,$permisos], 200); 
+        return response()->json([$user,$delegaciones,$tipoTramites,$localidades,$tipoUsuarios,$permisos], 200);
         /*return Inertia::render('Vista',
                                 ['dataUser' => $user,
                                 ['dataDelegaciones' => $delegaciones,
@@ -97,7 +100,7 @@ class UserController extends Controller
         $persona->localidad_id = $request->localidad_id;
         $persona->tipo = $request->tipo_persona_id;//Es el mismo que User::tiposUsuario()
         $persona->save();
-        
+
         $oficina_id = Oficina::getOficina($request->delegacion_id,$request->tipo_tramite_id)->id;
         $user->persona_id = $persona->id;
         $user->oficina_id = $oficina_id;
@@ -108,7 +111,7 @@ class UserController extends Controller
             $user->givePermissionTo(["name"=>$permiso->name]);
         }
         $user->save();
-        return response()->json([$user], 200); 
+        return response()->json([$user], 200);
         /*return Inertia::render('Vista',
                                 ['dataUser' => $user,]);*/
     }
@@ -117,7 +120,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($request->id);
         $user->delete();
-        return response()->json([$user], 200); 
+        return response()->json([$user], 200);
         /*return Inertia::render('Vista',
                                 ['dataUser' => $user,]);*/
     }
@@ -126,8 +129,21 @@ class UserController extends Controller
     {
         $user = User::withTrashed()->findOrFail($request->id);
         $user->restore();
-        return response()->json([$user], 200); 
+        return response()->json([$user], 200);
         /*return Inertia::render('Vista',
                                 ['dataUser' => $user,]);*/
+    }
+
+    public function resetPassword(Request $request)
+    {
+        return Inertia::render('ResetPassword');
+    }
+
+    public function resetPass(Request $request)
+    {
+        $user = User::findOrFail($request->user_id);
+        $user->password = Hash::make($request->password);
+        $user->save();
+        return response()->json([$user], 200);
     }
 }
