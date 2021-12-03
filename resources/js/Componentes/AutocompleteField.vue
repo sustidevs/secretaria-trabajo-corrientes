@@ -1,7 +1,7 @@
 <template>
   <v-autocomplete
       class="MyriadPro-Cond text-justify"
-      color="light-green darken-1"
+      color="#7CB342"
       outlined
       :items="data"
       item-value="id"

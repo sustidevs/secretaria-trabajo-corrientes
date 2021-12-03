@@ -73,14 +73,14 @@ class TurnoController extends Controller
             $delegacion_id = '3';//Auth::User()->oficina->delegacion_id;
             $tipo_tramite_id = $request->tipo_tramite_id;
             $oficina = Oficina::getOficina($delegacion_id, $tipo_tramite_id);
-            $turnos = $oficina->turnos_by_date($request->fecha, $request->fecha2);
-            return Inertia::render('TurnosRegistrado/HistorialTurnos', ['dataAbogados'  => $abogadosInternos,
+            $turnos = $oficina->turnos_by_date($request->desde, $request->hasta);
+            return Inertia::render('HistorialTurnos', ['dataAbogados'  => $abogadosInternos,
                                                                         'dataTurnos'    => $turnos,
                                                                         'dataFecha'     => $ayer,
                                                                         'dataTramites'  => $tramites,
                                                                         'tipoTramite'   => $tipo_tramite_id]);
         }
-        return Inertia::render('TurnosRegistrado/HistorialTurnos', ['dataAbogados'  => $abogadosInternos,
+        return Inertia::render('HistorialTurnos', ['dataAbogados'  => $abogadosInternos,
                                                                     'dataTurnos'    => $turnos,
                                                                     'dataFecha'     => $ayer,
                                                                     'dataTramites'  => $tramites,
