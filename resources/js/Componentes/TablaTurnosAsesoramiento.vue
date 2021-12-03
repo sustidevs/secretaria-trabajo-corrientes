@@ -16,6 +16,12 @@
                         <v-icon color="grey darken-1" medium align="center">mdi-account-arrow-right</v-icon>
                     </v-btn>
                 </template>
+
+                <template v-slot:item.estado_nombre="{ item }">
+                    <div :class="getColor(item.estado_nombre)" outlined class="font">
+                        {{ item.estado_nombre }}
+                    </div>
+                </template>
             </v-data-table>
         </div>
 </template>
@@ -45,6 +51,11 @@ export default {
     methods: {
         asignar (item) {
             this.$inertia.get('/asignar',{turno: item.id} )
+        },
+        getColor (estado_nombre) {
+            if (estado_nombre === 'Ausente') return 'red--text'
+            else if (estado_nombre === 'Presente') return 'green--text'
+            else return 'black--text'
         },
     },
 }

@@ -1,7 +1,8 @@
 <template>
     <v-app-bar class="px-7" color="#393b44">
         <a href="/turnos"><img  max-height="110" width="210" :src="('./images/logo-horizontal-secret.svg')"></a>
-        <a href="/turnos">Turnos</a>
+        <a href="/turnos"><dropdown-list  titulo="Turnos"/></a>
+        <a href="/historial-turnos"><dropdown-list  titulo="Historial Turnos"/></a>
         <v-spacer></v-spacer>
         <div class="text-center">
             <v-menu
@@ -17,7 +18,7 @@
                 </template>
 
                 <v-card width="200">
-                    <v-list class="MyriadPro-Cond">
+                    <v-list class="MyriadPro-Cond text-2xl">
                         <v-list-item>
                             <v-list-item-content>
                                 <v-list-item-title>{{this.$page.props.user.email}}</v-list-item-title>
@@ -32,7 +33,7 @@
                         <v-spacer></v-spacer>
                          <form method="POST" @submit.prevent="logout">
                              <button type="submit" align="center">
-                    <a class="MyriadPro-LightCond text-2xl white--text">Cerrar sesión</a>
+                    <a class="MyriadPro-LightCond text-2xl black--text">Cerrar sesión</a>
                     <v-icon class="pl-2" align="center">mdi-logout</v-icon>
                 </button>
                          </form>
@@ -45,8 +46,11 @@
 </template>
 
 <script>
+import DropdownList from "../../Componentes/DropdownList";
 export default {
     name: "NavbarRegistrado",
+
+    components: {DropdownList},
 
     props: {
       user: Object,

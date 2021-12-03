@@ -23,6 +23,7 @@ Route::inertia('/tramites', 'Tramites');
 Route::inertia('/app-trabajo', 'AppTrabajo');
 Route::inertia('/tasas', 'PagoTasas');
 
+
 Route::get('/solicitar-turno', [FormularioController::class,'createForm']);
 Route::get('/solicitar-asesoramiento', [FormularioController::class,'createFormA']);
 Route::post('/solicitar-turno', [FormularioController::class,'storeTurnos']);
@@ -50,6 +51,9 @@ Route::get('/descargar-pdf/{id}', [TramiteController::class, 'requisitos'])->whe
  Route::group(['middleware' => 'auth'], function(){
    Route::resource('turnos', TurnoController::class)->middleware('auth');
  });
+
+ Route::get('/historial-turnos', [TurnoController::class,'historial_turnos']);
+
 
  //DELEGACIONES/////////////////////////////////////////////////////////////
  Route::get('/delegacion-index', [DelegacionController::class,'index']);
