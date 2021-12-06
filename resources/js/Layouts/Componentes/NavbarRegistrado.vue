@@ -25,6 +25,11 @@
                                 <v-list-item-subtitle>Capital</v-list-item-subtitle>
                             </v-list-item-content>
                         </v-list-item>
+                        <v-list-item>
+                            <v-list-item-content @click="cambiarPassword()">
+                                    <v-list-item-title>Cambiar Contraseña</v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
                     </v-list>
 
                     <v-divider></v-divider>
@@ -67,6 +72,9 @@ export default {
         logout() {
             this.$inertia.post('/cerrar-sesion');
         },
+        cambiarPassword() {
+            this.$inertia.get('/cambiar-contrasena');
+        }
     }
 }
 </script>

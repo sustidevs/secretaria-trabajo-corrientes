@@ -31,6 +31,8 @@ Route::post('/solicitar-asesoramiento', [FormularioController::class,'storeTurno
 Route::get('/ver-comprobante/{id}', [FormularioController::class,'comprobanteTurno']);
 Route::post('/asistencia', [TurnoController::class,'cambiarEstado']);
 
+Route::get('/cambiar-contrasena', [UserController::class, 'resetPassword']);
+Route::post('/cambiar-contrasena', [UserController::class, 'resetPass']);
 Route::post('/cerrar-sesion', [LogoutController::class, 'logout'])->name('cerrar-sesion');
 
 //Requisitos
@@ -50,9 +52,10 @@ Route::get('/descargar-pdf/{id}', [TramiteController::class, 'requisitos'])->whe
 
  Route::group(['middleware' => 'auth'], function(){
    Route::resource('turnos', TurnoController::class)->middleware('auth');
+   Route::get('/historial-turnos', [TurnoController::class,'historial_turnos']);
  });
 
- Route::get('/historial-turnos', [TurnoController::class,'historial_turnos']);
+
 
 
  //DELEGACIONES/////////////////////////////////////////////////////////////
