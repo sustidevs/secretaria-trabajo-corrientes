@@ -141,9 +141,12 @@ class UserController extends Controller
 
     public function resetPass(Request $request)
     {
-        $user = User::findOrFail($request->user_id);
-        $user->password = Hash::make($request->password);
-        $user->save();
-        return response()->json([$user], 200);
+        if (strlen($request->password) >= 8){
+            $user = User::findOrFail($request->user_id);
+            $user->password = Hash::make($request->password);
+            $user->save();
+            return Inertia::render('ResetPassword', ['dialog' => true]);
+            //return response()->json([$user], 200);
+        }
     }
 }

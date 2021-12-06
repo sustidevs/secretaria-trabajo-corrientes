@@ -47,7 +47,7 @@
                 </v-card>
             </v-col>
         </v-row>
-
+        <modal-reset-pass :dialog="dialog" @cerrar="show = false"/>
     </layout-registrado>
 </template>
 
@@ -60,12 +60,12 @@ import TablaTurnos from "../Componentes/TablaTurnos";
 import TablaTurnosAsesoramiento from "../Componentes/TablaTurnosAsesoramiento";
 import TextField from '../Componentes/TextField';
 import LabelInput from '../Componentes/LabelInput.vue';
-import ModalEdit from "../Componentes/Modals/ModalEdit";
+import ModalResetPass from "../Componentes/Modals/ModalResetPass";
 import { Inertia } from '@inertiajs/inertia'
 
 export default {
     name: "ResetPassword",
-    components: {TextField, LabelInput, ModalEdit, NavbarRegistrado,TituloTramite, Descripcion,LayoutRegistrado,TablaTurnos,TablaTurnosAsesoramiento},
+    components: {TextField, LabelInput, ModalResetPass, NavbarRegistrado,TituloTramite, Descripcion,LayoutRegistrado,TablaTurnos,TablaTurnosAsesoramiento},
 
     props: {
         dataUser: Array
@@ -86,7 +86,8 @@ export default {
                 current_pass: null,
                 password: null,
                 password2: null
-            })
+            }),
+            dialog: false
         }
     },
     methods: {
@@ -96,7 +97,7 @@ export default {
                 //console.log(this.form.user_id)
                 Inertia.post('/cambiar-contrasena', this.form, {
                     onSuccess: page => {
-                        this.$inertia.get('/ingresar');
+                        this.dialog = true
                     }
                 });
 
