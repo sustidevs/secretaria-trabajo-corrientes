@@ -8,7 +8,7 @@
         v-for="slide in slides"
         :key="slide.id"
       >
-        
+
           <v-sheet
         height="100%"
       >
@@ -18,7 +18,9 @@
           justify="center"
         >
           <div>
-            <v-img :src="slide.img" :href="slide.scr"/>
+              <a :href="slide.scr">
+                  <v-img :src="slide.img" />
+              </a>
           </div>
         </v-row>
       </v-sheet>
