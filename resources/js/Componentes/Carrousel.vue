@@ -18,7 +18,7 @@
           justify="center"
         >
           <div>
-            <v-img :src="slide.img"/>
+            <v-img :src="slide.img" :href="slide.scr"/>
           </div>
         </v-row>
       </v-sheet>
@@ -34,8 +34,8 @@
       return {
         model: 0,
         slides: [
-            { img:'./images/pago-de-multas.png' },
-            { img:'./images/trabajo-de-corrientes.png' },
+            { img:'./images/pago-de-multas.png', scr: '/tasas' },
+            { img:'./images/trabajo-de-corrientes.png', scr: '/app-trabajo'},
         ],
       }
     },
