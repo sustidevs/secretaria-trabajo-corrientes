@@ -14,7 +14,7 @@
                         <v-divider class="my-4" color="grey"></v-divider>
                         <form @submit.prevent="submit">
 
-                            <div class="MyriadPro-Cond text-2xl mb-2" color="grey darken-1">Email</div>
+                            <div class="MyriadPro-Cond text-2xl mb-2" color="grey darken-1">CUIL</div>
                             <v-text-field color="light-green darken-1" outlined prepend-inner-icon="mdi-email" v-model="form.cuil"></v-text-field>
 
                             <div class="MyriadPro-Cond text-2xl mb-2" color="grey darken-1">Contraseña</div>
@@ -52,7 +52,7 @@ export default {
         }
     },
     methods: {
-        
+
         submit() {
             this.form.post(this.route('login'), {
                 onError: () => window.alert("Verifique sus datos ingresados"),
