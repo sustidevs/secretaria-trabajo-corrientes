@@ -1,7 +1,7 @@
 <template>
     <div class="texto">
-        <v-app-bar class="pl-3" height="64" color="#393b44">
-            <v-bottom-navigation class="justify-start" background-color="#393b44" dark fixed height="60">
+        <v-app-bar class="pl-3" color="#393b44">
+            <v-bottom-navigation background-color="#393b44" dark fixed>
                 <v-bottom-sheet v-model="sheet">
                     <template v-slot:activator="{ on, attrs }">
                         <v-btn
@@ -11,6 +11,7 @@
                             <v-icon class="white--text">mdi-menu</v-icon>
                         </v-btn>
                     </template>
+
                     <v-list color="#393b44" dark class="texto">
                         <div v-for="(link, i) in links">
                             <v-list-tile
@@ -50,8 +51,8 @@
                         </div>
                     </v-list>
                 </v-bottom-sheet>
-                <v-row justify="start">
-                    <img class="py-2" width="80" :src="('./images/secretariaBlanco.svg')">
+                <v-row no-gutters justify="center">
+                    <img  width="80" :src="('./images/secretariaBlanco.svg')">
                 </v-row>
             </v-bottom-navigation>
         </v-app-bar>

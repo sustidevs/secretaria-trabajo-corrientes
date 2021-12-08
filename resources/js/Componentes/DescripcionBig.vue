@@ -1,5 +1,5 @@
 <template>
-    <div class="MyriadPro-Cond text-justify text-4xl pt-3">
+    <div class="MyriadPro-Cond text-justify text-4xl">
         {{texto}}
     </div>
 </template>
@@ -16,7 +16,7 @@ export default {
 <style>
 @media (max-width: 480px) {
     .MyriadPro-Cond {
-        font-size: 28px;
+        font-size: 22px;
     }
 }
 </style>

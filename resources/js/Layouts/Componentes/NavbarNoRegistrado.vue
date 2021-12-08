@@ -1,6 +1,7 @@
 <template>
             <v-app-bar class="px-7" color="#393b44">
                 <a href="/"><img class="pa-2" max-height="70" width="120" :src="('./images/secretariaBlanco.svg')"></a>
+
                 <a href="/"><dropdown-list  titulo="Inicio"/></a>
                 <DropdownMenu titulo="Institucional" :data-item="institucional"/>
                  <a href="/inspectores"><dropdown-list  titulo="Inspectores"/></a>

@@ -1,9 +1,9 @@
 <template>
 <div>
     <v-carousel cycle
-    height="500"
+                height="500"
     hide-delimiter-background
-    show-arrows-on-hover>
+    >
       <v-carousel-item
         v-for="slide in slides"
         :key="slide.id"
@@ -19,7 +19,15 @@
         >
           <div>
               <a :href="slide.scr">
-                  <v-img :src="slide.img" />
+                 <div v-if="$vuetify.breakpoint.smOnly">
+                     <v-img height="100%" width="700" :src="slide.img" />
+                 </div>
+                  <div v-if="$vuetify.breakpoint.mdOnly">
+                      <v-img height="100%" width="960" :src="slide.img" />
+                  </div>
+                  <div v-if="$vuetify.breakpoint.lgOnly || $vuetify.breakpoint.xlOnly">
+                      <v-img height="100%" width="1000" :src="slide.img" />
+                  </div>
               </a>
           </div>
         </v-row>
