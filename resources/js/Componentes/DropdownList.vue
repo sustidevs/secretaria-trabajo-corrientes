@@ -8,7 +8,7 @@
                        elevation="0"
                        file
                        :class="hover ? 'green--text text--darken-1' : 'white--text'"
-                       class="pa-8 MyriadPro-Cond size"
+                       class="pa-5 MyriadPro-Cond"
                        v-bind="attrs"
                        v-on="on">
                     {{ titulo }}
@@ -31,4 +31,5 @@ export default {
 .v-btn::before {
     background-color: transparent;
 }
+
 </style>

@@ -8,7 +8,7 @@
                 <navbar-no-registrado/>
             </div>
         </v-sheet>
-        <div v-if="$page.url === '/'">
+        <div v-if="($page.url === '/') && ($vuetify.breakpoint.mdOnly || $vuetify.breakpoint.lgOnly || $vuetify.breakpoint.xlOnly) ">
             <Header/>
         </div>
         <v-main class="mt-4 mb-8 mx-4 mx-sm-10 mx-lg-16">
