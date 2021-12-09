@@ -21,7 +21,10 @@
                                 :active-class="color"
                                 class="v-list-item"
                             >
-                                <v-list-tile-title v-text="link.text" />
+
+                                <a :href="link.to">
+                                    <v-list-tile-title v-text="link.text" class="text-white"/>
+                                </a>
                             </v-list-tile>
 
                             <v-list-group
@@ -44,7 +47,9 @@
                                     class="white--text texto"
                                 >
                                     <v-list-tile-content>
-                                        <v-list-item-title class="pl-6 ma-3 texto">{{ sublink.text }}</v-list-item-title>
+                                        <a :href="sublink.to">
+                                            <v-list-item-title class="pl-6 ma-3 text-white">{{ sublink.text }}</v-list-item-title>
+                                        </a>
                                     </v-list-tile-content>
                                 </v-list-tile>
                             </v-list-group>
@@ -75,25 +80,29 @@ export default {
                 subLinks : [
                     {
                         text : 'Delegaciones',
-                        to    : '/',
-                    },
-                    {
-                        text : 'Inspectores',
-                        to    : '/',
+                        to    : '/delegaciones',
                     },
                     {
                         text : 'Organigrama',
-                        to    : '/',
+                        to    : '/organigrama',
                     },
                 ]
             },
             {
-                to     : '/',
+                to     : '/tramites',
                 text   : 'Trámites',
             },
             {
-                to     : '/',
-                text   : 'Novedades',
+                to    : '/inspectores',
+                text : 'Inspectores'
+            },
+            {
+                to     : '/app-trabajo',
+                text   : 'App Trabajo',
+            },
+            {
+                to     : '/tasas',
+                text   : 'Pago Tasas',
             },
         ]
     }),
