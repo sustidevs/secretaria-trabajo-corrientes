@@ -4,8 +4,10 @@
             <div class="MyriadPro-Cond sizText text-justify green--text text--darken-4"> TRÁMITE </div>
             <titulo-tramite :texto="this.tramite.nombre"/>
             <descripcion class="mb-7" texto="Los requisitos deberán ser presentados de manera presencial el día y la hora en que se le asignará el turno."/>
-            <card-como-solicitar-turno/>
-            <v-divider/>
+            <div v-if="!$vuetify.breakpoint.xsOnly">
+                <card-como-solicitar-turno/>
+                <v-divider/>
+            </div>
             <v-row class="pt-10 pb-16">
                 <v-col cols="12" xl="8" lg="8" md="12" sm="12" xs="12">
                     <card-documentacion-obligatoria :datos="this.dataRequisitos" />
