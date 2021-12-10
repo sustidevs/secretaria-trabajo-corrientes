@@ -13,10 +13,10 @@
                 {{ requisito.descripcion }}
             </v-flex>
         </div>
-        <div v-if="this.datos.requisitos.lenght === 0">
+        <div v-if="this.datos.requisitos.length === 0">
             <div class="MyriadPro-Cond text-3xl pb-3">
                 <v-icon color="black" class="pr-2">mdi-check-bold</v-icon>
-                Titulo sin descripcion
+                Este trámite no posee documentación obligatoria.
             </div>
         </div>
     </div>

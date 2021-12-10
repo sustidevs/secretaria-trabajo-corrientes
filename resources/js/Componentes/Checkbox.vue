@@ -1,6 +1,6 @@
 <template>
             <v-row class="px-3">
-                <v-col cols="12">
+                <v-col v-if="posee_requisitos" cols="12">
                     <a :href="'/descargar-pdf/' +this.tramite_id" target="_blank">
                         <v-btn outlined color="success" justify="center">
                             <v-flex align="center">
@@ -35,19 +35,20 @@
                         </v-form>
                     </div>
                 </v-col>
-            </v-row> 
+            </v-row>
 </template>
 
 <script>
 export default {
     props: {
         tramite_id: Number,
+        posee_requisitos: Boolean
     },
 
     data () {
         return {
             checkbox: false,
         }
-    }
+    },
 }
 </script>
