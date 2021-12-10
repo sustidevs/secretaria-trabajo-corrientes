@@ -7,16 +7,16 @@
         <div class="pr-9" v-for="requisito in this.datos.requisitos" :key="requisito.id">
             <v-flex class="MyriadPro-Cond text-3xl justify-start align-start">
                 <v-icon color="grey darken-3" class="pr-2" align="start" justify="start">mdi-check-bold</v-icon>
-                 {{ requisito.titulo }}
+                {{ requisito.titulo }}
             </v-flex>
             <v-flex class="MyriadPro-LightCond text-2xl pl-8 pb-3">
                 {{ requisito.descripcion }}
             </v-flex>
         </div>
-        <div v-if="this.datos.requisitos.lenght === 0">
+        <div v-if="this.datos.requisitos.length === 0">
             <div class="MyriadPro-Cond text-3xl pb-3">
                 <v-icon color="black" class="pr-2">mdi-check-bold</v-icon>
-                Titulo sin descripcion
+                Este trámite no posee documentación obligatoria.
             </div>
         </div>
     </div>
