@@ -15,8 +15,7 @@
                                 </div>
                             </v-flex>
                         </v-col>
-                        <v-col cols="12">
-                            <v-flex>
+                        <v-col cols="12" sm="6" lg="6">
                                 <v-flex>
                                     <v-icon color="light-green darken-1" large>mdi-calendar-check</v-icon>
                                     <v-flex>
@@ -24,7 +23,8 @@
                                         <div class="MyriadPro-Cond text-3xl ml-2" > {{this.dataTurno.fecha}}  </div>
                                     </v-flex>
                                 </v-flex>
-
+                        </v-col>
+                        <v-col cols="12" sm="6" lg="6">
                                 <v-flex>
                                     <v-icon color="light-green darken-1" large >mdi-clock-time-nine-outline</v-icon>
                                     <v-flex>
@@ -32,7 +32,6 @@
                                         <div class="MyriadPro-Cond  text-3xl ml-2 "> {{this.dataTurno.hora}}</div>
                                     </v-flex>
                                 </v-flex>
-                            </v-flex>
                         </v-col>
                         <v-divider inset></v-divider>
                         <v-col cols="12">
@@ -90,7 +89,7 @@
                                     <v-icon dark right medium color="light-green darken-1">mdi-check-circle</v-icon>
                                 </v-btn>
                                  </inertia-link>
-                                    
+
 
                                 <a :href="'/ver-comprobante/' + this.dataTurno.turno_id" target="_blank">
                                     <v-btn
