@@ -15,24 +15,24 @@
 
         <v-divider class="my-2"></v-divider>
 
-                <div class="MyriadPro-Cond grey--text text--darken-4 text-2xl my-2">
-                    Seleccione un Tipo de Trámite
-                </div>
+            <div class="MyriadPro-Cond grey--text text--darken-4 text-2xl my-2">
+                Seleccione un Tipo de Trámite
+            </div>
 
-                        <v-row justify="center" align="center">
-                             <v-btn-toggle  v-for="tramite in dataTramites" :key="tramite.id" :value="tramite.id"  v-model="toggle_exclusive">
-                                                                <v-hover v-slot="{ hover }" >
-                                                                     <inertia-link href="/turnos" :data="{ tramite: tramite.id }" preserve-state>
-                                                                        <v-btn :value="tramite.id" rounded width="auto" :class="hover ? 'light-green darken-3' : 'grey lighten-3'" class="pa-5 ma-4 grey--text text--darken-4">
+                <v-row justify="center" align="center">
+                     <v-btn-toggle  v-for="tramite in dataTramites" :key="tramite.id" :value="tramite.id"  v-model="toggle_exclusive">
+                        <v-hover v-slot="{ hover }" >
+                             <inertia-link href="/turnos" :data="{ tramite: tramite.id }" preserve-state>
+                                <v-btn :value="tramite.id" rounded width="auto" :class="hover ? 'light-green darken-3' : 'grey lighten-3'" class="pa-5 ma-4 grey--text text--darken-4">
 
-                                                                                <div :class="hover ? 'white--text' : 'black--text'" class="MyriadPro-Cond  text-2xl">
-                                                                                    {{ tramite.name }}
-                                                                                </div>
-                                                                        </v-btn>
-                                                                     </inertia-link>
-                                                                </v-hover>
-                             </v-btn-toggle>
-                        </v-row>
+                                        <div :class="hover ? 'white--text' : 'black--text'" class="MyriadPro-Cond  text-2xl">
+                                            {{ tramite.name }}
+                                        </div>
+                                </v-btn>
+                             </inertia-link>
+                        </v-hover>
+                     </v-btn-toggle>
+                </v-row>
 
 
 
