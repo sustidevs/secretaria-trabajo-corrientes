@@ -141,12 +141,27 @@ class UserController extends Controller
 
     public function resetPass(Request $request)
     {
-        if (strlen($request->password) >= 8){
-            $user = User::findOrFail($request->user_id);
+        $errors = [];
+
+        $user = User::findOrFail($request->user_id);
+        if (!Hash::check($request->current_pass, $user->password)){
+            $errors["current_password"] = "Debe ingresar la contraseña actual";
+        }
+        if ($request->password != $request->password2){
+            $errors["not_match"] = "Las contraseñas no coinciden";
+        }
+        if (strlen($request->password) < 8) {
+            $errors["password_too_short"] = "La contraseña debe tener al menos 8 caracteres";
+        }
+
+        if (count($errors) == 0){
             $user->password = Hash::make($request->password);
             $user->save();
             return Inertia::render('ResetPassword', ['dialog' => true]);
-            //return response()->json([$user], 200);
+        }
+        else
+        {
+            return Inertia::render('ResetPassword', ['errors' => $errors]);
         }
     }
 }
