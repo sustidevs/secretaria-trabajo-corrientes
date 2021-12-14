@@ -7,9 +7,8 @@
     class="MyriadPro-Cond white--text alertSize"
      dismissible
 >
-Se marco la asistencia del solicitante {{ this.solicitante }} y su abogado {{ this.abogado }} con exito
+Se marcó la asistencia del solicitante {{ this.solicitante }} y su abogado {{ this.abogado }} con éxito.
 
-<v-icon @click="show = false"> mdi-close-thick </v-icon>
 </v-alert>
 
 
@@ -35,14 +34,14 @@ Se marco la asistencia del solicitante {{ this.solicitante }} y su abogado {{ th
                     </template>
                 </v-data-table>
 </div>
-               
+
 </template>
 
 <script>
 import AlertAsistencia from "../Componentes/AlertaAsistencia.vue"
 import { Inertia } from '@inertiajs/inertia'
 export default {
-    
+
     components: {AlertAsistencia},
 
     props: {
@@ -90,7 +89,7 @@ export default {
                 onSuccess: page => {
                     this.show = true;
                     this.$inertia.get('/turnos', {tramite: tipo_tramite})
-                    
+
                 },
                 onError: errors => {
                     this.error= true;

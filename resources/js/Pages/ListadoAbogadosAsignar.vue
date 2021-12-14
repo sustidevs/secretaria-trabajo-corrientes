@@ -32,14 +32,14 @@
                     </div>
                     <v-row no-gutters class="py-6 px-2">
                         <v-col cols="12" lg="6">
-                            <v-btn @click="submit()" elevation="0" block height="40" color="#558B2F" class="white--text">
+                            <v-btn @click="submit()" :disabled="abogado_id === null" elevation="0" block height="40" color="#558B2F" class="white--text mr-1">
                                 <div class="MyriadPro-Cond text-xl">Confirmar</div>
                             </v-btn>
                         </v-col>
 
                         <v-col cols="12" lg="6">
                             <inertia-link href="/turnos">
-                                <v-btn elevation="0" block height="40" color="light-grey lighten-5" @click="close">
+                                <v-btn elevation="0" block height="40" color="light-grey lighten-5" @click="close" class="ml-1">
                                     <div class="MyriadPro-Cond text-xl">Cancelar</div>
                                 </v-btn>
                             </inertia-link>
@@ -70,7 +70,7 @@ export default {
 
     data: () => ({
         abogado_id: null,
-        abogado: 'Aun no ha seleccionado un abogado',
+        abogado: 'Aún no ha seleccionado un abogado',
         headers: [
             {text: 'Nombre', value: 'nombre'},
             {text: 'Apellido', value: 'apellido'},
