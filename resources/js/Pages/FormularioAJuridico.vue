@@ -65,7 +65,7 @@
                         <text-field type="email" v-model="form.correo" icon="mdi-email"/>
 
                         <v-row justify="center" class="py-7">
-                            <v-col cols="3">
+                            <v-col cols="12" xs="12" sm="6" lg="4">
                                 <v-btn color="light-green darken-1" elevation="0" dark @click="e1 = 2" block height="55">
                                     <div class="MyriadPro-Cond text-xl">Continuar</div>
                                 </v-btn>
@@ -74,28 +74,24 @@
                     </v-stepper-content>
 
                     <v-stepper-content step="2">
-                        <v-row>
-                            <v-col cols="12" sm="12" lg="6">
-                                <div class="d-flex row pt-9 justify-center">
-                                    <v-icon color="green">mdi-map-marker</v-icon>
-                                    <div class="MyriadPro-Cond text-3xl my-5 green--text">Motivo : Asesoramiento Juridico Gratuito</div>
-                                </div>
+                        <v-row justify="center">
+                            <v-col class="d-flex row pt-9 justify-center" cols="12" sm="12" lg="6">
+                                    <v-icon color="green">mdi-file-document-multiple</v-icon>
+                                    <div class="MyriadPro-Cond text-3xl my-5 green--text">Motivo : Asesoramiento Jurídico Gratuito</div>
                             </v-col>
-                            <v-col cols="12" sm="12" lg="6">
-                                <div class="d-flex row pt-9 justify-center">
+                            <v-col class="d-flex row pt-9 justify-center" cols="12" sm="12" lg="6">
                                   <v-icon color="green">mdi-map-marker</v-icon>
-                                    <div class="MyriadPro-Cond text-3xl my-5 green--text">Delegacion : Corrientes, Capital</div>
-                                </div>
+                                    <div class="MyriadPro-Cond text-3xl my-5 green--text">Delegación : Corrientes, Capital</div>
                             </v-col>
                         </v-row>
 
                         <v-row justify="center" class="py-7">
-                            <v-col cols="3">
+                            <v-col cols="12" xs="12" sm="6" lg="4">
                                 <v-btn elevation="0" @click="e1 = 1" block height="55">
                                     <div class="MyriadPro-Cond text-xl">Volver</div>
                                 </v-btn>
                             </v-col>
-                            <v-col cols="3">
+                            <v-col cols="12" xs="12" sm="6" lg="4">
                                 <inertia-link href='/solicitar-asesoramiento' :data="{ tramite: 1 }" preserve-state>
                                     <v-btn color="light-green darken-1" elevation="0" dark block height="55">
                                         <div class="MyriadPro-Cond text-xl">Elegir fecha del turno</div>
@@ -127,7 +123,7 @@
                                 </v-col>
                             </v-row>
                             <v-row justify="center" class="py-7">
-                                <v-col cols="3">
+                                <v-col cols="12" xs="12" sm="6" lg="4">
                                     <v-btn @click="submit()" type="submit" color="light-green darken-1" elevation="0" dark block height="55">
                                         <div class="MyriadPro-Cond text-xl">Confirmar Turno</div>
                                     </v-btn>

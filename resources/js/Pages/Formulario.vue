@@ -76,7 +76,7 @@
 
 
                             <v-row justify="center" class="py-7">
-                                <v-col cols="3">
+                                <v-col cols="12" xs="12" sm="6" lg="4">
                                     <v-btn color="light-green darken-1" elevation="0" dark @click="e1 = 2" block height="55">
                                         <div class="MyriadPro-Cond text-xl">Continuar</div>
                                     </v-btn>
@@ -132,13 +132,13 @@
                             <text-field v-model="form.correop" icon="mdi-email"/>
 
                             <v-row justify="center" class="py-7">
-                                <v-col cols="3">
-                                    <v-btn elevation="0" @click="e1 = 1" block height="55">
+                                <v-col cols="12" xs="12" sm="6" lg="4">
+                                    <v-btn elevation="0" @click="e1 = 1"  block height="55">
                                         <div class="MyriadPro-Cond text-xl">Volver</div>
                                     </v-btn>
                                 </v-col>
-                                <v-col cols="3">
-                                    <v-btn color="light-green darken-1" elevation="0" dark @click="e1 = 3" block height="55">
+                                <v-col cols="12" xs="12" sm="6" lg="4">
+                                    <v-btn color="light-green darken-1 " elevation="0" dark @click="e1 = 3" block height="55">
                                         <div class="MyriadPro-Cond text-xl">Continuar</div>
                                     </v-btn>
                                 </v-col>
@@ -159,16 +159,16 @@
                                     <label-input texto="Delegación"/>
                                     <autocomplete-field  v-model="form.delegacion_id" nombre="nombre" :data="this.dataDelegaciones" icon="mdi-map-marker"/>
                                 </v-col>
-
-
                             </v-row>
 
-                            <v-row justify="center">
-                                <inertia-link href="/solicitar-turno" :data="{ tramite:form.tipos_tramite_id }" preserve-state>
-                                    <v-btn  color="light-green darken-1" elevation="0" dark block height="55">
-                                        <div class="MyriadPro-Cond text-xl">Buscar fecha y hora disponibles</div>
-                                    </v-btn>
-                                </inertia-link>
+                            <v-row justify="center" class="pb-2">
+                                <v-col cols="12" xs="12" sm="6" lg="4">
+                                    <inertia-link href="/solicitar-turno" :data="{ tramite:form.tipos_tramite_id }" preserve-state>
+                                        <v-btn  color="light-green darken-1" elevation="0" dark block height="55">
+                                            <div class="MyriadPro-Cond text-sm">Buscar fecha y hora disponibles</div>
+                                        </v-btn>
+                                    </inertia-link>
+                                </v-col>
                             </v-row>
 
 
@@ -204,7 +204,7 @@
                                             <div class="MyriadPro-Cond text-xl">Volver</div>
                                         </v-btn>
                                     </v-col>-->
-                                    <v-col cols="3">
+                                    <v-col cols="12" xs="12" sm="6" lg="4">
                                         <v-btn type="submit" color="light-green darken-1" elevation="0" dark block height="55">
                                             <div class="MyriadPro-Cond text-xl">Confirmar Turno</div>
                                         </v-btn>
