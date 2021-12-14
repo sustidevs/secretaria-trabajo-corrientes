@@ -24,11 +24,10 @@
                 <v-card-actions>
                     <v-flex class="justify-center">
                         <inertia-link :href="'/ingresar'" >
-                            <v-btn  class="ma-2 MyriadPro-Cond text-xl" color="light-green lighten-5" @click="close()">Aceptar
+                            <v-btn  class="ma-2 MyriadPro-Cond text-xl" color="light-green lighten-5" >Aceptar
                                 <v-icon dark right medium color="light-green darken-1">mdi-check-circle</v-icon>
                             </v-btn>
                         </inertia-link>
-
                     </v-flex>
                 </v-card-actions>
             </v-row>

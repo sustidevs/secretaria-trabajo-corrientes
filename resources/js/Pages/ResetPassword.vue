@@ -12,28 +12,26 @@
                 <v-card  elevation="6" outlined class="pa-4  lighten-4 rounded-xl mx-auto ">
                     <div class="MyriadPro-Cond grey--text text--darken-4 text-2xl mt-2 px-7">
                         <form class="p-7">
-                            <!--
                             <v-row>
                                 <v-col cols="12" sm="12" lg="12">
                                     <label-input texto="Contraseña actual"/>
-                                    <text-field  v-model="form.current_pass" icon="mdi-account"/>
+                                    <text-field tipo="password" v-model="form.current_pass" icon="mdi-account"/>
+                                    <input-error :message="$props.errors['current_password']"></input-error>
                                 </v-col>
                             </v-row>
-                            -->
                             <v-row>
                                 <v-col cols="12" sm="12" lg="12">
                                     <label-input texto="Nueva contraseña"/>
                                     <text-field tipo="password" v-model="form.password" icon="mdi-account"/>
+                                    <input-error :message="$props.errors['password_too_short']"></input-error>
                                 </v-col>
                             </v-row>
                             <v-row>
                                 <v-col cols="12" sm="12" lg="12">
                                     <label-input texto="Confirmar contraseña"/>
                                     <text-field tipo="password" v-model="form.password2" icon="mdi-account"/>
+                                    <input-error :message="$props.errors['not_match']"></input-error>
                                 </v-col>
-                            </v-row>
-                            <v-row justify="center" class="red--text">
-                                {{ this.errors}}
                             </v-row>
                             <v-row >
                                 <v-col cols="12" sm="12" lg="12">
@@ -60,20 +58,22 @@ import TablaTurnos from "../Componentes/TablaTurnos";
 import TablaTurnosAsesoramiento from "../Componentes/TablaTurnosAsesoramiento";
 import TextField from '../Componentes/TextField';
 import LabelInput from '../Componentes/LabelInput.vue';
+import InputError from '../Componentes/InputError.vue';
 import ModalResetPass from "../Componentes/Modals/ModalResetPass";
 import { Inertia } from '@inertiajs/inertia'
 
+
 export default {
     name: "ResetPassword",
-    components: {TextField, LabelInput, ModalResetPass, NavbarRegistrado,TituloTramite, Descripcion,LayoutRegistrado,TablaTurnos,TablaTurnosAsesoramiento},
+    components: {TextField, LabelInput, InputError, ModalResetPass, NavbarRegistrado,TituloTramite, Descripcion,LayoutRegistrado,TablaTurnos,TablaTurnosAsesoramiento},
 
     props: {
-        dataUser: Array
+        dataUser: Array,
+        errors: Object
     },
 
     data () {
         return {
-            errors: null,
             form: this.$inertia.form({
                 user_id: this.$page.props.user.id,
                 nombre: this.$page.props.user.nombre,
@@ -92,8 +92,6 @@ export default {
     },
     methods: {
         submit(){
-            if (this.form.password === this.form.password2)
-            {
                 //console.log(this.form.user_id)
                 Inertia.post('/cambiar-contrasena', this.form, {
                     onSuccess: page => {
@@ -101,11 +99,6 @@ export default {
                     }
                 });
 
-            }
-            else
-            {
-                this.errors = "Las contraseñas ingresadas no coinciden"
-            }
 
         }
 
