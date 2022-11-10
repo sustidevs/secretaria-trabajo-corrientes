@@ -32,12 +32,12 @@
                                 <v-col cols="12" sm="12" lg="6">
                                     <div v-if="errors.nombre" class="MyriadPro-Cond  text-xl red--text">{{ errors.nombre }}</div>
                                     <label-input texto="Nombre"/>
-                                    <text-field  v-model="form.nombre" icon="mdi-account"/>
+                                    <text-field tipo="text" v-model="form.nombre" icon="mdi-account"/>
                                 </v-col>
                                 <v-col cols="12" sm="12" lg="6">
                                     <div v-if="errors.apellido" class="MyriadPro-Cond text-xl red--text">{{ errors.apellido }}</div>
                                     <label-input texto="Apellido"/>
-                                    <text-field v-model="form.apellido" icon="mdi-account"/>
+                                    <text-field tipo="text" v-model="form.apellido" icon="mdi-account"/>
                                 </v-col>
                             </v-row>
 
@@ -45,7 +45,7 @@
                                 <v-col cols="12" sm="12" lg="6">
                                     <div v-if="errors.dni" class="MyriadPro-Cond text-xl red--text">{{ errors.dni }}</div>
                                     <label-input texto="DNI"/>
-                                    <text-field v-model="form.dni" tipo="number" icon="mdi-card-account-details"/>
+                                    <text-field v-model="form.dni" tipo="number" min="1000000" icon="mdi-card-account-details"/>
                                 </v-col>
                                 <v-col cols="12" sm="12" lg="6">
                                     <div v-if="errors.telefono" class="MyriadPro-Cond text-xl red--text">{{ errors.telefono }}</div>
@@ -58,7 +58,7 @@
                                 <v-col cols="12" sm="12" lg="6">
                                     <div v-if="errors.domicilio" class="MyriadPro-Cond  text-xl red--text">{{ errors.domicilio }}</div>
                                     <label-input texto="Domicilio"/>
-                                    <text-field  v-model="form.domicilio"  icon="mdi-home"/>
+                                    <text-field tipo="text" v-model="form.domicilio"  icon="mdi-home"/>
                                 </v-col>
 
                                 <v-col cols="12" sm="12" lg="6">
@@ -72,7 +72,7 @@
 
                             <div v-if="errors.correo" class=" MyriadPro-Cond text-xl red--text">{{ errors.correo }}</div>
                             <label-input texto="Correo electrónico"/>
-                            <text-field v-model="form.correo" icon="mdi-email"/>
+                            <text-field v-model="form.correo" tipo="email" icon="mdi-email"/>
 
 
                             <v-row justify="center" class="py-7">
@@ -129,7 +129,7 @@
 
                             <div v-if="errors.correop" class=" MyriadPro-Cond text-xl red--text">{{ errors.correop }}</div>
                             <label-input texto="Correo electrónico"/>
-                            <text-field v-model="form.correop" icon="mdi-email"/>
+                            <text-field v-model="form.correop" tipo="email" icon="mdi-email"/>
 
                             <v-row justify="center" class="py-7">
                                 <v-col cols="12" xs="12" sm="6" lg="4">

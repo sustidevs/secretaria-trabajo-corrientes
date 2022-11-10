@@ -15,14 +15,14 @@
                 <div class="MyriadPro-Cond text-2xl grey--text text--darken-3 mt-2 mb-2">
                     Desde:
                 </div>
-                <input style="border: 2px solid #7CB342; border-radius: 8px; width: 350px;padding: 15px" type="date" v-model="fecha"  min="2021-11-06" :max=dataFecha required>
+                <input style="border: 2px solid #7CB342; border-radius: 8px; width: 350px;padding: 15px" type="date" v-model="fecha"  min="2021-11-06"  required>
             </v-col>
 
             <v-col cols="12" lg="3">
                 <div class="MyriadPro-Cond text-2xl grey--text text--darken-3 mt-2 mb-2">
                     Hasta:
                 </div>
-                <input style="border: 2px solid #7CB342; border-radius: 8px; width: 350px;padding: 15px"  type="date"  v-model="fecha2"   min="2021-11-06" :max=dataFecha>
+                <input style="border: 2px solid #7CB342; border-radius: 8px; width: 350px;padding: 15px"  type="date"  v-model="fecha2"   min="2021-11-06" >
             </v-col>
 
             <v-col cols="12" lg="6">

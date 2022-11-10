@@ -41,7 +41,7 @@ class UserSeeder extends Seeder
         $user = User::create([
             'persona_id' => $persona->id,
             'oficina_id' => '3',
-            'email'      => 'NORMA.BEATRIZ.JARA.PISARELLO@gmail.com ',
+            'email'      => 'NORMA.BEATRIZ.JARA.PISARELLO@gmail.com',
             'cuil'       => '27124374915',
             'password'   => Hash::make('password'),
         ]);
@@ -60,7 +60,7 @@ class UserSeeder extends Seeder
         $user = User::create([
             'persona_id' => $persona->id,
             'oficina_id' => '3',
-            'email'      => 'EDUARDO.JESUS.FERNANDEZ.DOS.SANTOS@gmail.com ',
+            'email'      => 'EDUARDO.JESUS.FERNANDEZ.DOS.SANTOS@gmail.com',
             'cuil'       => '20181336987',
             'password'   => Hash::make('password'),
         ]);
@@ -79,7 +79,7 @@ class UserSeeder extends Seeder
         $user = User::create([
             'persona_id' => $persona->id,
             'oficina_id' => '25',
-            'email'      => 'ENRIQUE.SOVERÓN@gmail.com ',
+            'email'      => 'ENRIQUE.SOVERÓN@gmail.com',
             'cuil'       => '20181336987',
             'password'   => Hash::make('password'),
         ]);
@@ -98,7 +98,7 @@ class UserSeeder extends Seeder
         $user = User::create([
             'persona_id' => $persona->id,
             'oficina_id' => '25',
-            'email'      => 'SILVIA.MANICLER@gmail.com ',
+            'email'      => 'SILVIA.MANICLER@gmail.com',
             'cuil'       => '27268479207',
             'password'   => Hash::make('password'),
         ]);
@@ -117,7 +117,7 @@ class UserSeeder extends Seeder
         $user = User::create([
             'persona_id' => $persona->id,
             'oficina_id' => '25',
-            'email'      => 'PEDRO.RODRIGUEZ@gmail.com ',
+            'email'      => 'PEDRO.RODRIGUEZ@gmail.com',
             'cuil'       => '29331250309',
             'password'   => Hash::make('password'),
         ]);
@@ -136,7 +136,7 @@ class UserSeeder extends Seeder
         $user = User::create([
             'persona_id' => $persona->id,
             'oficina_id' => '25',
-            'email'      => 'MARIA.EUGENIA.VILA@gmail.com ',
+            'email'      => 'MARIA.EUGENIA.VILA@gmail.com',
             'cuil'       => '27308981547',
             'password'   => Hash::make('password'),
         ]);
@@ -155,7 +155,7 @@ class UserSeeder extends Seeder
         $user = User::create([
             'persona_id' => $persona->id,
             'oficina_id' => '14',
-            'email'      => 'ALEJANDRO.JAUREGUI@gmail.com ',
+            'email'      => 'ALEJANDRO.JAUREGUI@gmail.com',
             'cuil'       => '20169537500',
             'password'   => Hash::make('password'),
         ]);
@@ -174,7 +174,7 @@ class UserSeeder extends Seeder
         $user = User::create([
             'persona_id' => $persona->id,
             'oficina_id' => '14',
-            'email'      => 'LIS.LOPEZ@gmail.com ',
+            'email'      => 'LIS.LOPEZ@gmail.com',
             'cuil'       => '27298107347',
             'password'   => Hash::make('password'),
         ]);
@@ -193,7 +193,7 @@ class UserSeeder extends Seeder
         $user = User::create([
             'persona_id' => $persona->id,
             'oficina_id' => '14',
-            'email'      => 'CARINA.PAIVA@gmail.com ',
+            'email'      => 'CARINA.PAIVA@gmail.com',
             'cuil'       => '27241748001',
             'password'   => Hash::make('password'),
         ]);
@@ -212,7 +212,7 @@ class UserSeeder extends Seeder
         $user = User::create([
             'persona_id' => $persona->id,
             'oficina_id' => '14',
-            'email'      => 'VALERIA.NOEMI.IVAN@gmail.com ',
+            'email'      => 'VALERIA.NOEMI.IVAN@gmail.com',
             'cuil'       => '27361942774',
             'password'   => Hash::make('password'),
         ]);
@@ -231,7 +231,7 @@ class UserSeeder extends Seeder
         $user = User::create([
             'persona_id' => $persona->id,
             'oficina_id' => '14',
-            'email'      => 'FABIO.CASTILLO@gmail.com ',
+            'email'      => 'FABIO.CASTILLO@gmail.com',
             'cuil'       => '20203740450',
             'password'   => Hash::make('password'),
         ]);
@@ -250,7 +250,7 @@ class UserSeeder extends Seeder
         $user = User::create([
             'persona_id' => $persona->id,
             'oficina_id' => '69',
-            'email'      => 'GRACIELA.BERMUDEZ@gmail.com ',
+            'email'      => 'GRACIELA.BERMUDEZ@gmail.com',
             'cuil'       => '23123675754',
             'password'   => Hash::make('password'),
         ]);
@@ -269,7 +269,7 @@ class UserSeeder extends Seeder
         $user = User::create([
             'persona_id' => $persona->id,
             'oficina_id' => '69',
-            'email'      => 'CARLOS.FIGUEROA@gmail.com ',
+            'email'      => 'CARLOS.FIGUEROA@gmail.com',
             'cuil'       => '23123675754',
             'password'   => Hash::make('password'),
         ]);
@@ -288,7 +288,7 @@ class UserSeeder extends Seeder
         $user = User::create([
             'persona_id' => $persona->id,
             'oficina_id' => '69',
-            'email'      => 'ROXANA.ESCOBAR@gmail.com ',
+            'email'      => 'ROXANA.ESCOBAR@gmail.com',
             'cuil'       => '27206769063',
             'password'   => Hash::make('password'),
         ]);
